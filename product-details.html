@@ -50,6 +50,25 @@
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 
+  <!-- Core Product Catalogs for Instant Pre-render (Zero Flash of Wrong Image) -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/product-details.js"></script>
+  <script>
+    // Instant image preloader: instructs browser to download the exact cut image with highest priority
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var id = (params.get('id') || 'beef-3').toLowerCase().trim();
+      var p = window.getButcherProduct ? window.getButcherProduct(id) : null;
+      if (p && p.image) {
+        var link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = p.image;
+        document.head.appendChild(link);
+      }
+    })();
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
   <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
@@ -255,10 +274,23 @@
           <div class="relative rounded-3xl overflow-hidden shadow-xl border border-stone-200 dark:border-zinc-800 bg-stone-100 dark:bg-zinc-900 mb-4 h-[380px] sm:h-[480px]">
             <img 
               id="mainProductImage"
-              src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80" 
-              alt="45-Day Dry-Aged Prime Porterhouse Steak on Butcher Board" 
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect width='1200' height='800' fill='%231c1917'/%3E%3C/svg%3E" 
+              alt="Artisan Fresh Butcher Cut" 
               class="w-full h-full object-cover transition-transform duration-500"
             >
+            <script>
+              // Synchronous immediate image resolution: executed during parsing before browser paints
+              (function() {
+                var params = new URLSearchParams(window.location.search);
+                var id = (params.get('id') || 'beef-3').toLowerCase().trim();
+                var p = window.getButcherProduct ? window.getButcherProduct(id) : null;
+                var el = document.getElementById('mainProductImage');
+                if (el && p && p.image) {
+                  el.src = p.image;
+                  el.alt = p.name;
+                }
+              })();
+            </script>
             <!-- Quality Badges -->
             <div class="absolute top-4 left-4 flex flex-col gap-2">
               <span id="productBadge1" class="bg-red-800/95 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
@@ -394,6 +426,16 @@
         </div>
       </div>
     </div>
+    <!-- Instant Pre-render Script: Synchronously populates title, price, badges, SKU, and breadcrumbs before first paint -->
+    <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        var id = (params.get('id') || 'beef-3').toLowerCase().trim();
+        if (typeof window.instantRenderProduct === 'function') {
+          window.instantRenderProduct(id);
+        }
+      })();
+    </script>
   </section>
 
   <!-- Comprehensive Cut Specs & Culinary Guide Tabs -->
@@ -941,27 +983,11 @@
   <script src="assets/js/rtl.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/navbar.js"></script>
-  <script src="assets/js/products.js"></script>
-  <script src="assets/js/product-details.js"></script>
   <script src="assets/js/forms.js"></script>
 
-  <!-- Interactive Gallery & Spec Buttons Script -->
+  <!-- Interactive Spec Buttons & Stepper Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Gallery Thumb Switcher
-      const mainImg = document.getElementById('mainProductImage');
-      const thumbBtns = document.querySelectorAll('.gallery-thumb-btn');
-
-      thumbBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-          thumbBtns.forEach(b => b.classList.replace('border-red-700', 'border-transparent'));
-          btn.classList.replace('border-transparent', 'border-red-700');
-          const newSrc = btn.getAttribute('data-src');
-          if (mainImg && newSrc) {
-            mainImg.src = newSrc;
-          }
-        });
-      });
 
       // Quantity buttons
       const qtyInput = document.getElementById('cutQuantity');

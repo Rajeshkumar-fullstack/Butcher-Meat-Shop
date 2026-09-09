@@ -131,11 +131,11 @@
       badge1: 'Beef • Dry Aged 45 Days',
       badge2: 'USDA Prime • BMS 6',
       portionNote: 'Typical portion averages 24 oz – 32 oz (serves 2 hungry steak lovers).',
-      image: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=800&q=80',
         'assets/images/image.png'
       ],
       description: 'The ultimate steak lover’s cut featuring both tender filet mignon and full-flavored New York strip connected by the bone, aged 45 days in salt-brick vaults.',
@@ -239,9 +239,9 @@
       badge1: 'Prime Beef • Grass-Fed Angus',
       badge2: '100% Lean Châteaubriand Cut',
       portionNote: 'Hand-trimmed barrel-cut tenderloin medallions with silver skin removed.',
-      image: 'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80',
         'assets/images/image.png'
@@ -419,9 +419,9 @@
       badge1: 'Heritage Kurobuta • 100% Berkshire',
       badge2: 'Rich Red Marbled',
       portionNote: 'Woodland foraged, rich red marbling, extraordinarily juicy. Hand-cut 1.75 inches thick.',
-      image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=1200&q=80',
+      image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80',
       gallery: [
-        'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=1200&q=80',
+        'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80',
         'assets/images/products/crispy-crackling-pork-belly.jpg',
         'assets/images/products/whole-pork-tenderloin.jpg'
@@ -619,6 +619,438 @@
         { step: '02', title: 'High-Heat Lamb Rack Roast', desc: 'Roast French rack of lamb at 425°F (220°C) with rosemary and garlic crust for 22 minutes to tender ruby medium-rare.' },
         { step: '03', title: 'Crispy Crackling Finish', desc: 'Blast pork belly slab under top broiler for the final 5 minutes until the skin bubbles into glass-crisp golden crackling.' }
       ]
+    },
+
+    'beef-5': {
+      id: 'beef-5',
+      name: 'Whole Texas Smoker Brisket',
+      shortName: 'Whole Smoker Brisket',
+      category: 'beef',
+      categoryLabel: 'Prime Beef • Pitmaster Reserve',
+      sku: 'CUT-BF-BRSK05',
+      price: 68.00,
+      unit: '2.5kg (Packer Trimmed)',
+      rating: '4.9 / 5.0',
+      reviews: '(72 pitmaster reviews)',
+      badge1: 'Prime Beef • Pitmaster Choice',
+      badge2: 'Whole Packer Brisket',
+      portionNote: 'Packer cut brisket with intact fat cap, ideal for slow 14-hour hardwood smoke. Serves 8–10.',
+      image: 'assets/images/blog/hardwood-smoked-brisket.jpg',
+      gallery: [
+        'assets/images/blog/hardwood-smoked-brisket.jpg',
+        'assets/images/Decoding Beef Rib.jpg',
+        'assets/images/image.png',
+        'assets/images/salt.png'
+      ],
+      description: 'Packer cut brisket with intact fat cap, ideal for slow 14-hour hardwood smoke. Rich, collagenous, and deeply flavorful.',
+      tenderness: '9.8 / 10',
+      marbling: 'BMS 6-7 Rich Collagen Cap',
+      feed: 'Corn Finished Prime Angus',
+      aging: 'Wet Aged 28 Days',
+      anatomyTitle: 'Pectoral & Serratus Primal Split',
+      anatomyDesc: 'Composed of the lean flat (deep pectoral) and the luscious, fat-rich point (superficial pectoral). The dense fat deckle between muscles melts during smoking to create self-basting richness.',
+      cookingTitle: '14-Hour Low & Slow Texas Smoke',
+      cookingSteps: [
+        { step: '01', title: 'Texas Salt & Pepper Rub', desc: 'Coat thoroughly with 50/50 coarse kosher salt and 16-mesh black pepper. Rest 1 hour at room temperature.' },
+        { step: '02', title: 'Post Oak Hardwood Smoke', desc: 'Smoke at 225°F (107°C) for 8 hours until bark sets and internal temp reaches 165°F (74°C).' },
+        { step: '03', title: 'Peach Paper Wrap & Rest', desc: 'Wrap in butcher paper with beef tallow, return to heat until probe-tender at 203°F (95°C), and rest for 2 hours in a cooler.' }
+      ]
+    },
+
+    'chk-1': {
+      id: 'chk-1',
+      name: 'Free-Range Whole Roaster Chicken',
+      shortName: 'Whole Roaster Chicken',
+      category: 'chicken',
+      categoryLabel: 'Pasture Poultry • 100% Organic',
+      sku: 'CUT-CK-RST01',
+      price: 16.50,
+      unit: '1.8kg (Air-Chilled Whole)',
+      rating: '4.9 / 5.0',
+      reviews: '(118 farm direct reviews)',
+      badge1: 'Pasture Poultry • 100% Organic Pastured',
+      badge2: 'Pasture Raised & Certified',
+      portionNote: 'Air-chilled, pasture-raised whole chicken with crispy skin potential and juicy, natural chicken flavor. Never fed hormones. Serves 4–5.',
+      image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+        'assets/images/chicken/spatchcock-chicken.jpg',
+        'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80'
+      ],
+      description: 'Air-chilled, pasture-raised whole chicken with crispy skin potential and juicy, natural chicken flavor. Sourced from certified organic rotational pastures.',
+      tenderness: '9.8 / 10',
+      marbling: 'Natural Pasture Fat & Crispy Skin',
+      feed: '100% Organic Certified Grain & Pasture Forage',
+      aging: 'Air-Chilled Zero Water Weight',
+      anatomyTitle: 'Whole Pasture-Raised Heritage Broiler',
+      anatomyDesc: 'Raised with open-air rotational pasture access, building firm muscle structure, natural bone broth density, and deep golden skin that crisps dramatically when roasted.',
+      cookingTitle: 'Master High-Heat Golden Roast Protocol',
+      cookingSteps: [
+        { step: '01', title: 'Dry Brine Overnight', desc: 'Season skin and cavity with kosher salt, thyme, and lemon zest; leave uncovered in refrigerator 12 hours for crispy skin.' },
+        { step: '02', title: 'High-Heat Blast', desc: 'Roast at 425°F (220°C) for 20 minutes to start caramelization, then lower to 375°F (190°C) for 40 minutes.' },
+        { step: '03', title: 'Rest & Carve', desc: 'Rest for 15 minutes before carving to ensure clear, savory juices remain inside the breast and thighs.' }
+      ]
+    },
+
+    'chk-2': {
+      id: 'chk-2',
+      name: 'Artisan Chicken Breast Fillets',
+      shortName: 'Boneless Chicken Breasts',
+      category: 'chicken',
+      categoryLabel: 'Pasture Poultry • Boneless',
+      sku: 'CUT-CK-BRS02',
+      price: 13.50,
+      unit: '1kg (Boneless & Skinless)',
+      rating: '4.8 / 5.0',
+      reviews: '(86 kitchen reviews)',
+      badge1: 'Pasture Poultry • Boneless & Skinless',
+      badge2: 'Zero Water Weight Added',
+      portionNote: 'Precision-trimmed boneless breasts with zero excess fat. Plump, versatile, and chilled fresh daily without water injection. Serves 3–4.',
+      image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80',
+        'assets/images/chicken/spatchcock-chicken.jpg',
+        'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80'
+      ],
+      description: 'Precision-trimmed boneless breasts with zero excess fat. Plump, versatile, and chilled fresh daily without water injection.',
+      tenderness: '9.9 / 10',
+      marbling: 'Lean & Pure Muscle Fiber',
+      feed: 'Vegetarian Pasture Diet',
+      aging: 'Air-Chilled Fresh Daily',
+      anatomyTitle: 'Pectoralis Major Breast Primal',
+      anatomyDesc: 'Hand-filleted whole muscle free of cartilage or tendon fragments. Clean fibrous texture that absorbs marinades deeply without weeping moisture.',
+      cookingTitle: 'Pan-Sear with Herb Compound Butter',
+      cookingSteps: [
+        { step: '01', title: 'Uniform Thickness', desc: 'Lightly pound thicker ends so breast cooks evenly throughout.' },
+        { step: '02', title: 'Golden Skillet Sear', desc: 'Sear in olive oil over medium-high heat for 6 minutes without moving until deep golden.' },
+        { step: '03', title: 'Butter Baste & Rest', desc: 'Flip, baste with garlic thyme butter for 4 minutes until 160°F (71°C), and rest 5 minutes.' }
+      ]
+    },
+
+    'chk-3': {
+      id: 'chk-3',
+      name: 'Bone-In Farm Chicken Thighs',
+      shortName: 'Farm Chicken Thighs',
+      category: 'chicken',
+      categoryLabel: 'Pasture Poultry • Farm Direct',
+      sku: 'CUT-CK-THG03',
+      price: 11.00,
+      unit: '1kg (Bone-In & Skin-On)',
+      rating: '4.9 / 5.0',
+      reviews: '(94 customer reviews)',
+      badge1: 'Pasture Poultry • Farm Direct',
+      badge2: 'Rich Juicy Dark Meat',
+      portionNote: 'Succulent dark meat with skin intact, ideal for pan-searing or braising. Rich flavor with superior moisture retention. Serves 3–4.',
+      image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+        'assets/images/chicken/spatchcock-chicken.jpg',
+        'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80'
+      ],
+      description: 'Succulent dark meat with skin intact, ideal for pan-searing or braising. Rich flavor with superior moisture retention.',
+      tenderness: '9.8 / 10',
+      marbling: 'Juicy Dark Meat with Skin Fat Cap',
+      feed: 'Certified Organic Pasture Grains',
+      aging: 'Air-Chilled Fresh',
+      anatomyTitle: 'Upper Leg Femur Primal',
+      anatomyDesc: 'Heavily worked muscle fibers packed with myoglobin and collagen that stay remarkably juicy through extended roasting or stewing.',
+      cookingTitle: 'Crispy Cast-Iron Thigh Roast',
+      cookingSteps: [
+        { step: '01', title: 'Cold Pan Start', desc: 'Place thighs skin-side down in a cold cast iron skillet and bring up to medium heat to slowly render fat.' },
+        { step: '02', title: '15-Minute Crisp', desc: 'Cook undisturbed for 14-16 minutes until skin is glassy and deep golden brown.' },
+        { step: '03', title: 'Quick Flip Finish', desc: 'Flip and cook meat side for 3 minutes until internal temperature hits 175°F (80°C).' }
+      ]
+    },
+
+    'chk-4': {
+      id: 'chk-4',
+      name: 'Crispy Party Chicken Wings',
+      shortName: 'Crispy Chicken Wings',
+      category: 'chicken',
+      categoryLabel: 'Pasture Poultry • Party Pack',
+      sku: 'CUT-CK-WNG04',
+      price: 12.00,
+      unit: '1kg (Split Drumettes & Flats)',
+      rating: '4.9 / 5.0',
+      reviews: '(105 game day reviews)',
+      badge1: 'Pasture Poultry • Party Pack',
+      badge2: 'Uniform Hand-Inspected',
+      portionNote: 'Split drumettes and flats, hand-inspected for uniform size so every piece fries or bakes to deep golden crunchiness. Serves 3–4.',
+      image: 'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1567620832903-9fc6debc209f?auto=format&fit=crop&w=800&q=80',
+        'assets/images/chicken/spatchcock-chicken.jpg',
+        'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80',
+        'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80'
+      ],
+      description: 'Split drumettes and flats, hand-inspected for uniform size so every piece fries or bakes to deep golden crunchiness.',
+      tenderness: '9.7 / 10',
+      marbling: 'High Gelatin Skin-to-Meat Ratio',
+      feed: 'Pasture Grains & Clover',
+      aging: 'Air Chilled',
+      anatomyTitle: 'Wing Joint (Mid-Wing & Drumette)',
+      anatomyDesc: 'Separated cleanly at the cartilage knuckle. Features maximum skin surface area relative to meat for unbeatable crispness.',
+      cookingTitle: 'Double-Bake Super Crisp Wings',
+      cookingSteps: [
+        { step: '01', title: 'Baking Powder Toss', desc: 'Toss dry wings with a pinch of aluminum-free baking powder and kosher salt.' },
+        { step: '02', title: 'Low Bake Render', desc: 'Bake at 250°F (120°C) for 25 minutes on a wire rack to melt subcutaneous fat.' },
+        { step: '03', title: 'High Heat Crunch', desc: 'Crank oven to 450°F (230°C) for 20 minutes until blistering, then toss in hot sauce or honey garlic glaze.' }
+      ]
+    },
+
+    'mut-4': {
+      id: 'mut-4',
+      name: 'Artisan Lamb Loin Chops',
+      shortName: 'Lamb Loin Chops',
+      category: 'mutton',
+      categoryLabel: 'Spring Mutton • Loin Cut',
+      sku: 'CUT-MT-LNC04',
+      price: 36.00,
+      unit: '600g (4 Chops)',
+      rating: '4.9 / 5.0',
+      reviews: '(67 gourmet reviews)',
+      badge1: 'Spring Mutton • Tender Mini T-Bones',
+      badge2: 'Pasture Clover Reared',
+      portionNote: 'Often called the T-bone steaks of lamb, each chop delivers tender loin meat with a crisp ribbon of flavorful fat. Serves 2.',
+      image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=800&q=80',
+        'assets/images/mutton/rack-of-lamb.jpg',
+        'assets/images/mutton/lamb-shanks.jpg',
+        'assets/images/mutton/mutton-curry-cut.jpg'
+      ],
+      description: 'Often called the T-bone steaks of lamb, each chop delivers tender loin meat with a crisp ribbon of flavorful fat.',
+      tenderness: '9.9 / 10',
+      marbling: 'Velvety Loin with Exterior Fat Ribbon',
+      feed: 'Free-Range Mountain Pasture Clover',
+      aging: 'Air Chilled 7 Days',
+      anatomyTitle: 'Lumbar Loin Vertebrae Cut',
+      anatomyDesc: 'Cross-section of the lamb saddle containing the eye of the loin and tenderloin medallion anchored by a mini T-shaped vertebrae.',
+      cookingTitle: 'Seared Rosemary & Garlic Loin Chops',
+      cookingSteps: [
+        { step: '01', title: 'Season & Edge Sear', desc: 'Season with coarse salt, pepper, and rosemary. Hold vertically on fat edge for 2 minutes in skillet.' },
+        { step: '02', title: 'High Heat Sear', desc: 'Sear flat sides for 3 minutes each side in olive oil and foaming butter.' },
+        { step: '03', title: 'Rest to Medium-Rare', desc: 'Rest 5 minutes under loose foil until internal temp is 135°F (57°C).' }
+      ]
+    },
+
+    'mut-5': {
+      id: 'mut-5',
+      name: 'Bone-In Leg of Mutton Roast',
+      shortName: 'Whole Leg of Mutton Roast',
+      category: 'mutton',
+      categoryLabel: 'Spring Mutton • Centerpiece',
+      sku: 'CUT-MT-LEG05',
+      price: 52.00,
+      unit: '2.2kg (Bone-In Whole Leg)',
+      rating: '4.9 / 5.0',
+      reviews: '(58 roast reviews)',
+      badge1: 'Spring Mutton • Centerpiece Cut',
+      badge2: 'Naturally 7-Day Aged',
+      portionNote: 'A traditional centerpiece roast, naturally aged for seven days. Succulent, earthy flavor and tender slices when carved warm. Serves 6–8.',
+      image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80',
+        'assets/images/mutton/rack-of-lamb.jpg',
+        'assets/images/mutton/lamb-shanks.jpg',
+        'assets/images/mutton/mutton-curry-cut.jpg'
+      ],
+      description: 'A traditional centerpiece roast, naturally aged for seven days. Succulent, earthy flavor and tender slices when carved warm.',
+      tenderness: '9.7 / 10',
+      marbling: 'Firm Pasture Muscle with Sweet Fat Cap',
+      feed: 'Wild Pasture Grass & Mountain Herb',
+      aging: 'Cold Vault Dry-Aged 7 Days',
+      anatomyTitle: 'Whole Hind Leg & Shank Primal',
+      anatomyDesc: 'Comprising the topside, silverside, and knuckle surrounding the central femur bone. Rich in robust sheep flavor that mellows beautifully when slow roasted.',
+      cookingTitle: 'Garlic & Anchovy Studded Sunday Roast',
+      cookingSteps: [
+        { step: '01', title: 'Make Deep Slits', desc: 'Pierce skin all over with paring knife and insert garlic slivers and fresh rosemary sprigs.' },
+        { step: '02', title: 'High Heat Searing Blast', desc: 'Roast at 425°F (220°C) for 25 minutes to brown the fat cap, then reduce to 325°F (165°C).' },
+        { step: '03', title: 'Slow Roast & Carve', desc: 'Roast approx 1 hour 15 min until 140°F (60°C); rest 20 minutes before carving paper-thin pink slices.' }
+      ]
+    },
+
+    'prk-2': {
+      id: 'prk-2',
+      name: 'Smoked Pork Spare Ribs (St. Louis)',
+      shortName: 'St. Louis Spare Ribs',
+      category: 'pork',
+      categoryLabel: 'Pork • Berkshire Duroc',
+      sku: 'CUT-PK-RBS02',
+      price: 31.00,
+      unit: '1.3kg (Full Rack)',
+      rating: '4.9 / 5.0',
+      reviews: '(77 pitmaster reviews)',
+      badge1: 'Berkshire Duroc • BBQ Champion Cut',
+      badge2: 'St. Louis Cut Clean Trim',
+      portionNote: 'Cleanly squared off spare ribs with cartilage removed. Meat sits thick on the bone, perfect for smoking or sticky oven roasting. Serves 2–3.',
+      image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=800&q=80',
+        'assets/images/products/crispy-crackling-pork-belly.jpg',
+        'assets/images/products/whole-pork-tenderloin.jpg',
+        'assets/images/products/artisan-butcher-sausages.jpg'
+      ],
+      description: 'Cleanly squared off spare ribs with cartilage removed. Meat sits thick on the bone, perfect for smoking or sticky oven roasting.',
+      tenderness: '9.8 / 10',
+      marbling: 'Rich Rib Intermuscular Marbling',
+      feed: 'Pasture Reared & Acorn Foraged',
+      aging: 'Air Chilled 4 Days',
+      anatomyTitle: 'Belly Ribs with Brisket Bone Trimmed',
+      anatomyDesc: 'Squared-off rack with brisket bone, flap meat, and costal cartilage removed. Leaves uniform rectangular slabs that cook evenly across all 12 bones.',
+      cookingTitle: '3-2-1 Pitmaster Smoke Protocol',
+      cookingSteps: [
+        { step: '01', title: '3 Hours Naked Smoke', desc: 'Smoke at 225°F (107°C) over hickory or applewood with sweet paprika rub for 3 hours.' },
+        { step: '02', title: '2 Hours Wrapped in Foil', desc: 'Wrap tightly in heavy foil with brown sugar, butter, and apple cider; cook for 2 hours.' },
+        { step: '03', title: '1 Hour Glazed Finish', desc: 'Unwrap, brush with artisan barbecue glaze, and caramelize for 45 minutes until ribs bend 90 degrees.' }
+      ]
+    },
+
+    'box-family': {
+      id: 'box-family',
+      name: 'Family Pasture Box',
+      shortName: 'Family Pasture Box',
+      category: 'box',
+      categoryLabel: 'Curated Box • Family Reserve',
+      sku: 'BOX-FAM-01',
+      price: 149.00,
+      unit: 'box (approx. 14 lbs)',
+      rating: '4.9 / 5.0',
+      reviews: '(92 subscriber reviews)',
+      badge1: 'Curated Box • Weekly Essential',
+      badge2: '100% Pasture Reared Meats',
+      portionNote: 'Complete weekly protein variety for a family of 4: 4x chicken breasts, 2x chuck pot roasts, 4 lbs minced beef, 4x pork chops, and butcher salt. Serves 14–18 meals.',
+      image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=600&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=600&q=80',
+        'assets/images/products/farmhouse-feast-crate.jpg',
+        'assets/images/products/grill-master-reserve-box.jpg',
+        'assets/images/salt.png'
+      ],
+      description: 'Complete weekly protein variety for a family of 4. Includes pasture chicken breasts, dry-aged beef mince, tender chuck roast, and heritage pork chops.',
+      tenderness: '9.8 / 10',
+      marbling: 'Balanced Family Everyday Cuts',
+      feed: 'Ethical Rotational Pasture Grazed',
+      aging: 'Fresh Butcher Cut & Vacuum Sealed',
+      anatomyTitle: 'Multi-Species Family Meal Planner',
+      anatomyDesc: 'Curated by our head butcher to provide diverse weeknight meals: braising cuts, quick-sear fillets, and versatile heritage ground meats.',
+      cookingTitle: 'Weeknight Butcher Meal Prep',
+      cookingSteps: [
+        { step: '01', title: 'Unpack & Chill', desc: 'Store vacuum-sealed portions in cold meat drawer; freeze any packs planned beyond 4 days.' },
+        { step: '02', title: 'Mid-Week Braise', desc: 'Slow-cook the chuck roast on Wednesday for fork-tender shredded beef tacos or stew.' },
+        { step: '03', title: 'Quick Weekend Sear', desc: 'Grill pork chops and chicken breasts with lemon herb butter for easy 15-minute dinners.' }
+      ]
+    },
+
+    'box-pitmaster': {
+      id: 'box-pitmaster',
+      name: 'The Pitmaster BBQ Box',
+      shortName: 'Pitmaster BBQ Box',
+      category: 'box',
+      categoryLabel: 'Curated Box • Smokehouse Crate',
+      sku: 'BOX-PIT-03',
+      price: 229.00,
+      unit: 'box (approx. 24 lbs)',
+      rating: '5.0 / 5.0',
+      reviews: '(64 live-fire reviews)',
+      badge1: 'Curated Box • Smokehouse Special',
+      badge2: 'Smoker & Offset Fire Ready',
+      portionNote: 'Hardwood low-and-slow competition barbecue selections. Includes whole prime packer brisket (12 lbs), 2x Duroc spare ribs, 8 lb pork butt, and smoked sausage. Serves 10–14.',
+      image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
+      gallery: [
+        'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
+        'assets/images/blog/hardwood-smoked-brisket.jpg',
+        'assets/images/Decoding Beef Rib.jpg',
+        'assets/images/products/grill-master-reserve-box.jpg'
+      ],
+      description: 'Hardwood low-and-slow competition barbecue selections. Includes whole prime packer brisket (12 lbs), 2x Duroc spare ribs, 8 lb pork butt, and smoked sausage.',
+      tenderness: '9.9 / 10',
+      marbling: 'High Collagen Pitmaster Marbling',
+      feed: 'Corn Finished Beef & Heritage Pork',
+      aging: 'Dry Aged & Fresh Cured Blend',
+      anatomyTitle: 'The Live-Fire Championship Selection',
+      anatomyDesc: 'Hand-picked cuts with thick fat caps and high collagen content that thrive over long hardwood smoke sessions.',
+      cookingTitle: 'All-Day Offset Smoker Schedule',
+      cookingSteps: [
+        { step: '01', title: 'Early Morning Brisket Start', desc: 'Put brisket on at 6 AM over post oak wood at 225°F (107°C).' },
+        { step: '02', title: 'Midday Ribs & Chicken', desc: 'Add ribs and chicken thighs at 11 AM using applewood chunks.' },
+        { step: '03', title: 'Afternoon Sausage Warm', desc: 'Finish links on the warmer rack for the final 45 minutes before slicing.' }
+      ]
+    },
+
+    'box-steakhouse': {
+      id: 'box-steakhouse',
+      name: 'Steakhouse Connoisseur Box',
+      shortName: 'Steakhouse Connoisseur',
+      category: 'box',
+      categoryLabel: 'Curated Box • Dry-Aged Reserve',
+      sku: 'BOX-STK-04',
+      price: 319.00,
+      unit: 'box (Gourmet Cut Flight)',
+      rating: '5.0 / 5.0',
+      reviews: '(81 luxury steak reviews)',
+      badge1: 'Curated Box • Dry Aged Reserve',
+      badge2: '35–45 Day Salt Aged Steaks',
+      portionNote: 'Aged in our Himalayan pink salt lockers for 35–45 days. Includes 2x 45-day bone-in ribeyes, 2x 35-day dry-aged NY strips, 2x filet mignons, and marrow butter. Serves 6–8.',
+      image: 'assets/images/hospitality-supply.jpg',
+      gallery: [
+        'assets/images/hospitality-supply.jpg',
+        'assets/images/salt.png',
+        'assets/images/image.png',
+        'assets/images/beef/wagyu-a5.jpg'
+      ],
+      description: 'Aged in our Himalayan pink salt lockers for 35–45 days. Includes 2x 45-day bone-in ribeyes, 2x 35-day dry-aged NY strips, 2x filet mignons, and marrow butter.',
+      tenderness: '10.0 / 10',
+      marbling: 'USDA Prime BMS 7-9 Marbling',
+      feed: 'Pasture Reared Organic Grain Finish',
+      aging: 'Himalayan Salt Vault Aged 35–45 Days',
+      anatomyTitle: 'The Loin & Rib Primal Dynasty',
+      anatomyDesc: 'The pinnacle steak cuts of beef butchery, dry-aged on pink salt bricks to concentrate rich hazelnut and blue cheese aromatic notes.',
+      cookingTitle: 'Steakhouse Cast-Iron Tasting Menu',
+      cookingSteps: [
+        { step: '01', title: 'Dry Salt Temper', desc: 'Temper all steaks on a wire rack for 45 minutes with sea salt flakes.' },
+        { step: '02', title: 'Searing Hot Skillet', desc: 'Sear in cast iron with rendered beef tallow for 2.5 minutes per side.' },
+        { step: '03', title: 'Compound Marrow Baste', desc: 'Baste with melting marrow truffle butter and rest for 7 minutes before slicing.' }
+      ]
+    },
+
+    'box-banquet': {
+      id: 'box-banquet',
+      name: 'Grand Feast Banquet Crate',
+      shortName: 'Grand Banquet Crate',
+      category: 'box',
+      categoryLabel: 'Curated Box • Master Chef Crate',
+      sku: 'BOX-BNQ-05',
+      price: 589.00,
+      unit: 'box (Serves 25–30 guests)',
+      rating: '5.0 / 5.0',
+      reviews: '(43 celebration reviews)',
+      badge1: 'Curated Box • Master Chef Banquet',
+      badge2: 'Ultimate Holiday Centerpiece',
+      portionNote: 'Massive celebratory crate: 45oz Tomahawk, 8-bone Lamb Rack, Crispy Pork Belly, and whole Spatchcock Chicken. Serves 25–30.',
+      image: 'assets/images/whole-roasts.jpg',
+      gallery: [
+        'assets/images/whole-roasts.jpg',
+        'assets/images/image.png',
+        'assets/images/products/farmhouse-feast-crate.jpg',
+        'assets/images/mutton/rack-of-lamb.jpg'
+      ],
+      description: 'Our most lavish collection designed for grand celebratory feasts. Features long-bone tomahawk ribeye, Frenched lamb rack, crispy Berkshire pork belly, and spatchcock poultry.',
+      tenderness: '9.9 / 10',
+      marbling: 'Pinnacle Reserve Marbled Cuts',
+      feed: 'Pure Pasture Reared Multi-Species',
+      aging: 'Artisan Dry & Fresh Cured',
+      anatomyTitle: 'Four-Species Master Butchery Showcase',
+      anatomyDesc: 'A grand architectural showcase of prime butchery across beef, lamb, pork, and poultry, providing every guest with their preferred showpiece cut.',
+      cookingTitle: 'Multi-Station Feast Execution',
+      cookingSteps: [
+        { step: '01', title: 'Stagger Cooking Times', desc: 'Start pork belly first for its 2.5 hour slow roast, followed by the spatchcock chicken.' },
+        { step: '02', title: 'Mid-Roast Lamb', desc: 'Roast the French-trimmed lamb rack for 22 minutes to perfect medium-rare.' },
+        { step: '03', title: 'Grand Tomahawk Finish', desc: 'Reverse sear the 45oz tomahawk over live coals as the dazzling dining room centerpiece.' }
+      ]
     }
   };
 
@@ -638,10 +1070,28 @@
       'dry-aged-ribeye': 'beef-1',
       'wagyu': 'beef-2',
       'wagyu-a5': 'beef-2',
+      'filet-mignon': 'beef-4',
+      'brisket': 'beef-5',
+      'smoker-brisket': 'beef-5',
+      'chicken-whole': 'chk-1',
+      'roaster-chicken': 'chk-1',
+      'chicken-breast': 'chk-2',
+      'chicken-thighs': 'chk-3',
+      'chicken-wings': 'chk-4',
+      'spatchcock': 'chk-5',
+      'spatchcock-chicken': 'chk-5',
       'lamb-rack': 'mut-1',
+      'rack-of-lamb': 'mut-1',
       'lamb-shanks': 'mut-2',
       'mutton-curry': 'mut-3',
+      'lamb-chops': 'mut-4',
+      'lamb-loin-chops': 'mut-4',
+      'leg-of-mutton': 'mut-5',
+      'mutton-roast': 'mut-5',
       'pork-chop': 'prk-1',
+      'pork-chops': 'prk-1',
+      'pork-ribs': 'prk-2',
+      'spare-ribs': 'prk-2',
       'pork-tenderloin': 'prk-3',
       'whole-pork-tenderloin': 'prk-3',
       'pork-belly': 'prk-4',
@@ -649,11 +1099,19 @@
       'sausage': 'prk-5',
       'sausages': 'prk-5',
       'artisan-sausages': 'prk-5',
-      'spatchcock': 'chk-5',
       'tomahawk-ribeye': 'tomahawk',
+      'tomahawk': 'tomahawk',
+      'tomahawk-1': 'tomahawk',
       'beef-ribs': 'beef-ribs',
       'dinosaur-ribs': 'beef-ribs',
-      'plate-ribs': 'beef-ribs'
+      'plate-ribs': 'beef-ribs',
+      'grillmaster': 'box-grillmaster',
+      'grill-master': 'box-grillmaster',
+      'farmhouse': 'box-farmhouse',
+      'family-box': 'box-family',
+      'pitmaster-box': 'box-pitmaster',
+      'steakhouse-box': 'box-steakhouse',
+      'banquet-crate': 'box-banquet'
     };
     if (aliasMap[normalized] && CUT_DATABASE[aliasMap[normalized]]) {
       return CUT_DATABASE[aliasMap[normalized]];
@@ -701,29 +1159,30 @@
     return CUT_DATABASE['beef-3'];
   }
 
-  // Render product details onto the DOM
-  function renderProductDetails(product) {
+  // Instant synchronous render of hero product before first paint
+  function instantRenderProduct(id) {
+    const product = getProduct(id);
     if (!product) return;
 
     // Document Title
     document.title = `${product.name} | Prime & Cut Artisan Butcher Shop`;
-
-    // Breadcrumbs
-    const bcCat = document.getElementById('breadcrumbCategory');
-    const bcProd = document.getElementById('breadcrumbProduct');
-    if (bcCat) {
-      bcCat.textContent = product.categoryLabel;
-      bcCat.href = `products.html?category=${product.category}`;
-    }
-    if (bcProd) {
-      bcProd.textContent = product.name;
-    }
 
     // Main Hero Image
     const mainImg = document.getElementById('mainProductImage');
     if (mainImg) {
       mainImg.src = product.image;
       mainImg.alt = product.name;
+    }
+
+    // Breadcrumbs
+    const bcCat = document.getElementById('breadcrumbCategory');
+    const bcProd = document.getElementById('breadcrumbProduct');
+    if (bcCat) {
+      bcCat.textContent = product.categoryLabel;
+      bcCat.href = `products.html?category=${product.category}#productsCatalogSection`;
+    }
+    if (bcProd) {
+      bcProd.textContent = product.name;
     }
 
     // Badges on Image
@@ -759,6 +1218,14 @@
 
     const descEl = document.getElementById('productDescription');
     if (descEl) descEl.textContent = product.description;
+  }
+
+  // Render product details onto the DOM
+  function renderProductDetails(product) {
+    if (!product) return;
+
+    // Synchronously ensure all hero specs and images match
+    instantRenderProduct(product.id);
 
     // Add to Basket Button data attributes and click event
     const addBtn = document.getElementById('detailAddBtn');
@@ -795,7 +1262,8 @@
         'beef': ['beef-2', 'tomahawk', 'beef-3', 'beef-1'],
         'mutton': ['mut-1', 'mut-2', 'mut-3', 'mut-4'],
         'chicken': ['chk-5', 'chk-1', 'chk-2', 'chk-4'],
-        'pork': ['prk-1', 'prk-3', 'prk-4', 'prk-5']
+        'pork': ['prk-1', 'prk-3', 'prk-4', 'prk-5'],
+        'box': ['box-grillmaster', 'box-farmhouse', 'box-steakhouse', 'box-pitmaster']
       };
       
       let candidateKeys = categoryCuts[product.category] || ['beef-2', 'tomahawk', 'mut-1', 'prk-1'];
@@ -1000,12 +1468,17 @@
     renderProductDetails(initialProduct);
   });
 
-  // Expose global controller
+  // Expose global controller and fast utilities
+  window.CUT_DATABASE = CUT_DATABASE;
+  window.getButcherProduct = getProduct;
+  window.instantRenderProduct = instantRenderProduct;
+  window.renderProductDetails = renderProductDetails;
   window.ProductDetailController = {
     loadProduct: (id) => {
       const p = getProduct(id);
       renderProductDetails(p);
     },
-    getCut: getProduct
+    getCut: getProduct,
+    instantRender: instantRenderProduct
   };
 })();
