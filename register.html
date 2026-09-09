@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Counter Account &bull; Prime &amp; Cut Artisan Butchery</title>
+  <meta name="description" content="Register your customer account for same-day cold-chain meat delivery notifications, custom cut history, and exclusive dry-aged allocation releases.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Create Counter Account &bull; Prime &amp; Cut">
+  <meta property="og:description" content="Register for custom cut history and cold chain delivery tracking.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Early Theme & RTL Detection to Prevent FOUC -->
+  <script>
+    (function () {
+      try {
+        const savedTheme = localStorage.getItem('primecut_theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-bs-theme', 'dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+        }
+        if (!sessionStorage.getItem('primecut_ltr_enforced')) {
+          sessionStorage.setItem('primecut_ltr_enforced', 'true');
+          localStorage.setItem('primecut_direction', 'ltr');
+        }
+        const savedDir = localStorage.getItem('primecut_direction');
+        if (savedDir === 'rtl') {
+          document.documentElement.setAttribute('dir', 'rtl');
+          document.documentElement.setAttribute('lang', 'ar');
+        } else {
+          document.documentElement.setAttribute('dir', 'ltr');
+          document.documentElement.setAttribute('lang', 'en');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            artisan: {
+              red: '#8B1E1E',
+              darkred: '#5E1212',
+              bright: '#B91C1C',
+              gold: '#D4AF37',
+              dark: '#0F0F10',
+              carddark: '#18181B',
+              borderdark: '#2D2D33'
+            }
+          },
+          fontFamily: {
+            heading: ['Cinzel', 'serif'],
+            body: ['Outfit', 'sans-serif'],
+            rtl: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#0F0F10] text-[#1F2421] dark:text-[#F3F4F6] min-h-full flex flex-col justify-between antialiased selection:bg-red-700 selection:text-white transition-colors duration-300">
+
+  <!-- Floating Nav Controls -->
+  <div class="fixed top-4 left-4 right-4 z-50 flex items-center justify-between pointer-events-none">
+    <a href="index.html" class="pointer-events-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/90 dark:bg-stone-900/85 backdrop-blur-md border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 hover:text-red-700 dark:hover:text-white text-xs font-semibold shadow-md transition" aria-label="Back to Counter">
+      <i class="bi bi-arrow-left rtl-flip"></i>
+      <span>Back to Counter</span>
+    </a>
+
+    <div class="pointer-events-auto flex items-center gap-2">
+      <button type="button" class="theme-toggle-btn p-2 rounded-xl bg-white/90 dark:bg-stone-900/85 backdrop-blur-md border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition text-xs shadow-md flex items-center justify-center" aria-label="Toggle theme" title="Toggle Light / Dark Theme">
+        <i class="bi bi-sun-fill text-amber-500 theme-icon-sun hidden"></i>
+        <i class="bi bi-moon-stars-fill text-stone-700 dark:text-stone-300 theme-icon-moon"></i>
+      </button>
+
+      <button type="button" class="rtl-toggle-btn px-2.5 py-1.5 rounded-xl bg-white/90 dark:bg-stone-900/85 backdrop-blur-md border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-stone-800 transition text-xs font-bold shadow-md" aria-label="Toggle RTL" title="Toggle RTL layout">
+        <span class="rtl-label">RTL</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <main class="flex-grow flex items-center justify-center p-4 py-16 relative overflow-hidden">
+    <!-- Atmospheric Butcher Counter Background -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <img 
+        src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1600&q=80" 
+        alt="Artisan Butcher Display Counter" 
+        class="w-full h-full object-cover opacity-15 dark:opacity-35 filter dark:brightness-[0.35] dark:contrast-125 transition-all duration-500"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/85 to-[#FAF8F5]/95 dark:from-[#0F0F10] dark:via-[#0F0F10]/80 dark:to-[#0F0F10]/95 transition-colors duration-500"></div>
+    </div>
+
+    <!-- Register Card -->
+    <div class="relative z-10 w-full max-w-lg bg-white/95 dark:bg-[#18181B]/95 backdrop-blur-xl border border-stone-200 dark:border-stone-800 rounded-3xl p-8 sm:p-10 shadow-2xl my-8 transition-colors duration-300">
+      <!-- Brand Logo & Intro -->
+      <div class="text-center mb-8">
+        <a href="index.html" class="inline-block group text-decoration-none mb-3" aria-label="Prime & Cut Butcher Shop Homepage">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-lg group-hover:scale-105 transition">
+            <svg class="w-8 h-8 fill-current text-amber-400" viewBox="0 0 100 100">
+              <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
+              <g transform="translate(32, 28) rotate(-15)">
+                <path d="M0,4 C0,1.8 1.8,0 4,0 L30,0 C32,0 34,1.8 34,4 L32,24 C32,26 30,28 28,28 L0,28 Z" fill="#F8FAFC"/>
+                <circle cx="26" cy="7" r="2.5" fill="#8B1E1E"/>
+                <path d="M-2,8 L-12,8 C-14,8 -16,10 -16,12 L-16,16 C-16,18 -14,20 -12,20 L-2,20 Z" fill="#D4AF37"/>
+              </g>
+            </svg>
+          </div>
+        </a>
+        <h1 class="text-2xl font-heading font-extrabold text-stone-900 dark:text-stone-50 tracking-wider">PRIME &amp; CUT</h1>
+        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Open your private butcher account for priority cut allocations</p>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="registerForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Full Name *</label>
+          <div class="relative">
+            <i class="bi bi-person absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
+            <input type="text" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Julian Vance" required>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Email Address *</label>
+            <div class="relative">
+              <i class="bi bi-envelope absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
+              <input type="email" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="julian@example.com" required>
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Mobile Phone *</label>
+            <div class="relative">
+              <i class="bi bi-telephone absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
+              <input type="tel" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="(555) 382-0199" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Password *</label>
+            <div class="relative">
+              <i class="bi bi-lock absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
+              <input type="password" id="regPassword" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Min. 8 characters" required minlength="8">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Confirm Password *</label>
+            <div class="relative">
+              <i class="bi bi-shield-lock absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
+              <input type="password" id="regConfirmPassword" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Repeat password" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cut Preferences -->
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-2">Favorite Meats (For Custom Cut Alerts)</label>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 cursor-pointer hover:border-red-600 dark:hover:border-red-500 transition-colors">
+              <input type="checkbox" checked class="text-red-700 rounded bg-white dark:bg-stone-700 border-stone-300 dark:border-stone-600 focus:ring-red-700">
+              <span>Dry-Aged Beef</span>
+            </label>
+            <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 cursor-pointer hover:border-red-600 dark:hover:border-red-500 transition-colors">
+              <input type="checkbox" checked class="text-red-700 rounded bg-white dark:bg-stone-700 border-stone-300 dark:border-stone-600 focus:ring-red-700">
+              <span>Smokehouse BBQ</span>
+            </label>
+            <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 cursor-pointer hover:border-red-600 dark:hover:border-red-500 transition-colors">
+              <input type="checkbox" class="text-red-700 rounded bg-white dark:bg-stone-700 border-stone-300 dark:border-stone-600 focus:ring-red-700">
+              <span>Pasture Poultry</span>
+            </label>
+            <label class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 cursor-pointer hover:border-red-600 dark:hover:border-red-500 transition-colors">
+              <input type="checkbox" class="text-red-700 rounded bg-white dark:bg-stone-700 border-stone-300 dark:border-stone-600 focus:ring-red-700">
+              <span>Heritage Pork</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <label class="flex items-start gap-2 cursor-pointer text-xs text-stone-600 dark:text-stone-400">
+            <input type="checkbox" required class="rounded mt-0.5 bg-stone-100 dark:bg-stone-800 border-stone-300 dark:border-stone-700 text-red-700 focus:ring-red-700">
+            <span>I agree to Prime &amp; Cut's 0°C–4°C Cold Chain Transit Protocol and Terms of Service.</span>
+          </label>
+        </div>
+
+        <button type="submit" class="w-full btn-artisan-primary py-3 text-xs font-bold shadow-lg mt-3">
+          <i class="bi bi-person-check-fill me-1.5"></i> Create Customer Account
+        </button>
+      </form>
+
+      <!-- Footer Login Link -->
+      <div class="text-center mt-6 text-xs text-stone-500 dark:text-stone-400">
+        <span>Already have an account?</span> <br>
+        <a href="login.html" class="text-red-700 dark:text-amber-400 hover:underline font-bold mt-1 inline-block">Sign in to your counter portal</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Minimal Bottom Bar -->
+  <footer class="py-4 text-center text-xs text-stone-500 dark:text-stone-400 border-t border-stone-200 dark:border-stone-800/80 relative z-10 bg-white/70 dark:bg-stone-950/70 backdrop-blur-sm transition-colors">
+    &copy; 2026 Prime &amp; Cut Artisan Butchery. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Validation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const regForm = document.getElementById('registerForm');
+      const pass = document.getElementById('regPassword');
+      const confirmPass = document.getElementById('regConfirmPassword');
+
+      if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (pass.value !== confirmPass.value) {
+            alert('Passwords do not match. Please verify your passwords.');
+            return;
+          }
+          if (window.showToast) {
+            window.showToast('Account created successfully! Welcome to the Prime & Cut counter.');
+          } else {
+            alert('Account created successfully! Welcome to the Prime & Cut counter.');
+          }
+          setTimeout(() => {
+            window.location.href = 'products.html';
+          }, 1200);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

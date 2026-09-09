@@ -1,0 +1,78 @@
+<!-- ==========================================================================
+     PRIME & CUT — REUSABLE PRODUCT CARD SNIPPET
+     Use this HTML structure whenever rendering a meat product card.
+     ========================================================================== -->
+
+<div class="product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full">
+  <!-- Image Box with Badge & Quick Actions -->
+  <div class="relative overflow-hidden product-img-wrapper h-56 bg-stone-100 dark:bg-zinc-800">
+    <img 
+      src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" 
+      alt="Bone-in Prime Tomahawk Ribeye" 
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+      loading="lazy"
+    >
+    <!-- Species / Category Tag -->
+    <span class="absolute top-3 left-3 bg-red-800/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+      Beef &bull; Dry-Aged
+    </span>
+
+    <!-- Freshness / Grade Badge -->
+    <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+      <i class="bi bi-star-fill text-[9px]"></i> USDA Prime
+    </span>
+
+    <!-- Hover Overlay Quick Action -->
+    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+      <a href="product-details.html" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs" title="View Cut Details">
+        <i class="bi bi-eye-fill me-1 text-red-700"></i> View Specs
+      </a>
+      <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="tomahawk-1" data-title="Prime Tomahawk Ribeye" data-price="42.99" data-category="Beef">
+        <i class="bi bi-basket2-fill me-1"></i> Add to Basket
+      </button>
+    </div>
+  </div>
+
+  <!-- Content & Butcher Details -->
+  <div class="p-5 flex flex-col flex-grow justify-between">
+    <div>
+      <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+        <span class="flex items-center gap-1">
+          <i class="bi bi-shield-check text-emerald-600"></i> 100% Grass-Fed
+        </span>
+        <span>Aged 35 Days</span>
+      </div>
+
+      <h3 class="font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-1 meat-card-title group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+        <a href="product-details.html" class="text-reset text-decoration-none">
+          <span class="block leading-tight">Bone-In Dry-Aged</span>
+          <span class="block leading-tight">Tomahawk Ribeye</span>
+        </a>
+      </h3>
+
+      <p class="text-stone-600 dark:text-stone-400 text-xs meat-card-desc mb-3">
+        Substantial marbling, thick hand-cut bone-in rib section, aged in Himalayan salt lockers for rich hazelnut undertones.
+      </p>
+
+      <!-- Cut Specs Micro-Badges -->
+      <div class="flex flex-wrap gap-1 mb-4">
+        <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Thick 2.0" Cut</span>
+        <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Bone-In</span>
+        <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Reverse Sear</span>
+      </div>
+    </div>
+
+    <!-- Pricing and Direct Action -->
+    <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+      <div>
+        <div class="text-[10px] uppercase font-bold text-stone-400">Price per lb</div>
+        <div class="text-xl font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+          $42.99 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ lb</span>
+        </div>
+      </div>
+      <a href="product-details.html" class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors">
+        <i class="bi bi-arrow-right rtl-flip"></i>
+      </a>
+    </div>
+  </div>
+</div>

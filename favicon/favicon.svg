@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1E1E"/>
+      <stop offset="100%" stop-color="#4A0E0E"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E7C4"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#AA820A"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Shield -->
+  <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="3"/>
+  <!-- Inner Rim -->
+  <path d="M50,11 C68,11 83,19 83,38 C83,62 50,88 50,88 C50,88 17,62 17,38 C17,19 32,11 50,11 Z" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.6" stroke-dasharray="2 2"/>
+  <!-- Butcher Cleaver Icon -->
+  <g transform="translate(32, 26) rotate(-15)">
+    <!-- Blade -->
+    <path d="M0,4 C0,1.8 1.8,0 4,0 L32,0 C34.2,0 36,1.8 36,4 L34,26 C34,28.2 32.2,30 30,30 L0,30 Z" fill="#F8FAFC" stroke="#94A3B8" stroke-width="1.5"/>
+    <!-- Blade Hole -->
+    <circle cx="28" cy="8" r="3" fill="#8B1E1E"/>
+    <!-- Blade Highlight -->
+    <path d="M4,28 L30,28" stroke="#CBD5E1" stroke-width="2"/>
+    <!-- Handle Tang & Wood Handle -->
+    <path d="M-2,10 L-14,10 C-16,10 -18,12 -18,14 L-18,20 C-18,22 -16,24 -14,24 L-2,24 Z" fill="#78350F" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <!-- Handle Rivets -->
+    <circle cx="-7" cy="14" r="1.5" fill="url(#goldGrad)"/>
+    <circle cx="-13" cy="19" r="1.5" fill="url(#goldGrad)"/>
+  </g>
+  <!-- Stars -->
+  <polygon points="50,68 52,72 57,72 53,75 55,80 50,77 45,80 47,75 43,72 48,72" fill="url(#goldGrad)"/>
+</svg>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Soon &bull; The West Village Smokehouse Counter | Prime &amp; Cut</title>
+  <meta name="description" content="Our second artisan butcher counter and hardwood smokehouse pit is launching soon in the West Village. Join the VIP priority allocation list.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Opening Soon &bull; West Village Smokehouse Counter | Prime &amp; Cut">
+  <meta property="og:description" content="Hardwood pitmaster meats and salt aging room launching soon.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            artisan: {
+              red: '#8B1E1E',
+              darkred: '#5E1212',
+              bright: '#B91C1C',
+              gold: '#D4AF37',
+              dark: '#0F0F10',
+              carddark: '#18181B',
+              borderdark: '#2D2D33'
+            }
+          },
+          fontFamily: {
+            heading: ['Cinzel', 'serif'],
+            body: ['Outfit', 'sans-serif'],
+            rtl: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+</head>
+<body class="bg-stone-950 text-white min-h-full flex flex-col justify-between antialiased selection:bg-red-700 selection:text-white">
+
+  <!-- Header Nav Controls -->
+  <header class="py-4 px-6 fixed top-0 left-0 right-0 z-50 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 text-decoration-none">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md">
+        <i class="bi bi-shield-shaded text-amber-400 text-lg"></i>
+      </div>
+      <div>
+        <span class="font-heading font-extrabold text-lg text-white block leading-tight">PRIME &amp; CUT</span>
+        <span class="text-[9px] tracking-widest text-amber-400 uppercase font-bold">Smokehouse Expansion</span>
+      </div>
+    </a>
+
+    <div class="flex items-center gap-2">
+      <a href="index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-900/80 backdrop-blur-md border border-stone-800 text-xs font-semibold hover:text-amber-400 transition">
+        <i class="bi bi-shop"></i> <span class="hidden sm:inline">Visit Main Shop</span>
+      </a>
+      <button type="button" class="rtl-toggle-btn px-2.5 py-1.5 rounded-xl bg-stone-900/80 backdrop-blur-md border border-stone-800 text-xs font-bold" aria-label="Toggle RTL">
+        <span class="rtl-label">RTL</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Content with Countdown -->
+  <main class="flex-grow flex items-center justify-center p-4 py-24 relative overflow-hidden text-center">
+    <!-- Atmospheric Hardwood Smoke Background -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1600&q=80" 
+        alt="Artisan Hardwood Smoke and Fire" 
+        class="w-full h-full object-cover filter brightness-[0.2] contrast-125"
+      >
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/90"></div>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-4">
+      <span class="badge-artisan !bg-amber-500/20 !text-amber-400 !border-amber-500/30 mb-4 inline-flex items-center gap-1.5">
+        <i class="bi bi-fire text-amber-500"></i> Hardwood Smokehouse &bull; Opening Fall 2026
+      </span>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight mb-4">
+        Our New Counter <br>
+        <span class="text-amber-400">Opens in the Village</span>
+      </h1>
+
+      <p class="text-sm sm:text-base text-stone-300 leading-relaxed mb-10 max-w-lg mx-auto">
+        Featuring an open-fire rotisserie, a walk-in Himalayan salt dry-aging theater, and daily hardwood pitmaster barbecue flights.
+      </p>
+
+      <!-- Live Reusable Countdown Timer Container -->
+      <div class="countdown-timer-box flex items-center justify-center gap-3 sm:gap-6 mb-12" data-countdown-date="2026-11-15T08:00:00">
+        <div class="countdown-segment bg-stone-900/90 backdrop-blur-md border border-stone-800 rounded-2xl p-4 sm:p-5 min-w-[70px] sm:min-w-[90px] shadow-xl">
+          <span class="countdown-number cd-days text-3xl sm:text-4xl font-heading font-extrabold text-amber-400 block">14</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-400 font-bold">Days</span>
+        </div>
+        <div class="countdown-segment bg-stone-900/90 backdrop-blur-md border border-stone-800 rounded-2xl p-4 sm:p-5 min-w-[70px] sm:min-w-[90px] shadow-xl">
+          <span class="countdown-number cd-hours text-3xl sm:text-4xl font-heading font-extrabold text-amber-400 block">08</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-400 font-bold">Hours</span>
+        </div>
+        <div class="countdown-segment bg-stone-900/90 backdrop-blur-md border border-stone-800 rounded-2xl p-4 sm:p-5 min-w-[70px] sm:min-w-[90px] shadow-xl">
+          <span class="countdown-number cd-minutes text-3xl sm:text-4xl font-heading font-extrabold text-amber-400 block">45</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-400 font-bold">Mins</span>
+        </div>
+        <div class="countdown-segment bg-stone-900/90 backdrop-blur-md border border-stone-800 rounded-2xl p-4 sm:p-5 min-w-[70px] sm:min-w-[90px] shadow-xl">
+          <span class="countdown-number cd-seconds text-3xl sm:text-4xl font-heading font-extrabold text-red-500 block">30</span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-stone-400 font-bold">Secs</span>
+        </div>
+      </div>
+
+      <!-- VIP Invitation Form -->
+      <div class="bg-stone-900/80 backdrop-blur-md border border-stone-800 rounded-3xl p-6 sm:p-8 max-w-lg mx-auto shadow-2xl">
+        <h3 class="font-heading font-bold text-lg text-white mb-2">Claim VIP Opening Night Invitation</h3>
+        <p class="text-xs text-stone-400 mb-4">Be the first to taste our 60-day dry-aged reserve cuts and wood-smoked brisket.</p>
+        
+        <form id="comingSoonForm" class="flex flex-col sm:flex-row gap-2">
+          <input 
+            type="email" 
+            class="form-control-artisan flex-grow px-4 py-3 rounded-xl text-xs bg-stone-800 border-stone-700 text-white placeholder-stone-500" 
+            placeholder="Enter your email address..." 
+            required
+          >
+          <button type="submit" class="btn-artisan-gold text-xs py-3 px-5 whitespace-nowrap font-bold">
+            <i class="bi bi-bell-fill me-1"></i> Notify Me
+          </button>
+        </form>
+        <span class="text-[10px] text-stone-500 mt-2 block">Zero spam. Only opening date announcements and cut allocations.</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="py-4 px-6 border-t border-stone-800/80 bg-stone-950/80 backdrop-blur-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 relative z-10">
+    <div class="flex items-center gap-2">
+      <i class="bi bi-geo-alt-fill text-amber-500"></i>
+      <span>New Counter Location: 88 Bleecker Street, West Village, NY 10012</span>
+    </div>
+    <div>&copy; 2026 Prime &amp; Cut Artisan Butchery.</div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/countdown.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('comingSoonForm');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (window.showToast) {
+            window.showToast('You are on the VIP opening guestlist! Check your email for details.');
+          } else {
+            alert('You are on the VIP opening guestlist! Check your email for details.');
+          }
+          form.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

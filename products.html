@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Meat Products &amp; Cuts | Prime &amp; Cut Artisan Butcher Shop</title>
+  <meta name="description" content="Browse our artisan butcher cuts: dry-aged beef steaks, French-trimmed lamb racks, organic free-range poultry, and Kurobuta pork. Filter by category and add to your order enquiry.">
+  <meta name="keywords" content="butcher products, ribeye steak, wagyu striploin, lamb chops, fresh chicken cuts, pork belly, buy meat online">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Artisan Meat Products Catalog | Prime &amp; Cut">
+  <meta property="og:description" content="Explore fresh beef, chicken, mutton, and pork cuts trimmed to perfection by master butchers.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            butcher: {
+              50: '#FDF2F2',
+              100: '#FDE8E8',
+              500: '#E02424',
+              700: '#B91C1C',
+              800: '#8B1E1E',
+              900: '#5E1212',
+              950: '#380B0B'
+            },
+            brass: {
+              400: '#E5C06E',
+              500: '#D4AF37',
+              600: '#B89020'
+            }
+          },
+          fontFamily: {
+            heading: ['Cinzel', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
+            rtl: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="bg-[#FAF8F5] dark:bg-[#0F0F10] text-[#1F2421] dark:text-[#F3F4F6] transition-colors duration-300">
+
+  <!-- Main Sticky Navbar -->
+  <header class="sticky top-0 z-50 navbar-glass">
+  <nav class="container mx-auto px-4 py-3.5 flex items-center justify-between" aria-label="Main Navigation">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-2 sm:gap-3 group text-decoration-none flex-shrink-0" aria-label="Prime & Cut Butcher Shop Homepage">
+      <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition flex-shrink-0">
+        <!-- SVG Cleaver Logo -->
+        <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current text-amber-400" viewBox="0 0 100 100">
+          <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
+          <g transform="translate(32, 28) rotate(-15)">
+            <path d="M0,4 C0,1.8 1.8,0 4,0 L30,0 C32,0 34,1.8 34,4 L32,24 C32,26 30,28 28,28 L0,28 Z" fill="#F8FAFC"/>
+            <circle cx="26" cy="7" r="2.5" fill="#8B1E1E"/>
+            <path d="M-2,8 L-12,8 C-14,8 -16,10 -16,12 L-16,16 C-16,18 -14,20 -12,20 L-2,20 Z" fill="#D4AF37"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="font-heading font-extrabold text-base sm:text-xl tracking-wider text-stone-900 dark:text-stone-50 block leading-tight whitespace-nowrap">PRIME &amp; CUT</span>
+        <span class="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.2em] font-semibold text-red-700 dark:text-red-400 uppercase block whitespace-nowrap">Artisan Butchery</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+      <!-- Home Dropdown (Only dropdown in navbar) -->
+      <div class="dropdown">
+        <button class="nav-link-custom text-sm flex items-center gap-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <span>Home</span>
+        </button>
+        <ul class="dropdown-menu bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs">
+          <li>
+            <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700" href="index.html">
+              <i class="bi bi-shop me-1.5 text-red-600"></i> Home 1 &bull; Artisan Heritage
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item py-2 px-3 hover:bg-amber-500/10 hover:text-amber-500" href="home-2.html">
+              <i class="bi bi-fire me-1.5 text-amber-500"></i> Home 2 &bull; Smokehouse &amp; BBQ
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <a href="about.html" class="nav-link-custom text-sm" id="nav-about">About Us</a>
+
+      <a href="products.html" class="nav-link-custom text-sm active" id="nav-products">Shop Cuts</a>
+
+      <a href="shop-services.html" class="nav-link-custom text-sm" id="nav-services">Services</a>
+
+      <a href="blog.html" class="nav-link-custom text-sm" id="nav-blog">Journal</a>
+
+      <a href="contact.html" class="nav-link-custom text-sm" id="nav-contact">Contact</a>
+    </div>
+
+    <!-- Right Controls: Theme Toggle, RTL Toggle, Account, Basket, Mobile Toggle -->
+    <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+      <!-- Dark/Light Theme Toggle (Circular) -->
+      <button type="button" class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle Dark / Light Theme" title="Toggle theme">
+        <i class="bi bi-sun-fill text-amber-500 text-xs sm:text-sm theme-icon-sun hidden"></i>
+        <i class="bi bi-moon-stars-fill text-stone-700 dark:text-stone-200 text-xs sm:text-sm theme-icon-moon"></i>
+      </button>
+
+      <!-- RTL / LTR Toggle (Circular) -->
+      <button type="button" class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-100 dark:hover:bg-zinc-800 transition flex items-center justify-center flex-shrink-0 text-xs font-bold" aria-label="Toggle RTL Direction" title="Toggle Left to Right / Right to Left layout">
+        <i class="bi bi-arrow-left-right text-xs sm:text-sm text-red-700 dark:text-red-400"></i>
+        <span class="rtl-label sr-only">RTL</span>
+      </button>
+
+      <!-- Enquiry Cart / Basket Button (Desktop) -->
+      <button type="button" class="open-cart-btn hidden sm:inline-flex relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition items-center justify-center flex-shrink-0" aria-label="Open Meat Enquiry Basket" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">
+        <i class="bi bi-basket2-fill text-xs sm:text-sm text-red-700 dark:text-red-400"></i>
+        <span class="cart-badge" style="display: none;">0</span>
+      </button>
+
+      <!-- Order Online CTA (Desktop) -->
+      <a href="products.html" class="hidden md:inline-flex btn-artisan-primary text-xs !py-2 !px-3.5 flex-shrink-0">
+        <span>Shop Cuts</span>
+        <i class="bi bi-arrow-right rtl-flip text-xs"></i>
+      </a>
+
+      <!-- Customer Account / Login Dropdown (At Navbar End) -->
+      <div class="dropdown nav-account-dropdown hidden sm:block flex-shrink-0">
+        <button type="button" class="nav-account-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 dropdown-toggle shadow-xs" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Customer Account and Login" title="Account &amp; Sign In">
+          <i class="bi bi-person-fill text-sm sm:text-base text-stone-700 dark:text-stone-200"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs mt-2">
+          <li class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 border-b border-stone-200/80 dark:border-zinc-800 mb-1">
+            Account Access
+          </li>
+          <li>
+            <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="login.html">
+              <i class="bi bi-box-arrow-in-right text-red-600 text-sm"></i>
+              <span>Customer Login</span>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="register.html">
+              <i class="bi bi-person-plus text-amber-500 text-sm"></i>
+              <span>Create Account</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Hamburger Menu Button (Circular) -->
+      <button type="button" id="mobileNavToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 shadow-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle mobile menu" title="Toggle navigation menu">
+        <i class="bi bi-list text-lg sm:text-xl"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Backdrop Overlay (Demo Format) -->
+  <div id="mobileNavBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden lg:hidden transition-opacity duration-300" aria-hidden="true"></div>
+
+  <!-- Mobile Collapsible Menu (Demo Image Format) -->
+  <div id="mobileNavMenu" class="fixed top-0 left-0 right-0 z-50 hidden lg:hidden bg-white dark:bg-zinc-900 rounded-b-3xl shadow-2xl border-b border-stone-200 dark:border-zinc-800 max-h-[88vh] overflow-y-auto transition-all duration-300">
+    <!-- Top Header inside Drawer -->
+    <div class="flex items-center justify-between px-5 py-4 border-b border-stone-200/80 dark:border-zinc-800">
+      <a href="index.html" class="flex items-center gap-2 text-decoration-none">
+        <i class="bi bi-shop text-red-700 dark:text-red-500 text-lg"></i>
+        <span class="font-heading font-black text-lg text-stone-900 dark:text-stone-100 tracking-tight">Prime &amp; Cut</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <!-- RTL Toggle Button (Circular) -->
+        <button type="button" class="rtl-toggle-btn w-9 h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle RTL Direction" title="Toggle RTL">
+          <i class="bi bi-arrow-left-right text-sm"></i>
+          <span class="rtl-label sr-only">RTL</span>
+        </button>
+        <!-- Dark/Light Theme Toggle (Circular) -->
+        <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle Dark / Light Theme" title="Toggle theme">
+          <i class="bi bi-sun-fill text-amber-500 text-sm theme-icon-sun hidden"></i>
+          <i class="bi bi-moon-stars-fill text-stone-700 dark:text-stone-200 text-sm theme-icon-moon"></i>
+        </button>
+        <!-- Close Menu Button (Circular) -->
+        <button type="button" id="mobileNavClose" class="w-9 h-9 rounded-full bg-red-100/80 dark:bg-red-950/60 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-900/50 hover:bg-red-200 dark:hover:bg-red-900/60 transition flex items-center justify-center flex-shrink-0" aria-label="Close navigation menu" title="Close menu">
+          <i class="bi bi-x-lg text-sm"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation List (Demo Format) -->
+    <div class="flex flex-col text-sm">
+      <a href="index.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Home &ndash; Artisan Butchery</a>
+      <a href="home-2.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Home &ndash; Steakhouse &amp; BBQ</a>
+      <a href="about.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">About Us</a>
+      <a href="products.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition bg-red-100/70 dark:bg-red-950/50 text-red-900 dark:text-red-300 font-semibold">Shop Cuts</a>
+      <a href="shop-services.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Services</a>
+      <a href="pricing.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Pricing</a>
+      <a href="blog.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Journal</a>
+      <a href="contact.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Contact Us</a>
+
+      <!-- Shopping Cart Entry (Demo Format: Solid Bag Icon & Amber Count Badge) -->
+      <button type="button" class="open-cart-btn w-full px-5 py-3.5 flex items-center justify-between text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 border-b border-stone-200/80 dark:border-zinc-800 transition text-sm font-medium" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-label="Open Meat Enquiry Basket">
+        <div class="flex items-center gap-3">
+          <i class="bi bi-bag-fill text-stone-700 dark:text-stone-300 text-base"></i>
+          <span>Shopping Cart</span>
+        </div>
+        <span class="cart-badge w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">0</span>
+      </button>
+
+      <!-- Login Entry (Demo Format: Login Icon) -->
+      <a href="login.html" class="block px-5 py-3.5 flex items-center gap-3 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 border-b border-stone-200/80 dark:border-zinc-800 transition text-sm font-medium">
+        <i class="bi bi-box-arrow-in-right text-stone-700 dark:text-stone-300 text-base"></i>
+        <span>Login</span>
+      </a>
+    </div>
+
+    <!-- Sign Up Wide Pill Button Container (Demo Format) -->
+    <div class="p-4 sm:p-5 bg-stone-50/50 dark:bg-zinc-900/50">
+      <a href="register.html" class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 text-decoration-none">
+        <i class="bi bi-person-plus-fill text-base"></i>
+        <span>Sign Up</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <!-- Page Header Banner with Colorful Background & Animated Visual Showcase -->
+  <section class="relative overflow-hidden py-12 sm:py-16 md:py-20 border-b border-stone-200 dark:border-zinc-800 bg-stone-950 text-white">
+    <!-- Colorful Background Image with Multi-Tone Gradient Overlays -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80" 
+           alt="Premium Artisan Butcher Cuts & Culinary Herbs" 
+           class="w-full h-full object-cover object-center opacity-35 transform scale-105 filter saturate-150 transition duration-1000">
+      <!-- Rich Multi-Tone Gradients for Vibrant Depth -->
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-950 via-stone-950/90 to-red-950/75"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-stone-950/70"></div>
+    </div>
+
+    <!-- Animated Ambient Color Glow Orbs -->
+    <div class="absolute -top-16 -start-16 w-96 h-96 bg-red-600/25 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute top-1/2 end-1/4 -translate-y-1/2 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <div class="absolute -bottom-10 end-10 w-72 h-72 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left Column: Title, Breadcrumbs & Value Chips -->
+        <div class="lg:col-span-7">
+          <!-- Breadcrumb -->
+          <div class="flex items-center gap-2 text-xs font-semibold text-stone-300 mb-3">
+            <a href="index.html" class="hover:text-amber-400 transition flex items-center gap-1 text-decoration-none">
+              <i class="bi bi-house-door text-xs"></i>
+              <span>Home</span>
+            </a>
+            <i class="bi bi-chevron-right rtl-flip text-[10px] text-stone-500"></i>
+            <span class="text-amber-400 font-bold">Products Catalog</span>
+          </div>
+
+          <!-- Animated Live Counter Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-900/40 border border-red-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 backdrop-blur-md shadow-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>Master Butchery &bull; Fresh Counter Restocked</span>
+          </div>
+
+          <!-- Main Heading with Colorful Gradient Accent -->
+          <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight tracking-tight">
+            Our Master Cuts &amp; <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-amber-400 via-red-400 to-amber-300 bg-clip-text text-transparent">Provisions</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-6 max-w-xl">
+            Every cut is dry-aged, precision-trimmed, or portioned by hand. Select your desired cuts to add to your order enquiry, or use our filter to explore by meat species.
+          </p>
+
+          <!-- Interactive Highlights Row -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/15 text-xs text-stone-200 shadow-sm hover:border-amber-400/40 transition">
+              <i class="bi bi-patch-check-fill text-amber-400 text-sm"></i>
+              <span class="font-semibold">28 Master Cuts In Stock</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/15 text-xs text-stone-200 shadow-sm hover:border-cyan-400/40 transition">
+              <i class="bi bi-thermometer-snow text-cyan-400 text-sm"></i>
+              <span class="font-semibold">Active 0°C Cold Chain</span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 dark:bg-black/40 backdrop-blur-md border border-white/15 text-xs text-stone-200 shadow-sm hover:border-emerald-400/40 transition">
+              <i class="bi bi-truck text-emerald-400 text-sm"></i>
+              <span class="font-semibold">Same-Day Express Dispatch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Animated Visual Showcase Card (High-End 3D Tilt, Ember Aura & Particles) -->
+        <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-sm sm:max-w-md lg:max-w-[420px] showcase-tilt-wrapper ember-aura-wrapper">
+            
+            <!-- Animated Rotating Ember Aura Border Glow -->
+            <div class="ember-aura-glow" aria-hidden="true"></div>
+
+            <!-- Animated Floating Badge 1 (Top-End) with Parallax Depth -->
+            <div class="absolute -top-3.5 -end-2 sm:-end-3 z-30 animate-float-slow hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-gradient-to-r from-red-800 to-red-950 border border-amber-400/60 text-white shadow-xl backdrop-blur-md text-xs font-bold pointer-events-none" style="transform: translateZ(35px);">
+              <i class="bi bi-fire text-amber-400 text-sm"></i>
+              <span class="tracking-wide text-amber-200 text-[11px]">28-Day Dry Aged</span>
+            </div>
+
+            <!-- Main Showcase Image Card with 3D Tilt & Cursor Spotlight Sheen -->
+            <a href="product-details.html?id=beef-1" 
+               id="heroShowcaseCard"
+               class="showcase-tilt-card block relative rounded-3xl overflow-hidden shadow-2xl border-2 border-amber-500/40 hover:border-amber-400/80 aspect-[4/5] bg-stone-950 group text-decoration-none transition-all duration-300 cursor-pointer z-10" 
+               aria-label="Explore Himalayan Salt Dry-Aged Ribeye details">
+              <img src="assets/images/28-Day Dry-Aged Ribeye.jpg" 
+                   alt="Master Butcher Seasoning Himalayan Salt Dry-Aged Ribeye Steaks" 
+                   class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700 pointer-events-none" 
+                   style="object-position: center 68%;"
+                   loading="eager"
+                   fetchpriority="high"
+                   decoding="async"
+                   width="1200"
+                   height="1799">
+              
+              <!-- Subtle Image Gradient Overlays (Clear center so the steaks are vivid and visible) -->
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-transparent to-black/20 pointer-events-none"></div>
+
+              <!-- Interactive Dynamic Specular Light Sheen (Follows Cursor) -->
+              <div class="showcase-sheen" id="heroShowcaseSheen" aria-hidden="true"></div>
+
+              <!-- Ambient Drifting Salt & Ember Micro-Particles -->
+              <div class="particle-container" aria-hidden="true">
+                <span class="particle-ember particle-ember-1"></span>
+                <span class="particle-ember particle-ember-2"></span>
+                <span class="particle-ember particle-ember-3"></span>
+                <span class="particle-ember particle-ember-4"></span>
+                <span class="particle-ember particle-ember-5"></span>
+              </div>
+
+              <!-- Overlay Card on Hero (Live Featured Cut with Depth Elevation) -->
+              <div class="absolute bottom-3 sm:bottom-4 start-3 sm:start-4 end-3 sm:end-4 p-3 sm:p-3.5 rounded-2xl bg-stone-950/85 backdrop-blur-md border border-white/20 text-white group-hover:border-amber-400/60 group-hover:bg-stone-950/95 transition shadow-xl" style="transform: translateZ(25px);">
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-2.5 sm:gap-3">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-red-700 to-amber-600 flex items-center justify-center text-white font-black text-xs shadow-md flex-shrink-0 group-hover:scale-110 transition">
+                      <i class="bi bi-award text-base sm:text-lg text-amber-200"></i>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Chef's Reserve Pick</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      </div>
+                      <h3 class="text-xs sm:text-sm md:text-base font-bold text-stone-100 leading-tight group-hover:text-amber-300 transition">Himalayan Salt Dry-Aged Ribeye</h3>
+                      <div class="flex items-center gap-1 text-[10px] text-amber-400 mt-0.5">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <span class="text-stone-300 ms-1 text-[10px] font-semibold">4.9 (1.2k+ reviews)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="text-end flex-shrink-0">
+                    <span class="text-[9px] text-stone-400 block font-semibold uppercase">From</span>
+                    <span class="text-sm sm:text-base font-black text-amber-400">$34.99</span>
+                    <span class="text-[9px] text-stone-300 block font-normal flex items-center justify-end gap-1 mt-0.5">View Cut <i class="bi bi-arrow-right rtl-flip text-[8px]"></i></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- Animated Floating Badge 2 (Bottom-Start) with Parallax Depth -->
+            <div class="absolute -bottom-3.5 -start-2 sm:-start-3 z-30 animate-float-reverse hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-stone-900/95 border border-stone-700/80 text-white shadow-2xl backdrop-blur-md text-xs pointer-events-none" style="transform: translateZ(35px);">
+              <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
+                <i class="bi bi-shield-check text-xs"></i>
+              </div>
+              <div>
+                <span class="text-[9px] text-stone-400 block uppercase font-bold tracking-wider leading-none">Pasture Verified</span>
+                <span class="font-extrabold text-stone-100 text-[11px] leading-tight">100% Ethical Sourcing</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Products Catalog Section -->
+  <section id="productsCatalogSection" class="py-10 md:py-16">
+    <div class="container mx-auto px-4">
+      <!-- Active Delivery Zone Banner (Populated via assets/js/products.js) -->
+      <div id="activeDeliveryZoneBanner" class="hidden mb-6"></div>
+
+      <!-- Search, Filter Pills & Sort Bar -->
+      <div class="p-5 rounded-2xl bg-white dark:bg-zinc-850 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-sm mb-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-5">
+          <!-- Category Filter Buttons (All | Chicken | Mutton | Beef | Pork) -->
+          <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto" role="group" aria-label="Filter cuts by meat type">
+            <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 active bg-red-700 text-white" data-category="all">
+              <span>All Cuts</span>
+            </button>
+            <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 bg-stone-200 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-stone-300 dark:hover:bg-zinc-700" data-category="beef">
+              <i class="bi bi-record-circle text-red-500"></i>
+              <span>Beef</span>
+            </button>
+            <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 bg-stone-200 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-stone-300 dark:hover:bg-zinc-700" data-category="chicken">
+              <i class="bi bi-record-circle text-amber-500"></i>
+              <span>Chicken</span>
+            </button>
+            <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 bg-stone-200 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-stone-300 dark:hover:bg-zinc-700" data-category="mutton">
+              <i class="bi bi-record-circle text-indigo-500"></i>
+              <span>Mutton</span>
+            </button>
+            <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 bg-stone-200 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-stone-300 dark:hover:bg-zinc-700" data-category="pork">
+              <i class="bi bi-record-circle text-pink-500"></i>
+              <span>Pork</span>
+            </button>
+            <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-1.5 bg-stone-200 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-stone-300 dark:hover:bg-zinc-700" data-category="box">
+              <i class="bi bi-box-seam text-amber-500"></i>
+              <span>Curated Boxes</span>
+            </button>
+          </div>
+
+          <!-- Search and Sort Controls -->
+          <div class="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+            <!-- Search Input -->
+            <div class="relative w-full sm:w-64">
+              <i class="bi bi-search absolute top-1/2 -translate-y-1/2 start-3 text-stone-400 text-xs"></i>
+              <input type="text" id="productSearchInput" placeholder="Search cut, steak, roast..." class="w-full ps-8 pe-3 py-2 text-xs rounded-xl bg-stone-100 dark:bg-zinc-800 border border-stone-200 dark:border-zinc-700 text-stone-900 dark:text-stone-100 focus:outline-none focus:border-red-600" aria-label="Search meat cuts">
+            </div>
+
+            <!-- Sort Select -->
+            <div class="w-full sm:w-auto flex-shrink-0">
+              <select id="productSortSelect" class="w-full text-xs px-3 py-2 rounded-xl bg-stone-100 dark:bg-zinc-800 border border-stone-200 dark:border-zinc-700 text-stone-800 dark:text-stone-200 focus:outline-none focus:border-red-600" aria-label="Sort cuts">
+                <option value="default">Sort: Recommended</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="name">Cut Name: A to Z</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Count Indicator -->
+        <div class="mt-4 pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between text-xs text-stone-500 dark:text-stone-400">
+          <span id="productCountDisplay">Showing 28 premium cuts</span>
+          <span class="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold">
+            <i class="bi bi-truck"></i> All cuts ready for same-day chilled delivery
+          </span>
+        </div>
+      </div>
+
+      <!-- Products Cards Grid (Dynamic JS rendering container with static fallback) -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Javascript products.js populates all 28 unique cards dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Cut Banner Section -->
+  <section class="py-12 bg-stone-100 dark:bg-zinc-900 border-t border-stone-200 dark:border-zinc-800">
+    <div class="container mx-auto px-4 text-center">
+      <div class="max-w-xl mx-auto">
+        <div class="w-12 h-12 rounded-2xl bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-400 flex items-center justify-center mx-auto mb-3 text-xl">
+          <i class="bi bi-scissors"></i>
+        </div>
+        <h3 class="font-heading text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">Can't Find Your Exact Cut?</h3>
+        <p class="text-stone-600 dark:text-stone-400 text-xs mb-5">
+          Our master butchers can cut, debone, french, tie, or grind meat according to your exact weights and thickness requirements.
+        </p>
+        <a href="custom-cuts.html" class="btn-artisan-primary text-xs !py-3 !px-6">
+          <span>Configure Custom Meat Cut</span>
+          <i class="bi bi-arrow-right rtl-flip"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="bg-stone-100 dark:bg-stone-950 text-stone-600 dark:text-stone-300 pt-16 pb-8 border-t border-stone-200 dark:border-stone-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-200 dark:border-stone-800">
+        <div class="lg:col-span-5">
+          <a href="index.html" class="flex items-center gap-3 mb-4 group text-decoration-none" aria-label="Prime & Cut Butcher Shop Homepage">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition">
+              <!-- SVG Cleaver Logo -->
+              <svg class="w-6 h-6 fill-current text-amber-400" viewBox="0 0 100 100">
+                <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
+                <g transform="translate(32, 28) rotate(-15)">
+                  <path d="M0,4 C0,1.8 1.8,0 4,0 L30,0 C32,0 34,1.8 34,4 L32,24 C32,26 30,28 28,28 L0,28 Z" fill="#F8FAFC"/>
+                  <circle cx="26" cy="7" r="2.5" fill="#8B1E1E"/>
+                  <path d="M-2,8 L-12,8 C-14,8 -16,10 -16,12 L-16,16 C-16,18 -14,20 -12,20 L-2,20 Z" fill="#D4AF37"/>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-extrabold text-xl tracking-wider text-stone-900 dark:text-stone-50 block leading-tight">PRIME &amp; CUT</span>
+              <span class="text-[10px] tracking-[0.2em] font-semibold text-red-700 dark:text-red-400 uppercase block">Artisan Butchery</span>
+            </div>
+          </a>
+          <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed max-w-md">
+            Dedicated to old-world butchery craftsmanship, ethical pasture-to-plate sourcing, and uncompromising freshness. Every cut is hand-selected and precision-trimmed to order.
+          </p>
+          <div class="flex items-center gap-3 mt-5">
+            <span class="inline-flex items-center gap-1 text-xs bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 px-3 py-1.5 rounded-lg shadow-sm">
+              <i class="bi bi-patch-check-fill text-amber-500 dark:text-amber-400"></i> USDA Prime &amp; Angus
+            </span>
+            <span class="inline-flex items-center gap-1 text-xs bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 px-3 py-1.5 rounded-lg shadow-sm">
+              <i class="bi bi-thermometer-snow text-cyan-600 dark:text-cyan-400"></i> Active 0°C Cold Chain
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <div class="bg-white dark:bg-stone-900/80 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm max-w-xl lg:ms-auto w-full">
+            <h4 class="font-heading text-stone-900 dark:text-stone-100 text-base font-bold mb-1">Join the Butcher’s Guild</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-xs mb-4">Receive private notifications on dry-aged reserve releases, seasonal cuts, and weekend BBQ packages.</p>
+            <form class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault(); alert('Thank you for subscribing to our Butcher reserve notifications!'); this.reset();">
+              <input type="email" required placeholder="Enter your email address..." class="bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-stone-200 text-xs rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-red-600 flex-grow">
+              <button type="submit" class="btn-artisan-primary text-xs !py-2.5 !px-5 whitespace-nowrap">
+                <span>Subscribe</span>
+                <i class="bi bi-send-fill text-xs"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-12 border-b border-stone-200 dark:border-stone-800/80 text-sm">
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Shop Navigation</h4>
+          <ul class="space-y-2.5 text-stone-600 dark:text-stone-400">
+            <li><a href="index.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Home</a></li>
+            <li><a href="products.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> All Products</a></li>
+            <li><a href="custom-cuts.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Custom Cuts Builder</a></li>
+            <li><a href="shop-services.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Artisan Butcher Services</a></li>
+            <li><a href="contact.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Contact &amp; Hours</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Meat Categories</h4>
+          <ul class="space-y-2.5 text-stone-600 dark:text-stone-400">
+            <li><a href="products.html?category=beef#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Prime Dry-Aged Beef</a></li>
+            <li><a href="products.html?category=chicken#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Pasture-Raised Chicken</a></li>
+            <li><a href="products.html?category=mutton#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Spring Lamb &amp; Mutton</a></li>
+            <li><a href="products.html?category=pork#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Kurobuta Heritage Pork</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Butcher Counter</h4>
+          <ul class="space-y-3 text-stone-600 dark:text-stone-400 text-xs">
+            <li class="flex items-start gap-2.5">
+              <i class="bi bi-geo-alt-fill text-red-500 text-sm mt-0.5 flex-shrink-0"></i>
+              <span>142 Artisan Boulevard, Meatpacking District, NY 10014</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-telephone-fill text-amber-500 dark:text-amber-400 flex-shrink-0"></i>
+              <a href="tel:5553826328" class="hover:text-stone-900 dark:hover:text-stone-200">(555) 382-MEAT (6328)</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-envelope-fill text-amber-500 dark:text-amber-400 flex-shrink-0"></i>
+              <a href="mailto:orders@primecutbutchery.com" class="hover:text-stone-900 dark:hover:text-stone-200">orders@primecutbutchery.com</a>
+            </li>
+            <li class="flex items-start gap-2.5 pt-1">
+              <i class="bi bi-clock-fill text-stone-400 dark:text-stone-500 text-sm mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-semibold text-stone-900 dark:text-stone-200">Mon &ndash; Sat: 7:00 AM &ndash; 8:00 PM</p>
+                <p class="text-stone-500 dark:text-stone-400">Sun: 8:00 AM &ndash; 5:00 PM</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Connect With Us</h4>
+          <div class="flex items-center gap-3 mb-6">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-red-600 hover:text-red-500 text-stone-600 dark:text-stone-300 flex items-center justify-center shadow-sm transition" aria-label="Facebook">
+              <i class="bi bi-facebook text-base"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-red-600 hover:text-red-500 text-stone-600 dark:text-stone-300 flex items-center justify-center shadow-sm transition" aria-label="Instagram">
+              <i class="bi bi-instagram text-base"></i>
+            </a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-red-600 hover:text-emerald-500 text-stone-600 dark:text-stone-300 flex items-center justify-center shadow-sm transition" aria-label="WhatsApp Direct">
+              <i class="bi bi-whatsapp text-base"></i>
+            </a>
+          </div>
+          <div class="text-xs text-stone-500 dark:text-stone-400">
+            <span class="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              WhatsApp Butcher Line Active
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-stone-400">
+        <p>&copy; <span class="dynamic-year">2026</span> Prime &amp; Cut Artisan Butcher Shop. All Rights Reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="about.html" class="hover:text-stone-800 dark:hover:text-stone-300">Artisan Guarantee</a>
+          <a href="custom-cuts.html" class="hover:text-stone-800 dark:hover:text-stone-300">Butcher Standards</a>
+          <a href="contact.html" class="hover:text-stone-800 dark:hover:text-stone-300">Privacy &amp; Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Shared Enquiry Cart Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-end bg-stone-50 dark:bg-zinc-900 text-stone-900 dark:text-stone-100" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel" style="width: 420px; max-width: 90vw;">
+    <div class="offcanvas-header border-b border-stone-200 dark:border-zinc-800 p-4">
+      <div class="flex items-center gap-2">
+        <i class="bi bi-basket2-fill text-red-700 dark:text-red-400 text-xl"></i>
+        <h5 class="offcanvas-title font-heading font-bold text-lg" id="cartDrawerLabel">Order Enquiry Basket</h5>
+      </div>
+      <button type="button" class="btn-close text-reset dark:filter dark:invert" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4 flex flex-col justify-between">
+      <div id="cartDrawerContent" class="flex-grow">
+        <div id="cartEmptyNotice" class="text-center py-12">
+          <div class="w-16 h-16 rounded-full bg-stone-200 dark:bg-zinc-800 text-stone-400 flex items-center justify-center mx-auto mb-3 text-2xl">
+            <i class="bi bi-basket"></i>
+          </div>
+          <h6 class="font-bold text-stone-700 dark:text-stone-300">Your basket is currently empty</h6>
+          <p class="text-xs text-stone-500 mt-1 max-w-xs mx-auto">Explore our premium cuts or request a custom butchery cut to add items here.</p>
+          <a href="products.html" class="btn-artisan-primary text-xs mt-5 !py-2 !px-4">Browse Meat Catalog</a>
+        </div>
+        <div id="cartItemsList" class="space-y-3"></div>
+      </div>
+
+      <div id="cartDrawerFooter" class="pt-4 mt-4 border-t border-stone-200 dark:border-zinc-800 hidden">
+        <div class="flex items-center justify-between mb-3 text-sm">
+          <span class="text-stone-500 dark:text-stone-400">Estimated Total:</span>
+          <span id="cartTotalEstimate" class="font-extrabold text-xl text-red-700 dark:text-red-400">$0.00</span>
+        </div>
+        <p class="text-[11px] text-stone-500 mb-4">*Final price confirmed by butcher based on exact cutting scale weight.</p>
+        <div class="flex flex-col gap-2">
+          <button type="button" id="proceedToEnquiryBtn" class="btn-artisan-primary w-full text-center text-sm py-3">
+            <i class="bi bi-check2-circle"></i> Proceed to Submit Enquiry
+          </button>
+          <button type="button" id="clearCartBtn" class="btn-artisan-outline w-full text-center text-xs !py-2">
+            Clear Basket
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Modal: Enquiry Checkout -->
+  <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="modal-header bg-gradient-to-r from-red-800 to-red-950 text-white p-4">
+          <div class="flex items-center gap-2">
+            <i class="bi bi-file-earmark-text-fill text-amber-400 text-lg"></i>
+            <h5 class="modal-title font-heading font-bold" id="enquiryModalLabel">Submit Meat Order Enquiry</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+          <p class="text-xs text-stone-600 dark:text-stone-400 mb-4">
+            Review your selected cuts below and enter your contact details. Our head butcher will contact you to verify delivery timing and custom cut instructions.
+          </p>
+
+          <div class="bg-stone-100 dark:bg-zinc-800/70 p-3 rounded-xl mb-4 border border-stone-200 dark:border-zinc-700">
+            <h6 class="text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Selected Cuts Summary</h6>
+            <div id="modalCartItemsSummary" class="space-y-1"></div>
+          </div>
+
+          <form id="cartEnquiryModalForm" class="space-y-3">
+            <div>
+              <label for="modalCustName" class="block text-xs font-semibold mb-1">Full Name *</label>
+              <input type="text" id="modalCustName" required class="form-control-artisan w-full text-xs" placeholder="e.g. Eleanor Vance">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="modalCustPhone" class="block text-xs font-semibold mb-1">Phone Number *</label>
+                <input type="tel" id="modalCustPhone" required class="form-control-artisan w-full text-xs" placeholder="e.g. (555) 019-2834">
+              </div>
+              <div>
+                <label for="modalCustEmail" class="block text-xs font-semibold mb-1">Email Address *</label>
+                <input type="email" id="modalCustEmail" required class="form-control-artisan w-full text-xs" placeholder="eleanor@example.com">
+              </div>
+            </div>
+            <div>
+              <label for="modalCustAddress" class="block text-xs font-semibold mb-1">Delivery Address *</label>
+              <textarea id="modalCustAddress" rows="2" required class="form-control-artisan w-full text-xs" placeholder="Street address, apartment/unit, city, zip code"></textarea>
+            </div>
+            <div>
+              <label for="modalCustNotes" class="block text-xs font-semibold mb-1">Butcher Notes / Delivery Window</label>
+              <input type="text" id="modalCustNotes" class="form-control-artisan w-full text-xs" placeholder="e.g. Please cut steaks 1.5 inches thick, deliver after 4 PM">
+            </div>
+
+            <div class="pt-3">
+              <button type="submit" class="btn-artisan-primary w-full text-sm py-3">
+                <i class="bi bi-send-check-fill"></i> Confirm &amp; Send Order Enquiry
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll To Top Button -->
+  <button id="scrollToTopBtn" aria-label="Scroll to top of page" title="Scroll to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Modular Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+</body>
+</html>

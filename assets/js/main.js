@@ -1,0 +1,264 @@
+/**
+ * Butcher & Meat Shop - Main Application Script
+ * Handles: Mobile Navigation, Sticky Header, Scroll-To-Top, Toast Notifications
+ */
+
+(function () {
+  'use strict';
+
+  // --------------------------------------------------------------------------
+  // Sticky Navbar Effect on Scroll
+  // --------------------------------------------------------------------------
+  function initStickyNavbar() {
+    const navbar = document.querySelector('.navbar-glass');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        navbar.classList.add('navbar-scrolled', 'shadow-md');
+      } else {
+        navbar.classList.remove('navbar-scrolled', 'shadow-md');
+      }
+    }, { passive: true });
+  }
+
+  // --------------------------------------------------------------------------
+  // Mobile Navigation Drawer (Demo Format)
+  // --------------------------------------------------------------------------
+  function initMobileNav() {
+    const toggleBtn = document.getElementById('mobileNavToggle');
+    const mobileMenu = document.getElementById('mobileNavMenu');
+    const backdrop = document.getElementById('mobileNavBackdrop');
+    const closeBtn = document.getElementById('mobileNavClose');
+    if (!toggleBtn || !mobileMenu) return;
+
+    function setMenuState(open) {
+      toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        mobileMenu.classList.remove('hidden');
+        if (backdrop) backdrop.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        if (backdrop) backdrop.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+      const icon = toggleBtn.querySelector('i');
+      if (icon) {
+        icon.className = open ? 'bi bi-x-lg text-lg sm:text-xl' : 'bi bi-list text-lg sm:text-xl';
+      }
+    }
+
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      setMenuState(!isExpanded);
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMenuState(false);
+      });
+    }
+
+    if (backdrop) {
+      backdrop.addEventListener('click', () => {
+        setMenuState(false);
+      });
+    }
+
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        setMenuState(false);
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        setMenuState(false);
+      }
+    });
+
+    // Close on resize above mobile breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+        setMenuState(false);
+      }
+    }, { passive: true });
+
+    // Close mobile nav when clicking any link or the cart button inside drawer
+    mobileMenu.querySelectorAll('a, button.open-cart-btn').forEach(item => {
+      item.addEventListener('click', () => {
+        setMenuState(false);
+      });
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // Scroll To Top Button
+  // --------------------------------------------------------------------------
+  function initScrollToTop() {
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    if (!scrollBtn) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    }, { passive: true });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // Global Toast Notification Manager
+  // --------------------------------------------------------------------------
+  function createToastContainer() {
+    let container = document.querySelector('.toast-container-custom');
+    if (!container) {
+      container = document.createElement('div');
+      container.className = 'toast-container-custom';
+      document.body.appendChild(container);
+    }
+    return container;
+  }
+
+  window.showToast = function (message, type = 'info') {
+    const container = createToastContainer();
+    const toast = document.createElement('div');
+    toast.className = 'toast-custom';
+
+    let iconHtml = '<i class="bi bi-info-circle-fill text-blue-600 me-2 text-lg"></i>';
+    if (type === 'success') {
+      iconHtml = '<i class="bi bi-check-circle-fill text-emerald-600 me-2 text-lg"></i>';
+    } else if (type === 'error') {
+      iconHtml = '<i class="bi bi-exclamation-octagon-fill text-red-600 me-2 text-lg"></i>';
+    }
+
+    toast.innerHTML = `
+      <div class="flex items-center">
+        ${iconHtml}
+        <span class="text-xs font-semibold leading-snug text-stone-800 dark:text-stone-100">${message}</span>
+      </div>
+      <button type="button" class="text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 ms-3" aria-label="Close">
+        <i class="bi bi-x text-lg"></i>
+      </button>
+    `;
+
+    // Close button
+    toast.querySelector('button').addEventListener('click', () => {
+      toast.remove();
+    });
+
+    container.appendChild(toast);
+
+    // Auto dismiss after 4.5 seconds
+    setTimeout(() => {
+      toast.style.opacity = '0';
+      toast.style.transform = 'translateY(-10px)';
+      toast.style.transition = 'all 0.3s ease';
+      setTimeout(() => toast.remove(), 300);
+    }, 4500);
+  };
+
+  // --------------------------------------------------------------------------
+  // Dynamic Year in Footer
+  // --------------------------------------------------------------------------
+  function initDynamicYear() {
+    const yearEls = document.querySelectorAll('.dynamic-year');
+    const currentYear = new Date().getFullYear();
+    yearEls.forEach(el => {
+      el.textContent = currentYear;
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // Initialize Bootstrap Offcanvas trigger for Cart
+  // --------------------------------------------------------------------------
+  function initCartTriggers() {
+    const openCartBtns = document.querySelectorAll('.open-cart-btn');
+    const cartDrawerEl = document.getElementById('cartDrawer');
+
+    if (cartDrawerEl && window.bootstrap) {
+      const bsDrawer = new bootstrap.Offcanvas(cartDrawerEl);
+      openCartBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          bsDrawer.show();
+        });
+      });
+    }
+  }
+
+  // --------------------------------------------------------------------------
+  // Global Image Lightbox Modal for Responsive HD Inspection
+  // --------------------------------------------------------------------------
+  function initImageLightbox() {
+    const trigger = document.getElementById('heroImageContainer');
+    const modalEl = document.getElementById('imageLightboxModal');
+    if (!modalEl || !window.bootstrap) return;
+
+    const bsModal = window.bootstrap.Modal.getOrCreateInstance(modalEl);
+
+    if (trigger) {
+      function openHeroModal() {
+        const img = trigger.querySelector('img');
+        const modalImg = document.getElementById('imageLightboxImg');
+        const modalTitle = document.getElementById('imageLightboxTitle');
+        if (img && modalImg) {
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+        }
+        if (modalTitle) {
+          modalTitle.textContent = "Dry-Aged Tomahawk Ribeye";
+        }
+        bsModal.show();
+      }
+
+      trigger.addEventListener('click', openHeroModal);
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openHeroModal();
+        }
+      });
+    }
+
+    // Support any element with data-lightbox-src
+    document.querySelectorAll('[data-lightbox-src]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const src = el.getAttribute('data-lightbox-src');
+        const title = el.getAttribute('data-lightbox-title') || 'Artisan Cut Inspection';
+        const caption = el.getAttribute('data-lightbox-caption') || '';
+        const modalImg = document.getElementById('imageLightboxImg');
+        const modalTitle = document.getElementById('imageLightboxTitle');
+        const modalCaption = document.getElementById('imageLightboxCaption');
+        if (modalImg) modalImg.src = src;
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalCaption) modalCaption.textContent = caption;
+        bsModal.show();
+      });
+    });
+  }
+
+  // Document Ready
+  document.addEventListener('DOMContentLoaded', () => {
+    initStickyNavbar();
+    initMobileNav();
+    initScrollToTop();
+    initDynamicYear();
+    initCartTriggers();
+    initImageLightbox();
+  });
+})();

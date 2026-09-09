@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Butcher's Journal &bull; Butchery Guides &amp; Recipes | Prime &amp; Cut</title>
+  <meta name="description" content="Explore master butcher insights on Himalayan salt dry aging, reverse searing, wood smoking profiles, knife anatomy, and cold-chain home meat care.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Butcher's Journal | Prime &amp; Cut Artisan Butchery">
+  <meta property="og:description" content="Master butcher insights, searing guides, and culinary smoking advice.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            artisan: {
+              red: '#8B1E1E',
+              darkred: '#5E1212',
+              bright: '#B91C1C',
+              gold: '#D4AF37',
+              dark: '#0F0F10',
+              carddark: '#18181B',
+              borderdark: '#2D2D33'
+            }
+          },
+          fontFamily: {
+            heading: ['Cinzel', 'serif'],
+            body: ['Outfit', 'sans-serif'],
+            rtl: ['Cairo', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+</head>
+<body class="bg-stone-50 dark:bg-zinc-950 text-stone-900 dark:text-stone-100 antialiased selection:bg-red-700 selection:text-white transition-colors duration-300">
+
+  <!-- Sticky Navbar -->
+  <header class="sticky top-0 z-50 navbar-glass">
+    <nav class="container mx-auto px-4 py-3.5 flex items-center justify-between" aria-label="Main Navigation">
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group text-decoration-none flex-shrink-0" aria-label="Prime & Cut Butcher Shop Homepage">
+        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition flex-shrink-0">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current text-amber-400" viewBox="0 0 100 100">
+            <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
+            <g transform="translate(32, 28) rotate(-15)">
+              <path d="M0,4 C0,1.8 1.8,0 4,0 L30,0 C32,0 34,1.8 34,4 L32,24 C32,26 30,28 28,28 L0,28 Z" fill="#F8FAFC"/>
+              <circle cx="26" cy="7" r="2.5" fill="#8B1E1E"/>
+              <path d="M-2,8 L-12,8 C-14,8 -16,10 -16,12 L-16,16 C-16,18 -14,20 -12,20 L-2,20 Z" fill="#D4AF37"/>
+            </g>
+          </svg>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-base sm:text-xl tracking-wider text-stone-900 dark:text-stone-50 block leading-tight whitespace-nowrap">PRIME &amp; CUT</span>
+          <span class="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.2em] font-semibold text-red-700 dark:text-red-400 uppercase block whitespace-nowrap">Artisan Butchery</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+        <!-- Home Dropdown (Only dropdown in navbar) -->
+        <div class="dropdown">
+          <button class="nav-link-custom text-sm flex items-center gap-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>Home</span>
+          </button>
+          <ul class="dropdown-menu bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs">
+            <li><a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700" href="index.html"><i class="bi bi-shop me-1.5 text-red-600"></i> Home 1 &bull; Artisan Heritage</a></li>
+            <li><a class="dropdown-item py-2 px-3 hover:bg-amber-500/10 hover:text-amber-500" href="home-2.html"><i class="bi bi-fire me-1.5 text-amber-500"></i> Home 2 &bull; Smokehouse &amp; BBQ</a></li>
+          </ul>
+        </div>
+
+        <a href="about.html" class="nav-link-custom text-sm" id="nav-about">About Us</a>
+
+        <a href="products.html" class="nav-link-custom text-sm" id="nav-products">Shop Cuts</a>
+
+        <a href="shop-services.html" class="nav-link-custom text-sm" id="nav-services">Services</a>
+
+        <a href="blog.html" class="nav-link-custom text-sm active" id="nav-blog">Journal</a>
+
+        <a href="contact.html" class="nav-link-custom text-sm" id="nav-contact">Contact</a>
+      </div>
+
+      <!-- Right Controls: Theme Toggle, RTL Toggle, Basket, Shop Cuts CTA, Account Dropdown, Mobile Toggle -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+        <!-- Dark/Light Theme Toggle (Circular) -->
+        <button type="button" class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle Dark / Light Theme" title="Toggle theme">
+          <i class="bi bi-sun-fill text-amber-500 text-xs sm:text-sm theme-icon-sun hidden"></i>
+          <i class="bi bi-moon-stars-fill text-stone-700 dark:text-stone-200 text-xs sm:text-sm theme-icon-moon"></i>
+        </button>
+
+        <!-- RTL / LTR Toggle (Circular) -->
+        <button type="button" class="rtl-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-100 dark:hover:bg-zinc-800 transition flex items-center justify-center flex-shrink-0 text-xs font-bold" aria-label="Toggle RTL Direction" title="Toggle Left to Right / Right to Left layout">
+          <i class="bi bi-arrow-left-right text-xs sm:text-sm text-red-700 dark:text-red-400"></i>
+          <span class="rtl-label sr-only">RTL</span>
+        </button>
+
+        <!-- Enquiry Cart / Basket Button (Desktop) -->
+        <button type="button" class="open-cart-btn hidden sm:inline-flex relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition items-center justify-center flex-shrink-0" aria-label="Open Meat Enquiry Basket" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer">
+          <i class="bi bi-basket2-fill text-xs sm:text-sm text-red-700 dark:text-red-400"></i>
+          <span class="cart-badge" style="display: none;">0</span>
+        </button>
+
+        <!-- Order Online CTA (Desktop) -->
+        <a href="products.html" class="hidden md:inline-flex btn-artisan-primary text-xs !py-2 !px-3.5 flex-shrink-0">
+          <span>Shop Cuts</span>
+          <i class="bi bi-arrow-right rtl-flip text-xs"></i>
+        </a>
+
+        <!-- Customer Account / Login Dropdown (At Navbar End) -->
+        <div class="dropdown nav-account-dropdown hidden sm:block flex-shrink-0">
+          <button type="button" class="nav-account-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 dropdown-toggle shadow-xs" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Customer Account and Login" title="Account &amp; Sign In">
+            <i class="bi bi-person-fill text-sm sm:text-base text-stone-700 dark:text-stone-200"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs mt-2">
+            <li class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 border-b border-stone-200/80 dark:border-zinc-800 mb-1">
+              Account Access
+            </li>
+            <li>
+              <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="login.html">
+                <i class="bi bi-box-arrow-in-right text-red-600 text-sm"></i>
+                <span>Customer Login</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="register.html">
+                <i class="bi bi-person-plus text-amber-500 text-sm"></i>
+                <span>Create Account</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile Hamburger Menu Button (Circular) -->
+        <button type="button" id="mobileNavToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 shadow-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle mobile menu" title="Toggle navigation menu">
+          <i class="bi bi-list text-lg sm:text-xl"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Backdrop Overlay (Demo Format) -->
+    <div id="mobileNavBackdrop" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-40 hidden lg:hidden transition-opacity duration-300" aria-hidden="true"></div>
+
+    <!-- Mobile Collapsible Menu (Demo Image Format) -->
+    <div id="mobileNavMenu" class="fixed top-0 left-0 right-0 z-50 hidden lg:hidden bg-white dark:bg-zinc-900 rounded-b-3xl shadow-2xl border-b border-stone-200 dark:border-zinc-800 max-h-[88vh] overflow-y-auto transition-all duration-300">
+      <!-- Top Header inside Drawer -->
+      <div class="flex items-center justify-between px-5 py-4 border-b border-stone-200/80 dark:border-zinc-800">
+        <a href="index.html" class="flex items-center gap-2 text-decoration-none">
+          <i class="bi bi-shop text-red-700 dark:text-red-500 text-lg"></i>
+          <span class="font-heading font-black text-lg text-stone-900 dark:text-stone-100 tracking-tight">Prime &amp; Cut</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <!-- RTL Toggle Button (Circular) -->
+          <button type="button" class="rtl-toggle-btn w-9 h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle RTL Direction" title="Toggle RTL">
+            <i class="bi bi-arrow-left-right text-sm"></i>
+            <span class="rtl-label sr-only">RTL</span>
+          </button>
+          <!-- Dark/Light Theme Toggle (Circular) -->
+          <button type="button" class="theme-toggle-btn w-9 h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle Dark / Light Theme" title="Toggle theme">
+            <i class="bi bi-sun-fill text-amber-500 text-sm theme-icon-sun hidden"></i>
+            <i class="bi bi-moon-stars-fill text-stone-700 dark:text-stone-200 text-sm theme-icon-moon"></i>
+          </button>
+          <!-- Close Menu Button (Circular) -->
+          <button type="button" id="mobileNavClose" class="w-9 h-9 rounded-full bg-red-100/80 dark:bg-red-950/60 text-red-700 dark:text-red-300 border border-red-200 dark:border-red-900/50 hover:bg-red-200 dark:hover:bg-red-900/60 transition flex items-center justify-center flex-shrink-0" aria-label="Close navigation menu" title="Close menu">
+            <i class="bi bi-x-lg text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation List (Demo Format) -->
+      <div class="flex flex-col text-sm">
+        <a href="index.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Home &ndash; Artisan Butchery</a>
+        <a href="home-2.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Home &ndash; Steakhouse &amp; BBQ</a>
+        <a href="about.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">About Us</a>
+        <a href="products.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Shop Cuts</a>
+        <a href="shop-services.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Services</a>
+        <a href="pricing.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Pricing</a>
+        <a href="blog.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition bg-red-100/70 dark:bg-red-950/50 text-red-900 dark:text-red-300 font-semibold">Journal</a>
+        <a href="contact.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Contact Us</a>
+
+        <!-- Shopping Cart Entry (Demo Format: Solid Bag Icon & Amber Count Badge) -->
+        <button type="button" class="open-cart-btn w-full px-5 py-3.5 flex items-center justify-between text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 border-b border-stone-200/80 dark:border-zinc-800 transition text-sm font-medium" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-label="Open Meat Enquiry Basket">
+          <div class="flex items-center gap-3">
+            <i class="bi bi-bag-fill text-stone-700 dark:text-stone-300 text-base"></i>
+            <span>Shopping Cart</span>
+          </div>
+          <span class="cart-badge w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">0</span>
+        </button>
+
+        <!-- Login Entry (Demo Format: Login Icon) -->
+        <a href="login.html" class="block px-5 py-3.5 flex items-center gap-3 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 border-b border-stone-200/80 dark:border-zinc-800 transition text-sm font-medium">
+          <i class="bi bi-box-arrow-in-right text-stone-700 dark:text-stone-300 text-base"></i>
+          <span>Login</span>
+        </a>
+      </div>
+
+      <!-- Sign Up Wide Pill Button Container (Demo Format) -->
+      <div class="p-4 sm:p-5 bg-stone-50/50 dark:bg-zinc-900/50">
+        <a href="register.html" class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 text-decoration-none">
+          <i class="bi bi-person-plus-fill text-base"></i>
+          <span>Sign Up</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumbs Bar -->
+  <div class="bg-stone-100 dark:bg-zinc-900/60 border-b border-stone-200 dark:border-zinc-800 py-3 text-xs">
+    <div class="container mx-auto px-4 flex items-center gap-2 text-stone-500 dark:text-stone-400">
+      <a href="index.html" class="hover:text-red-700 transition"><i class="bi bi-house-door"></i> Home</a>
+      <span>/</span>
+      <span class="text-stone-900 dark:text-stone-200 font-semibold">The Meat Journal</span>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <section class="py-14 lg:py-18 bg-gradient-to-b from-stone-100 to-stone-50 dark:from-zinc-900 dark:to-zinc-950 border-b border-stone-200 dark:border-zinc-800 text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <span class="badge-artisan mb-3 inline-flex items-center gap-1.5">
+        <i class="bi bi-fire text-amber-500"></i> Fire, Salt &amp; Bone
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-stone-900 dark:text-stone-50 mb-4">
+        The Butcher's Journal
+      </h1>
+      <p class="text-stone-600 dark:text-stone-300 text-base sm:text-lg">
+        Master knife techniques, 35-day Himalayan dry aging chemistry, cast iron searing secrets, and pasture animal welfare insights.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Hero Post -->
+  <section class="py-12 border-b border-stone-200 dark:border-zinc-800">
+    <div class="container mx-auto px-4">
+      <div class="bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition grid grid-cols-1 lg:grid-cols-12 group">
+        <div class="lg:col-span-7 h-72 sm:h-96 lg:h-auto overflow-hidden relative">
+          <a href="blog-details.html?id=dry-aging-science" data-article-id="dry-aging-science" class="block w-full h-full" aria-label="The Science of 35 Days: Why Himalayan Pink Salt Changes Meat Science Forever">
+            <img 
+              src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=1200&q=80" 
+              alt="Himalayan Salt Dry Aging Chamber Display" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            >
+          </a>
+          <span class="absolute top-4 left-4 bg-red-800 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md pointer-events-none">
+            Featured Masterclass
+          </span>
+        </div>
+        <div class="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-3 text-xs text-stone-500 dark:text-stone-400 mb-3">
+              <span><i class="bi bi-calendar3 me-1"></i> May 28, 2026</span>
+              <span>&bull;</span>
+              <span><i class="bi bi-clock me-1"></i> 8 Min Read</span>
+              <span>&bull;</span>
+              <span class="text-amber-600 dark:text-amber-400 font-bold">Dry Aging</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-stone-900 dark:text-stone-100 mb-4 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+              <a href="blog-details.html?id=dry-aging-science" data-article-id="dry-aging-science" class="text-reset text-decoration-none">
+                The Science of 35 Days: Why Himalayan Pink Salt Changes Meat Science Forever
+              </a>
+            </h2>
+            <p class="text-stone-600 dark:text-stone-300 text-sm leading-relaxed mb-6">
+              Step inside our climate-controlled salt room. Learn how negative ions, proteolytic enzyme breakdown, and moisture evaporation transform tough collagen into sweet, nutty umami.
+            </p>
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-stone-100 dark:border-zinc-800">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-stone-200 dark:bg-zinc-700 flex items-center justify-center font-bold text-xs">MR</div>
+              <div>
+                <span class="text-xs font-bold text-stone-900 dark:text-stone-100 block">Marco Rossi</span>
+                <span class="text-[10px] text-stone-500">Head Butcher</span>
+              </div>
+            </div>
+            <a href="blog-details.html?id=dry-aging-science" data-article-id="dry-aging-science" class="btn-artisan-primary text-xs !py-2 !px-4">
+              <span>Read Guide</span>
+              <i class="bi bi-arrow-right rtl-flip text-xs"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Controls Bar -->
+  <section class="py-8 bg-white dark:bg-zinc-900 border-b border-stone-200 dark:border-zinc-800 sticky top-[69px] z-40">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+        <!-- Search Input -->
+        <div class="relative w-full lg:w-96">
+          <i class="bi bi-search absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-sm"></i>
+          <input 
+            type="text" 
+            id="blogSearchInput" 
+            class="form-control-artisan w-full pl-10 pr-4 py-2 text-xs rounded-xl" 
+            placeholder="Search articles, searing, cuts, rubs..."
+          >
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap items-center gap-2 w-full lg:w-auto justify-start lg:justify-end">
+          <button type="button" class="blog-category-pill btn-artisan active text-xs py-1.5 px-3 rounded-full text-white font-bold" data-category="all">
+            All Articles
+          </button>
+          <button type="button" class="blog-category-pill btn-outline-artisan text-xs py-1.5 px-3 rounded-full font-bold" data-category="dry-aging">
+            Dry Aging
+          </button>
+          <button type="button" class="blog-category-pill btn-outline-artisan text-xs py-1.5 px-3 rounded-full font-bold" data-category="bbq">
+            Searing &amp; BBQ
+          </button>
+          <button type="button" class="blog-category-pill btn-outline-artisan text-xs py-1.5 px-3 rounded-full font-bold" data-category="cutting">
+            Cut Guides
+          </button>
+          <button type="button" class="blog-category-pill btn-outline-artisan text-xs py-1.5 px-3 rounded-full font-bold" data-category="hygiene">
+            Cold Storage
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mt-3 text-xs text-stone-500 dark:text-stone-400">
+        <span id="blogResultsCount">9 Articles Found</span>
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <span class="text-[10px] uppercase font-bold text-stone-400">Filter Tags:</span>
+          <button type="button" class="blog-tag-badge text-[10px] px-2 py-0.5 rounded bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 hover:text-red-700 transition" data-tag="steak">#Steak</button>
+          <button type="button" class="blog-tag-badge text-[10px] px-2 py-0.5 rounded bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 hover:text-red-700 transition" data-tag="smoke">#Smoke</button>
+          <button type="button" class="blog-tag-badge text-[10px] px-2 py-0.5 rounded bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 hover:text-red-700 transition" data-tag="grass-fed">#Grass-Fed</button>
+          <button type="button" class="blog-tag-badge text-[10px] px-2 py-0.5 rounded bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 hover:text-red-700 transition" data-tag="poultry">#Poultry</button>
+          <button type="button" class="blog-tag-badge text-[10px] px-2 py-0.5 rounded bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 hover:text-red-700 transition" data-tag="lamb">#Lamb</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Articles Grid -->
+  <section class="py-16 border-b border-stone-200 dark:border-zinc-800">
+    <div class="container mx-auto px-4">
+      <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="bbq" data-tags="steak,cast iron,searing" data-article-id="reverse-searing-101">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=reverse-searing-101" data-article-id="reverse-searing-101" class="block w-full h-full" aria-label="Reverse Searing 101: Edge-to-Edge Pink Medium Rare">
+                <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=1200&q=80" alt="Reverse Sear Skillet Steak" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>May 18, 2026</span>
+                <span>&bull;</span>
+                <span class="text-amber-500 font-bold uppercase text-[10px]">Searing &amp; BBQ</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=reverse-searing-101" data-article-id="reverse-searing-101" class="text-reset text-decoration-none">
+                  Reverse Searing 101: Edge-to-Edge Pink Medium Rare
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Stop battling grey bands in thick steaks. Master the two-zone thermal method: low oven roast followed by screaming hot cast-iron flash sear.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=reverse-searing-101" data-article-id="reverse-searing-101" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Reverse Searing 101"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="cutting" data-tags="anatomy,butcher,tomahawk" data-article-id="beef-rib-anatomy">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=beef-rib-anatomy" data-article-id="beef-rib-anatomy" class="block w-full h-full" aria-label="Decoding Beef Rib Anatomy: Back Ribs vs Short Ribs">
+                <img src="assets/images/Decoding Beef Rib.jpg" alt="Decoding Beef Rib Anatomy: Back Ribs vs Short Ribs" class="w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>May 12, 2026</span>
+                <span>&bull;</span>
+                <span class="text-red-700 dark:text-red-400 font-bold uppercase text-[10px]">Cut Guides</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=beef-rib-anatomy" data-article-id="beef-rib-anatomy" class="text-reset text-decoration-none">
+                  Decoding Beef Rib Anatomy: Back Ribs vs Short Ribs
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                A butcher's visual breakdown between dinosaur plate ribs, chuck flanken cross-cuts, and curvature back ribs. Which fits your smoker?
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=beef-rib-anatomy" data-article-id="beef-rib-anatomy" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Beef Rib Anatomy"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="hygiene" data-tags="storage,hygiene,salt locker" data-article-id="cold-chain-storage">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=cold-chain-storage" data-article-id="cold-chain-storage" class="block w-full h-full" aria-label="Active Cold Chain at Home: Meat Storage Dos and Don'ts">
+                <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=1200&q=80" alt="Cold Chain Storage Packaging" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>May 04, 2026</span>
+                <span>&bull;</span>
+                <span class="text-emerald-600 font-bold uppercase text-[10px]">Cold Storage</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=cold-chain-storage" data-article-id="cold-chain-storage" class="text-reset text-decoration-none">
+                  Active Cold Chain at Home: Meat Storage Dos and Don'ts
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Why your refrigerator door is the worst place for aged ribeye, how butcher paper breathes differently than plastic film, and safe freezing tips.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=cold-chain-storage" data-article-id="cold-chain-storage" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Cold Chain Storage"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="bbq" data-tags="smoke,bbq,brisket" data-article-id="hardwood-matrix">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=hardwood-matrix" data-article-id="hardwood-matrix" class="block w-full h-full" aria-label="The Hardwood Matrix: Post Oak, Hickory & Cherry Wood">
+                <img src="assets/images/blog/hardwood-smoked-brisket.jpg" alt="Hardwood Smoked Brisket" class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>April 29, 2026</span>
+                <span>&bull;</span>
+                <span class="text-amber-500 font-bold uppercase text-[10px]">Searing &amp; BBQ</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=hardwood-matrix" data-article-id="hardwood-matrix" class="text-reset text-decoration-none">
+                  The Hardwood Matrix: Post Oak, Hickory &amp; Cherry Wood
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Pairing smoke intensity to muscle density. Why dense beef briskets demand post oak, while pork shoulder shines with sweet applewood.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=hardwood-matrix" data-article-id="hardwood-matrix" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Hardwood Matrix"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="dry-aging" data-tags="wagyu,marbling,grass-fed" data-article-id="marbling-demystified">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=marbling-demystified" data-article-id="marbling-demystified" class="block w-full h-full" aria-label="Intramuscular Marbling Demystified: BMS 3 to 12">
+                <img src="assets/images/blog/wagyu-marbling-steak.jpg" alt="Intramuscular Wagyu Marbling Steak" class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>April 20, 2026</span>
+                <span>&bull;</span>
+                <span class="text-red-700 dark:text-red-400 font-bold uppercase text-[10px]">Dry Aging</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=marbling-demystified" data-article-id="marbling-demystified" class="text-reset text-decoration-none">
+                  Intramuscular Marbling Demystified: BMS 3 to 12
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Understanding Beef Marbling Score standards across American USDA Prime, Australian Wagyu, and Japanese Miyazaki A5 classifications.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=marbling-demystified" data-article-id="marbling-demystified" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Marbling Demystified"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="cutting" data-tags="heritage,pork,butcher" data-article-id="heritage-pork">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=heritage-pork" data-article-id="heritage-pork" class="block w-full h-full" aria-label="The Resurgence of Heritage Pork: Why Berkshire Wins">
+                <img src="assets/images/blog/berkshire-heritage-pork.jpg" alt="Heritage Berkshire Kurobuta Pork Chops" class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>April 14, 2026</span>
+                <span>&bull;</span>
+                <span class="text-red-700 dark:text-red-400 font-bold uppercase text-[10px]">Cut Guides</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=heritage-pork" data-article-id="heritage-pork" class="text-reset text-decoration-none">
+                  The Resurgence of Heritage Pork: Why Berkshire Wins
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Why industrial white pork dried out in the 1990s and how heritage genetics restored dark ruby muscle, creamy backfat, and crispy crackling.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=heritage-pork" data-article-id="heritage-pork" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Heritage Berkshire Pork"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="cutting" data-tags="poultry,spatchcock,roasting,herbbutter" data-article-id="spatchcock-poultry-guide">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=spatchcock-poultry-guide" data-article-id="spatchcock-poultry-guide" class="block w-full h-full" aria-label="The Anatomy of Poultry: Spatchcocking & Herb Butter Roasting">
+                <img src="assets/images/blog/spatchcock-roast-chicken.jpg" alt="Pasture Raised Whole Chicken Roaster Butchery" class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>April 08, 2026</span>
+                <span>&bull;</span>
+                <span class="text-red-700 dark:text-red-400 font-bold uppercase text-[10px]">Cut Guides</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=spatchcock-poultry-guide" data-article-id="spatchcock-poultry-guide" class="text-reset text-decoration-none">
+                  The Anatomy of Poultry: Spatchcocking &amp; Herb Butter Roasting
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Master the butcher knife technique of removing the backbone to flatten the bird, ensuring crisp golden skin and juicy white meat simultaneously.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=spatchcock-poultry-guide" data-article-id="spatchcock-poultry-guide" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Spatchcock Poultry Guide"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="cutting" data-tags="lamb,frenching,artisancut,finedining" data-article-id="frenched-lamb-rack">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=frenched-lamb-rack" data-article-id="frenched-lamb-rack" class="block w-full h-full" aria-label="The Art of the French Trim: Seam Butchery on Spring Lamb Racks">
+                <img src="assets/images/blog/frenched-rack-lamb.jpg" alt="Artisan Frenched 8-Rib Lamb Rack" class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>March 30, 2026</span>
+                <span>&bull;</span>
+                <span class="text-red-700 dark:text-red-400 font-bold uppercase text-[10px]">Cut Guides</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=frenched-lamb-rack" data-article-id="frenched-lamb-rack" class="text-reset text-decoration-none">
+                  The Art of the French Trim: Seam Butchery on Spring Lamb Racks
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                How clean bone stripping elevates lamb from rustic chop to Michelin-grade centerpiece. Scrape intercostals, cap fat, and sear with rosemary butter.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=frenched-lamb-rack" data-article-id="frenched-lamb-rack" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Frenched Lamb Rack"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="blog-card-item bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition flex flex-col justify-between group" data-category="dry-aging" data-tags="tomahawk,dry-aging,steak,bone-in,steakhouse" data-article-id="dry-aged-tomahawk">
+          <div>
+            <div class="h-48 overflow-hidden bg-stone-100 dark:bg-zinc-800">
+              <a href="blog-details.html?id=dry-aged-tomahawk" data-article-id="dry-aged-tomahawk" class="block w-full h-full" aria-label="The Dry-Aged Tomahawk: Fire, Bone &amp; Pitmaster Carving">
+                <img src="assets/images/blog/dry-aged-tomahawk-steak.jpg" alt="Dry-Aged Prime Tomahawk Ribeye Showpiece" class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition duration-500" loading="lazy">
+              </a>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-2">
+                <span>March 22, 2026</span>
+                <span>&bull;</span>
+                <span class="text-red-700 dark:text-red-400 font-bold uppercase text-[10px]">Dry Aging</span>
+              </div>
+              <h3 class="blog-title font-heading font-bold text-lg text-stone-900 dark:text-stone-100 mb-2 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="blog-details.html?id=dry-aged-tomahawk" data-article-id="dry-aged-tomahawk" class="text-reset text-decoration-none">
+                  The Dry-Aged Tomahawk: Fire, Bone &amp; Pitmaster Carving
+                </a>
+              </h3>
+              <p class="blog-excerpt text-xs text-stone-600 dark:text-stone-400 leading-relaxed line-clamp-3">
+                Why the 8-inch frenched rib bone insulates kernel tenderness, how to master two-zone charcoal heat, and the culinary theater of carving tableside.
+              </p>
+            </div>
+          </div>
+          <div class="p-6 pt-0 border-t border-stone-100 dark:border-zinc-800 mt-2 flex items-center justify-between">
+            <span class="text-[11px] font-bold text-red-700 dark:text-red-400">Read Article</span>
+            <a href="blog-details.html?id=dry-aged-tomahawk" data-article-id="dry-aged-tomahawk" class="p-2 rounded-lg bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition" aria-label="Read Dry-Aged Tomahawk"><i class="bi bi-arrow-right rtl-flip"></i></a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Empty State Container -->
+      <div id="blogEmptyState" class="text-center py-16 d-none">
+        <i class="bi bi-journal-x text-5xl text-stone-400 mb-3 block opacity-50"></i>
+        <h3 class="font-heading font-bold text-lg text-stone-800 dark:text-stone-200">No Butcher Articles Match Your Search</h3>
+        <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">Try searching for "aging", "searing", "brisket", or select "All Articles".</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="journalProductsSection" class="py-16 bg-stone-100 dark:bg-zinc-950 border-b border-stone-200 dark:border-zinc-800 transition-colors">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="badge-artisan mb-3 inline-flex items-center gap-1.5">
+            <i class="bi bi-tag-fill text-amber-500"></i> From Cutting Block to Kitchen
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-stone-900 dark:text-stone-50 mb-2">
+            Shop Masterclass Cuts Featured in Our Journal
+          </h2>
+          <p class="text-stone-600 dark:text-stone-300 text-sm max-w-2xl">
+            Taste the science. Order the exact dry-aged loins, heritage pork chops, and competition briskets highlighted in Marco's butchery guides.
+          </p>
+        </div>
+
+        <!-- Product Category Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" class="journal-product-filter active text-xs font-bold py-2 px-3.5 rounded-xl bg-red-700 text-white shadow-sm transition" data-filter="all">
+            All Cuts
+          </button>
+          <button type="button" class="journal-product-filter text-xs font-bold py-2 px-3.5 rounded-xl bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-700 dark:text-stone-300 hover:border-red-600 transition" data-filter="beef">
+            Prime Beef
+          </button>
+          <button type="button" class="journal-product-filter text-xs font-bold py-2 px-3.5 rounded-xl bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-700 dark:text-stone-300 hover:border-red-600 transition" data-filter="pork">
+            Heritage Pork
+          </button>
+          <button type="button" class="journal-product-filter text-xs font-bold py-2 px-3.5 rounded-xl bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-700 dark:text-stone-300 hover:border-red-600 transition" data-filter="smoker">
+            Smoker Cuts
+          </button>
+          <button type="button" class="journal-product-filter text-xs font-bold py-2 px-3.5 rounded-xl bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-700 dark:text-stone-300 hover:border-red-600 transition" data-filter="box">
+            Curated Boxes
+          </button>
+        </div>
+      </div>
+
+      <!-- 8 Featured Butcher Products Grid -->
+      <div id="journalProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Product 1: Bone-In Prime Tomahawk Ribeye -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="beef">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" 
+              alt="Bone-In Prime Tomahawk Ribeye" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-red-800/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Prime Beef
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-star-fill text-[9px]"></i> USDA Prime
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=tomahawk-1" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="tomahawk-1" data-title="Bone-In Prime Tomahawk Ribeye" data-price="42.99" data-category="Prime Beef">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "Reverse Searing 101"
+                </span>
+                <span class="text-[11px]">2.0" Thick</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=tomahawk-1" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Bone-In Prime</span>
+                  <span class="block leading-tight">Tomahawk Ribeye</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Thick hand-cut bone-in rib section, perfectly portioned for two-zone oven roasting and cast-iron searing.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Frenched Bone</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Reverse Sear</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per lb</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $42.99 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ lb</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="tomahawk-1" data-title="Bone-In Prime Tomahawk Ribeye" data-price="42.99" data-category="Prime Beef">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2: Japanese Wagyu A5 Striploin -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="beef">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="assets/images/beef/wagyu-a5.jpg" 
+              alt="Japanese Wagyu A5 Striploin" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-red-800/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Prime Beef
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-star-fill text-[9px]"></i> BMS 10+ Certified
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=beef-2" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="beef-2" data-title="Japanese Wagyu A5 Striploin" data-price="89.50" data-category="Prime Beef">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "Marbling Demystified"
+                </span>
+                <span class="text-[11px]">300g Portion</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=beef-2" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Japanese Wagyu A5</span>
+                  <span class="block leading-tight">Striploin Steak</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Exquisite snowflake marbling with low-melting-point oleic fatty acid chains that dissolve on contact.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Miyazaki A5</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Oleic Rich</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per unit</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $89.50 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ 300g</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="beef-2" data-title="Japanese Wagyu A5 Striploin" data-price="89.50" data-category="Prime Beef">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3: Whole Texas Smoker Brisket -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="smoker">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="assets/images/blog/hardwood-smoked-brisket.jpg" 
+              alt="Whole Texas Smoker Brisket" 
+              class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-amber-700/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Smoker Cut
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-fire text-[9px]"></i> Pitmaster Choice
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=beef-5" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="beef-5" data-title="Whole Texas Smoker Brisket" data-price="68.00" data-category="Prime Beef">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "The Hardwood Matrix"
+                </span>
+                <span class="text-[11px]">2.5kg Packer</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=beef-5" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Whole Texas Smoker</span>
+                  <span class="block leading-tight">Packer Brisket</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Packer cut brisket with intact 1/4" fat cap, ideal for 14-hour post oak and hickory hardwood smoking.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Post Oak Ready</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Intact Deckle</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per unit</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $68.00 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ 2.5kg</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="beef-5" data-title="Whole Texas Smoker Brisket" data-price="68.00" data-category="Prime Beef">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4: Kurobuta Thick-Cut Pork Chops -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="pork">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80" 
+              alt="Kurobuta Thick-Cut Pork Chops" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-red-800/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Heritage Pork
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-patch-check-fill text-[9px]"></i> 100% Berkshire
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=prk-1" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="prk-1" data-title="Kurobuta Thick-Cut Pork Chops" data-price="27.50" data-category="Berkshire Pork">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "Heritage Berkshire Pork"
+                </span>
+                <span class="text-[11px]">700g (2 pcs)</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=prk-1" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Kurobuta Thick-Cut</span>
+                  <span class="block leading-tight">Pork Chops</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Intensely marbled ruby-red Berkshire muscle with sweet exterior fat. Safe and juicy at 145&deg;F.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">High pH Retention</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Ruby Marbled</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per unit</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $27.50 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ 700g</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="prk-1" data-title="Kurobuta Thick-Cut Pork Chops" data-price="27.50" data-category="Berkshire Pork">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5: Prime Dinosaur Beef Plate Short Ribs -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="smoker">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="assets/images/Decoding Beef Rib.jpg" 
+              alt="Prime Dinosaur Beef Plate Short Ribs" 
+              class="w-full h-full object-cover object-[center_45%] group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-amber-700/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Smoker Cut
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-award-fill text-[9px]"></i> 3-Bone Plate
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=beef-ribs" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="beef-ribs" data-title="Prime Dinosaur Beef Plate Short Ribs" data-price="38.50" data-category="Prime Beef">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "Decoding Beef Ribs"
+                </span>
+                <span class="text-[11px]">1.2kg (3-Bone)</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=beef-ribs" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Prime Dinosaur</span>
+                  <span class="block leading-tight">Beef Short Ribs</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Massive 3-bone plate cut with incredible intramuscular marbling that renders into rich gelatin.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Bones 6-8</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Pitmaster Pride</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per unit</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $38.50 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ 1.2kg</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="beef-ribs" data-title="Prime Dinosaur Beef Plate Short Ribs" data-price="38.50" data-category="Prime Beef">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6: Free-Range Whole Roaster Chicken -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="pork">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="assets/images/blog/spatchcock-roast-chicken.jpg" 
+              alt="Free-Range Whole Roaster Chicken" 
+              class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-amber-700/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Pasture Poultry
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-patch-check-fill text-[9px]"></i> 100% Organic
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=chk-1" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="chk-1" data-title="Free-Range Whole Roaster Chicken" data-price="16.50" data-category="Pasture Poultry">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "Spatchcock Guide"
+                </span>
+                <span class="text-[11px]">1.8kg Bird</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=chk-1" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Free-Range Whole</span>
+                  <span class="block leading-tight">Roaster Chicken</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Air-chilled whole chicken, hand-inspected for crisp skin potential and tender breast roasting.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Air-Chilled</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Spatchcock Ready</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per unit</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $16.50 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ 1.8kg</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="chk-1" data-title="Free-Range Whole Roaster Chicken" data-price="16.50" data-category="Pasture Poultry">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 7: Steakhouse Connoisseur Curated Box -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="box">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="assets/images/hospitality-supply.jpg" 
+              alt="Steakhouse Connoisseur Curated Box" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-red-800/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Curated Box
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-box-seam-fill text-[9px]"></i> Reserve Flight
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="pricing.html" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="box-steakhouse" data-title="Steakhouse Connoisseur Box" data-price="319.00" data-category="Curated Box">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> Masterclass Reserve
+                </span>
+                <span class="text-[11px]">Gourmet Flight</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="pricing.html" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Steakhouse Reserve</span>
+                  <span class="block leading-tight">Connoisseur Box</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Dry-aged 35–45 days in our salt lockers. Includes bone-in ribeyes, dry-aged NY strips, and marrow butter.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">45-Day Aged</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Free Cold Chain</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Box price</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $319.00 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ box</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="box-steakhouse" data-title="Steakhouse Connoisseur Box" data-price="319.00" data-category="Curated Box">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8: Dry-Aged Prime Tomahawk Ribeye -->
+        <div class="journal-product-card bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full" data-category="beef">
+          <div class="relative overflow-hidden h-52 bg-stone-100 dark:bg-zinc-800">
+            <img 
+              src="assets/images/blog/dry-aged-tomahawk-steak.jpg" 
+              alt="Dry-Aged Prime Tomahawk Ribeye" 
+              class="w-full h-full object-cover object-[center_50%] group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy"
+            >
+            <span class="absolute top-3 left-3 bg-red-800/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">
+              Prime Beef
+            </span>
+            <span class="absolute top-3 right-3 bg-amber-500/95 text-stone-950 text-[10px] font-extrabold px-2 py-0.5 rounded shadow-sm flex items-center gap-1">
+              <i class="bi bi-star-fill text-[9px]"></i> 45oz Showpiece
+            </span>
+            <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 p-4">
+              <a href="product-details.html?id=tomahawk" class="btn btn-sm bg-white text-stone-900 font-bold hover:bg-stone-100 rounded-xl px-3 py-2 shadow-lg text-xs">
+                <i class="bi bi-eye-fill me-1 text-red-700"></i> Specs
+              </a>
+              <button type="button" class="btn btn-sm bg-red-700 text-white font-bold hover:bg-red-800 rounded-xl px-3 py-2 shadow-lg text-xs add-to-enquiry-btn" data-id="tomahawk" data-title="Dry-Aged Prime Tomahawk Ribeye" data-price="64.00" data-category="Prime Beef">
+                <i class="bi bi-basket2-fill me-1"></i> Add
+              </button>
+            </div>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 mb-1.5">
+                <span class="flex items-center gap-1 text-[11px] text-amber-600 dark:text-amber-400 font-semibold">
+                  <i class="bi bi-journal-bookmark-fill"></i> In "The Dry-Aged Tomahawk"
+                </span>
+                <span class="text-[11px]">45oz Showpiece</span>
+              </div>
+              <h3 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors">
+                <a href="product-details.html?id=tomahawk" class="text-reset text-decoration-none">
+                  <span class="block leading-tight">Dry-Aged Prime</span>
+                  <span class="block leading-tight">Tomahawk Ribeye</span>
+                </a>
+              </h3>
+              <p class="text-stone-600 dark:text-stone-400 text-xs line-clamp-2 mb-3">
+                Massive long-bone bone-in ribeye frenched by hand with BMS 7+ marbling aged 35-45 days in our Himalayan salt vaults.
+              </p>
+              <div class="flex flex-wrap gap-1 mb-4">
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">Frenched Bone</span>
+                <span class="text-[10px] bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-stone-300 px-2 py-0.5 rounded">BMS 7+ Prime</span>
+              </div>
+            </div>
+            <div class="meat-card-footer pt-3 border-t border-stone-100 dark:border-zinc-800 flex items-center justify-between">
+              <div>
+                <div class="text-[10px] uppercase font-bold text-stone-400">Price per unit</div>
+                <div class="text-lg font-heading font-extrabold text-red-800 dark:text-red-400 leading-none">
+                  $64.00 <span class="text-xs font-normal text-stone-500 dark:text-stone-400">/ 45oz</span>
+                </div>
+              </div>
+              <button type="button" class="add-to-enquiry-btn p-2 rounded-xl bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-300 hover:bg-red-700 hover:text-white transition-colors text-xs flex items-center gap-1 font-bold" data-id="tomahawk" data-title="Dry-Aged Prime Tomahawk Ribeye" data-price="64.00" data-category="Prime Beef">
+                <i class="bi bi-cart-plus"></i> Add
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Banner / CTA -->
+      <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-white dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-2xl bg-red-800/10 dark:bg-red-950/40 text-red-700 dark:text-red-400 flex items-center justify-center text-2xl flex-shrink-0">
+            <i class="bi bi-scissors"></i>
+          </div>
+          <div>
+            <h4 class="font-heading font-bold text-base text-stone-900 dark:text-stone-100">Need a Custom Steak Thickness or Carcass Cut?</h4>
+            <p class="text-xs text-stone-500 dark:text-stone-400">Our butchers hand-slice to your exact inch thickness, french bones, and package in sub-zero cryovac.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 w-full sm:w-auto">
+          <a href="custom-cuts.html" class="btn-artisan-outline text-xs !py-2.5 !px-4 flex-1 sm:flex-none text-center">Custom Cuts Builder</a>
+          <a href="products.html" class="btn-artisan-primary text-xs !py-2.5 !px-5 flex-1 sm:flex-none text-center whitespace-nowrap">
+            <span>Explore All 20+ Cuts</span>
+            <i class="bi bi-arrow-right rtl-flip ms-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Global Professional Footer -->
+  <footer class="bg-stone-100 dark:bg-stone-950 text-stone-600 dark:text-stone-300 pt-16 pb-8 border-t border-stone-200 dark:border-stone-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 pb-12 border-b border-stone-200 dark:border-stone-800">
+        <div class="lg:col-span-5">
+          <a href="index.html" class="flex items-center gap-3 mb-4 group text-decoration-none" aria-label="Prime & Cut Butcher Shop Homepage">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition">
+              <!-- SVG Cleaver Logo -->
+              <svg class="w-6 h-6 fill-current text-amber-400" viewBox="0 0 100 100">
+                <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
+                <g transform="translate(32, 28) rotate(-15)">
+                  <path d="M0,4 C0,1.8 1.8,0 4,0 L30,0 C32,0 34,1.8 34,4 L32,24 C32,26 30,28 28,28 L0,28 Z" fill="#F8FAFC"/>
+                  <circle cx="26" cy="7" r="2.5" fill="#8B1E1E"/>
+                  <path d="M-2,8 L-12,8 C-14,8 -16,10 -16,12 L-16,16 C-16,18 -14,20 -12,20 L-2,20 Z" fill="#D4AF37"/>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <span class="font-heading font-extrabold text-xl tracking-wider text-stone-900 dark:text-stone-50 block leading-tight">PRIME &amp; CUT</span>
+              <span class="text-[10px] tracking-[0.2em] font-semibold text-red-700 dark:text-red-400 uppercase block">Artisan Butchery</span>
+            </div>
+          </a>
+          <p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed max-w-md">
+            Dedicated to old-world butchery craftsmanship, ethical pasture-to-plate sourcing, and uncompromising freshness. Every cut is hand-selected and precision-trimmed to order.
+          </p>
+          <div class="flex items-center gap-3 mt-5">
+            <span class="inline-flex items-center gap-1 text-xs bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 px-3 py-1.5 rounded-lg shadow-sm">
+              <i class="bi bi-patch-check-fill text-amber-500 dark:text-amber-400"></i> USDA Prime &amp; Angus
+            </span>
+            <span class="inline-flex items-center gap-1 text-xs bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-stone-700 dark:text-stone-300 px-3 py-1.5 rounded-lg shadow-sm">
+              <i class="bi bi-thermometer-snow text-cyan-600 dark:text-cyan-400"></i> Active 0°C Cold Chain
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <div class="bg-white dark:bg-stone-900/80 p-6 rounded-2xl border border-stone-200 dark:border-stone-800 shadow-sm max-w-xl lg:ms-auto w-full">
+            <h4 class="font-heading text-stone-900 dark:text-stone-100 text-base font-bold mb-1">Join the Butcher’s Guild</h4>
+            <p class="text-stone-600 dark:text-stone-400 text-xs mb-4">Receive private notifications on dry-aged reserve releases, seasonal cuts, and weekend BBQ packages.</p>
+            <form class="flex flex-col sm:flex-row gap-2" onsubmit="event.preventDefault(); alert('Thank you for subscribing to our Butcher reserve notifications!'); this.reset();">
+              <input type="email" required placeholder="Enter your email address..." class="bg-stone-50 dark:bg-stone-950 border border-stone-300 dark:border-stone-700 text-stone-900 dark:text-stone-200 text-xs rounded-xl px-3.5 py-2.5 focus:outline-none focus:border-red-600 flex-grow">
+              <button type="submit" class="btn-artisan-primary text-xs !py-2.5 !px-5 whitespace-nowrap">
+                <span>Subscribe</span>
+                <i class="bi bi-send-fill text-xs"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 py-12 border-b border-stone-200 dark:border-stone-800/80 text-sm">
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Shop Navigation</h4>
+          <ul class="space-y-2.5 text-stone-600 dark:text-stone-400">
+            <li><a href="index.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Home</a></li>
+            <li><a href="products.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> All Products</a></li>
+            <li><a href="custom-cuts.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Custom Cuts Builder</a></li>
+            <li><a href="shop-services.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Artisan Butcher Services</a></li>
+            <li><a href="contact.html" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Contact &amp; Hours</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Meat Categories</h4>
+          <ul class="space-y-2.5 text-stone-600 dark:text-stone-400">
+            <li><a href="products.html?category=beef#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Prime Dry-Aged Beef</a></li>
+            <li><a href="products.html?category=chicken#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Pasture-Raised Chicken</a></li>
+            <li><a href="products.html?category=mutton#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Spring Lamb &amp; Mutton</a></li>
+            <li><a href="products.html?category=pork#productsCatalogSection" class="hover:text-red-600 dark:hover:text-red-400 transition flex items-center gap-2"><i class="bi bi-chevron-right rtl-flip text-xs text-stone-400 dark:text-stone-600"></i> Kurobuta Heritage Pork</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Butcher Counter</h4>
+          <ul class="space-y-3 text-stone-600 dark:text-stone-400 text-xs">
+            <li class="flex items-start gap-2.5">
+              <i class="bi bi-geo-alt-fill text-red-500 text-sm mt-0.5 flex-shrink-0"></i>
+              <span>142 Artisan Boulevard, Meatpacking District, NY 10014</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-telephone-fill text-amber-500 dark:text-amber-400 flex-shrink-0"></i>
+              <a href="tel:5553826328" class="hover:text-stone-900 dark:hover:text-stone-200">(555) 382-MEAT (6328)</a>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i class="bi bi-envelope-fill text-amber-500 dark:text-amber-400 flex-shrink-0"></i>
+              <a href="mailto:orders@primecutbutchery.com" class="hover:text-stone-900 dark:hover:text-stone-200">orders@primecutbutchery.com</a>
+            </li>
+            <li class="flex items-start gap-2.5 pt-1">
+              <i class="bi bi-clock-fill text-stone-400 dark:text-stone-500 text-sm mt-0.5 flex-shrink-0"></i>
+              <div>
+                <p class="font-semibold text-stone-900 dark:text-stone-200">Mon &ndash; Sat: 7:00 AM &ndash; 8:00 PM</p>
+                <p class="text-stone-500 dark:text-stone-400">Sun: 8:00 AM &ndash; 5:00 PM</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-heading text-stone-900 dark:text-stone-100 text-sm font-bold uppercase tracking-wider mb-4 text-amber-600 dark:text-amber-400/90">Connect With Us</h4>
+          <div class="flex items-center gap-3 mb-6">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-red-600 hover:text-red-500 text-stone-600 dark:text-stone-300 flex items-center justify-center shadow-sm transition" aria-label="Facebook">
+              <i class="bi bi-facebook text-base"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-red-600 hover:text-red-500 text-stone-600 dark:text-stone-300 flex items-center justify-center shadow-sm transition" aria-label="Instagram">
+              <i class="bi bi-instagram text-base"></i>
+            </a>
+            <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 hover:border-red-600 hover:text-emerald-500 text-stone-600 dark:text-stone-300 flex items-center justify-center shadow-sm transition" aria-label="WhatsApp Direct">
+              <i class="bi bi-whatsapp text-base"></i>
+            </a>
+          </div>
+          <div class="text-xs text-stone-500 dark:text-stone-400">
+            <span class="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              WhatsApp Butcher Line Active
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-stone-400">
+        <p>&copy; <span class="dynamic-year">2026</span> Prime &amp; Cut Artisan Butcher Shop. All Rights Reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="about.html" class="hover:text-stone-800 dark:hover:text-stone-300">Artisan Guarantee</a>
+          <a href="custom-cuts.html" class="hover:text-stone-800 dark:hover:text-stone-300">Butcher Standards</a>
+          <a href="contact.html" class="hover:text-stone-800 dark:hover:text-stone-300">Privacy &amp; Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Offcanvas Cart Drawer (Synchronized with products.js) -->
+  <div class="offcanvas offcanvas-end bg-stone-50 dark:bg-zinc-900 text-stone-900 dark:text-stone-100" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel" style="width: 420px; max-width: 90vw;">
+    <div class="offcanvas-header border-b border-stone-200 dark:border-zinc-800 p-4">
+      <div class="flex items-center gap-2">
+        <i class="bi bi-basket2-fill text-red-700 dark:text-red-400 text-xl"></i>
+        <h5 class="offcanvas-title font-heading font-bold text-lg" id="cartDrawerLabel">Order Enquiry Basket</h5>
+      </div>
+      <button type="button" class="btn-close text-reset dark:filter dark:invert" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-4 flex flex-col justify-between">
+      <div id="cartDrawerContent" class="flex-grow">
+        <div id="cartEmptyNotice" class="text-center py-12">
+          <div class="w-16 h-16 rounded-full bg-stone-200 dark:bg-zinc-800 text-stone-400 flex items-center justify-center mx-auto mb-3 text-2xl">
+            <i class="bi bi-basket"></i>
+          </div>
+          <h6 class="font-bold text-stone-700 dark:text-stone-300">Your basket is currently empty</h6>
+          <p class="text-xs text-stone-500 mt-1 max-w-xs mx-auto">Explore our premium cuts or request a custom butchery cut to add items here.</p>
+          <a href="products.html" class="btn-artisan-primary text-xs mt-5 !py-2 !px-4">Browse Meat Catalog</a>
+        </div>
+        <div id="cartItemsList" class="space-y-3"></div>
+      </div>
+
+      <div id="cartDrawerFooter" class="pt-4 mt-4 border-t border-stone-200 dark:border-zinc-800 hidden">
+        <div class="flex items-center justify-between mb-3 text-sm">
+          <span class="text-stone-500 dark:text-stone-400">Estimated Total:</span>
+          <span id="cartTotalEstimate" class="font-extrabold text-xl text-red-700 dark:text-red-400">$0.00</span>
+        </div>
+        <p class="text-[11px] text-stone-500 mb-4">*Final price confirmed by butcher based on exact cutting scale weight.</p>
+        <div class="flex flex-col gap-2">
+          <button type="button" id="proceedToEnquiryBtn" class="btn-artisan-primary w-full text-center text-sm py-3">
+            <i class="bi bi-check2-circle"></i> Proceed to Submit Enquiry
+          </button>
+          <button type="button" id="clearCartBtn" class="btn-artisan-outline w-full text-center text-xs !py-2">
+            Clear Basket
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Modal: Enquiry Checkout -->
+  <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl overflow-hidden shadow-2xl">
+        <div class="modal-header bg-gradient-to-r from-red-800 to-red-950 text-white p-4">
+          <div class="flex items-center gap-2">
+            <i class="bi bi-file-earmark-text-fill text-amber-400 text-lg"></i>
+            <h5 class="modal-title font-heading font-bold" id="enquiryModalLabel">Submit Meat Order Enquiry</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-5">
+          <p class="text-xs text-stone-600 dark:text-stone-400 mb-4">
+            Review your selected cuts below and enter your contact details. Our head butcher will contact you to verify delivery timing and custom cut instructions.
+          </p>
+
+          <div class="bg-stone-100 dark:bg-zinc-800/70 p-3 rounded-xl mb-4 border border-stone-200 dark:border-zinc-700">
+            <h6 class="text-xs font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 mb-2">Selected Cuts Summary</h6>
+            <div id="modalCartItemsSummary" class="space-y-1"></div>
+          </div>
+
+          <form id="cartEnquiryModalForm" class="space-y-3">
+            <div>
+              <label for="modalCustName" class="block text-xs font-semibold mb-1">Full Name *</label>
+              <input type="text" id="modalCustName" required class="form-control-artisan w-full text-xs" placeholder="e.g. Eleanor Vance">
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label for="modalCustPhone" class="block text-xs font-semibold mb-1">Phone Number *</label>
+                <input type="tel" id="modalCustPhone" required class="form-control-artisan w-full text-xs" placeholder="e.g. (555) 019-2834">
+              </div>
+              <div>
+                <label for="modalCustEmail" class="block text-xs font-semibold mb-1">Email Address *</label>
+                <input type="email" id="modalCustEmail" required class="form-control-artisan w-full text-xs" placeholder="eleanor@example.com">
+              </div>
+            </div>
+            <div>
+              <label for="modalCustAddress" class="block text-xs font-semibold mb-1">Delivery Address *</label>
+              <textarea id="modalCustAddress" rows="2" required class="form-control-artisan w-full text-xs" placeholder="Street address, apartment/unit, city, zip code"></textarea>
+            </div>
+            <div>
+              <label for="modalCustNotes" class="block text-xs font-semibold mb-1">Butcher Notes / Delivery Window</label>
+              <input type="text" id="modalCustNotes" class="form-control-artisan w-full text-xs" placeholder="e.g. Please cut steaks 1.5 inches thick, deliver after 4 PM">
+            </div>
+
+            <div class="pt-3">
+              <button type="submit" class="btn-artisan-primary w-full text-sm py-3">
+                <i class="bi bi-send-check-fill"></i> Confirm &amp; Send Order Enquiry
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollToTopBtn" aria-label="Scroll back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core Scripts -->
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/blog.js"></script>
+</body>
+</html>

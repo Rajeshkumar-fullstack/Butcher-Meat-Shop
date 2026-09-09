@@ -1,0 +1,160 @@
+/* ==========================================================================
+   PRIME & CUT ARTISAN BUTCHER SHOP — RTL SPECIFIC STYLESHEET
+   Supports Arabic, Hebrew and other Right-to-Left scripts.
+   Triggered automatically when <html dir="rtl"> is applied.
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-rtl, 'Cairo', sans-serif);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] .font-heading,
+[dir="rtl"] .artisan-brand {
+  font-family: var(--font-rtl, 'Cairo', sans-serif);
+  letter-spacing: 0 !important;
+}
+
+/* Preserve sentence structure and punctuation for Latin/English content in RTL */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] a,
+[dir="rtl"] li,
+[dir="rtl"] blockquote,
+[dir="rtl"] .hero-title,
+[dir="rtl"] .badge-artisan,
+[dir="rtl"] .btn-artisan-primary,
+[dir="rtl"] .btn-artisan-outline,
+[dir="rtl"] .font-heading,
+[dir="rtl"] .artisan-brand {
+  unicode-bidi: plaintext;
+}
+
+/* Directional Margin & Padding Inversions */
+[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  right: 0;
+  left: auto;
+}
+
+[dir="rtl"] .dropdown-menu-end {
+  left: 0;
+  right: auto;
+}
+
+/* Flip Icons indicating direction */
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-angle-right,
+[dir="rtl"] .fa-arrow-circle-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-chevron-left,
+[dir="rtl"] .fa-angle-left,
+[dir="rtl"] .fa-arrow-circle-left {
+  transform: scaleX(-1);
+}
+
+/* Offcanvas Drawer Alignment */
+[dir="rtl"] .offcanvas-end {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .offcanvas-end.show {
+  transform: none;
+}
+
+[dir="rtl"] .offcanvas-start {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+[dir="rtl"] .offcanvas-start.show {
+  transform: none;
+}
+
+/* Butcher Ticket Stamp & Perforation in RTL */
+[dir="rtl"] .butcher-ticket {
+  border-left-style: solid;
+  border-right-style: solid;
+}
+
+[dir="rtl"] .stamp-watermark {
+  left: 1.5rem;
+  right: auto;
+  transform: rotate(15deg);
+}
+
+/* Form Inputs & Badges */
+[dir="rtl"] .form-control-artisan,
+[dir="rtl"] .form-select-artisan {
+  text-align: right;
+}
+
+[dir="rtl"] .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-right: -1px;
+  margin-left: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+[dir="rtl"] .input-group > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+/* Floating Actions & Buttons */
+[dir="rtl"] .badge-corner {
+  left: 1rem;
+  right: auto;
+}
+
+[dir="rtl"] .btn-icon-end i {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .btn-icon-start i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}

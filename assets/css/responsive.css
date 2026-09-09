@@ -1,0 +1,327 @@
+/* ==========================================================================
+   PRIME & CUT ARTISAN BUTCHER SHOP — RESPONSIVE STYLESHEET
+   Refined breakpoints across Mobile (320px-640px), Tablet (768px-1024px),
+   Desktop (1024px-1280px), and Ultra-Wide (1440px+) screens.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Extra Small Devices (Phones < 576px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 2.25rem !important;
+    line-height: 1.15 !important;
+  }
+
+  .section-heading {
+    font-size: 1.85rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .butcher-ticket {
+    padding: 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .cut-builder-step {
+    padding: 1rem !important;
+  }
+
+  .btn-artisan {
+    padding: 0.65rem 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .product-img-wrapper,
+  .meat-img-wrapper {
+    height: 190px !important;
+  }
+
+  .table-responsive-cards table,
+  .table-responsive-cards thead,
+  .table-responsive-cards tbody,
+  .table-responsive-cards th,
+  .table-responsive-cards td,
+  .table-responsive-cards tr {
+    display: block;
+  }
+
+  .table-responsive-cards thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .table-responsive-cards tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.75rem;
+    background: var(--bg-card);
+  }
+
+  .table-responsive-cards td {
+    border: none;
+    position: relative;
+    padding-left: 50% !important;
+    text-align: right;
+  }
+
+  .table-responsive-cards td:before {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.75rem;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 600;
+    content: attr(data-label);
+  }
+
+  .stat-counter-box {
+    padding: 1.25rem !important;
+  }
+
+  .countdown-timer-box .countdown-segment {
+    min-width: 60px !important;
+    padding: 0.75rem 0.5rem !important;
+  }
+
+  .countdown-timer-box .countdown-number {
+    font-size: 1.75rem !important;
+  }
+
+  /* Responsive Navbar Controls on Small Phones (Demo Circular Button Style) */
+  #mobileNavToggle,
+  #mobileNavClose,
+  .theme-toggle-btn,
+  .rtl-toggle-btn,
+  .nav-account-btn {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 9999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Header cart button hidden on mobile phones; accessed via drawer */
+  header nav .open-cart-btn {
+    display: none !important;
+  }
+
+  #mobileNavMenu .open-cart-btn {
+    display: flex !important;
+  }
+
+  .nav-account-dropdown .dropdown-menu {
+    max-width: calc(100vw - 2rem);
+  }
+
+  /* Compact Floating Scroll-to-Top on Mobile Phones */
+  #scrollToTopBtn {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 1.05rem !important;
+  }
+
+  html[dir="rtl"] #scrollToTopBtn {
+    right: auto !important;
+  }
+}
+
+@media (max-width: 399.98px) {
+  #mobileNavToggle,
+  #mobileNavClose,
+  .theme-toggle-btn,
+  .rtl-toggle-btn,
+  .nav-account-btn {
+    width: 31px !important;
+    height: 31px !important;
+  }
+
+  header a span.font-heading {
+    font-size: 1rem !important;
+  }
+}
+
+/* Ensure mobile nav toggle is properly displayed below 1024px and hidden on desktop */
+@media (max-width: 1023.98px) {
+  #mobileNavToggle {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #mobileNavToggle {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Hero Visual Showcase Image & Lightbox
+   -------------------------------------------------------------------------- */
+#heroImageContainer {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#heroImageContainer:hover #heroShowcaseImg {
+  transform: scale(1.04);
+}
+
+@media (max-width: 639.98px) {
+  #heroShowcaseImg {
+    object-position: center 60% !important;
+  }
+  
+  #imageLightboxImg {
+    max-height: 65vh !important;
+  }
+
+  /* About Us Heritage Story 4-Grid Image Collage Mobile Alignment */
+  .about-collage-grid {
+    gap: 0.75rem !important;
+  }
+
+  .about-collage-stagger {
+    padding-top: 0 !important;
+  }
+
+  .about-collage-grid img,
+  .about-collage-grid .bg-gradient-to-br {
+    height: 190px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small to Medium Devices (Tablets 576px - 767.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-title {
+    font-size: 2.75rem !important;
+  }
+
+  .product-img-wrapper,
+  .meat-img-wrapper {
+    height: 220px !important;
+  }
+
+  .countdown-timer-box .countdown-segment {
+    min-width: 75px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Medium to Large Devices (Tablets Landscape 768px - 991.98px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-split-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .delivery-zone-table th,
+  .delivery-zone-table td {
+    padding: 0.75rem 0.5rem !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop & Nav Collapse Specifics (<= 991.98px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .mobile-menu-drawer {
+    display: block;
+  }
+
+  .desktop-nav-menu {
+    display: none !important;
+  }
+
+  .navbar-actions-mobile {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-drawer {
+    display: none !important;
+  }
+
+  .desktop-nav-menu {
+    display: flex !important;
+  }
+
+  /* Dropdown animations */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-item.dropdown .dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Large Desktops (>= 1200px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .container-custom {
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Ultra-Wide Displays (>= 1440px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .container-custom-wide {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Print Styles for Butcher Ticket & Receipts
+   -------------------------------------------------------------------------- */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .printable-receipt,
+  .printable-receipt * {
+    visibility: visible;
+  }
+
+  .printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 450px;
+    background: #FFF !important;
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,6 @@
+<!-- SVG Favicon reference for browsers requesting favicon.ico -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#8B1E1E"/>
+  <path d="M10,8 L22,8 L20,20 L10,20 Z" fill="#FFFFFF"/>
+  <rect x="7" y="12" width="4" height="4" rx="1" fill="#D4AF37"/>
+</svg>

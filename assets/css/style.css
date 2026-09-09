@@ -1,0 +1,1460 @@
+/* ==========================================================================
+   PRIME & CUT ARTISAN BUTCHER SHOP — MAIN STYLESHEET
+   Supports: Light/Dark Mode, Full RTL (Arabic/Hebrew), Responsive Breakpoints
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Google Fonts Import
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* --------------------------------------------------------------------------
+   CSS Variables & Theme Definitions
+   -------------------------------------------------------------------------- */
+:root {
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-rtl: 'Cairo', sans-serif;
+
+  /* Artisan Color Palette - Light Mode Default */
+  --primary-red: #8B1E1E;
+  --primary-dark-red: #5E1212;
+  --primary-bright: #B91C1C;
+  --primary-glow: rgba(139, 30, 30, 0.25);
+  --accent-gold: #D4AF37;
+  --accent-gold-light: #F4E8C1;
+  --accent-gold-dark: #A48016;
+
+  --bg-main: #FAF8F5;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #F5F1EB;
+  --border-color: #E6E1D8;
+  --border-subtle: #EDE9E1;
+
+  --text-main: #1F2421;
+  --text-muted: #5C646A;
+  --text-subtle: #8A949E;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.1);
+  --shadow-gold: 0 6px 24px rgba(212, 175, 55, 0.2);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Overrides */
+html.dark {
+  --bg-main: #0F0F10;
+  --bg-card: #18181B;
+  --bg-card-subtle: #222226;
+  --border-color: #2D2D33;
+  --border-subtle: #25252A;
+
+  --text-main: #F3F4F6;
+  --text-muted: #9CA3AF;
+  --text-subtle: #6B7280;
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.8);
+  --shadow-gold: 0 6px 28px rgba(212, 175, 55, 0.15);
+  --primary-glow: rgba(220, 38, 38, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   Base Styles & Typography
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+h1, h2, h3, .font-heading, .artisan-brand {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+}
+
+/* Smooth transition for theme toggle */
+.theme-transition,
+.theme-transition *,
+.theme-transition *:before,
+.theme-transition *:after {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, fill 0.3s ease !important;
+}
+
+/* --------------------------------------------------------------------------
+   LTR (Left-To-Right) Base Direction & Punctuation Protection
+   -------------------------------------------------------------------------- */
+html[dir="ltr"],
+html:not([dir="rtl"]) {
+  direction: ltr;
+  text-align: left;
+}
+
+html[dir="ltr"] body,
+html:not([dir="rtl"]) body {
+  direction: ltr;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   RTL (Right-To-Left) Adaptations
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] {
+  font-family: var(--font-rtl);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-rtl);
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] .font-heading,
+html[dir="rtl"] .artisan-brand {
+  font-family: var(--font-rtl);
+  letter-spacing: 0;
+}
+
+/* Preserve sentence structure and punctuation for Latin/English content in RTL */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p,
+html[dir="rtl"] span,
+html[dir="rtl"] a,
+html[dir="rtl"] li,
+html[dir="rtl"] blockquote,
+html[dir="rtl"] .hero-title,
+html[dir="rtl"] .badge-artisan,
+html[dir="rtl"] .btn-artisan-primary,
+html[dir="rtl"] .btn-artisan-outline,
+html[dir="rtl"] .font-heading,
+html[dir="rtl"] .artisan-brand {
+  unicode-bidi: plaintext;
+}
+
+/* RTL Icon Flipping */
+html[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Offcanvas in RTL */
+html[dir="rtl"] .offcanvas-end {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+html[dir="rtl"] .offcanvas-end.show {
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Scrollbar
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #A82222;
+  border-radius: 5px;
+  border: 2px solid var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B1E1E;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar Styles
+   -------------------------------------------------------------------------- */
+.navbar-glass {
+  background-color: rgba(250, 248, 245, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: all var(--transition-normal);
+}
+
+html.dark .navbar-glass {
+  background-color: rgba(15, 15, 16, 0.88);
+  border-bottom-color: var(--border-color);
+}
+
+.navbar-scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav-link-custom {
+  position: relative;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: color var(--transition-fast);
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--primary-bright);
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--primary-bright);
+  transition: all var(--transition-fast);
+  transform: translateX(-50%);
+}
+
+.nav-link-custom:hover::after,
+.nav-link-custom.active::after {
+  width: 80%;
+}
+
+/* Remove Bootstrap's default dropdown caret triangle and stray marks from navbar dropdowns */
+.dropdown-toggle::after,
+.nav-link-custom.dropdown-toggle::after {
+  border: none !important;
+  margin-left: 0 !important;
+  vertical-align: initial !important;
+}
+
+.nav-link-custom.dropdown-toggle:not(.active):not(:hover)::after {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Navbar Account Dropdown
+   -------------------------------------------------------------------------- */
+.nav-account-dropdown {
+  position: relative;
+}
+
+.nav-account-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background-color: #f5f5f4;
+  border: 1px solid #e7e5e4;
+  color: #44403c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+html.dark .nav-account-btn {
+  background-color: #27272a;
+  border-color: #3f3f46;
+  color: #e4e4e7;
+}
+
+.nav-account-btn:hover {
+  background-color: #e7e5e4;
+  color: #1c1917;
+  transform: translateY(-1px);
+}
+
+html.dark .nav-account-btn:hover {
+  background-color: #3f3f46;
+  color: #ffffff;
+}
+
+.nav-account-btn:active {
+  transform: translateY(0);
+}
+
+header nav .open-cart-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background-color: #f5f5f4;
+  border: 1px solid #e7e5e4;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+html.dark header nav .open-cart-btn {
+  background-color: #27272a;
+  border-color: #3f3f46;
+}
+
+header nav .open-cart-btn:hover {
+  background-color: #e7e5e4;
+  transform: translateY(-1px);
+}
+
+html.dark header nav .open-cart-btn:hover {
+  background-color: #3f3f46;
+}
+
+.nav-account-dropdown .dropdown-menu {
+  min-width: 195px;
+  border-radius: var(--radius-md);
+  padding: 0.4rem;
+  margin-top: 0.5rem !important;
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.16), 0 6px 14px -4px rgba(0, 0, 0, 0.1);
+  animation: navDropdownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html.dark .nav-account-dropdown .dropdown-menu {
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.7), 0 8px 16px -4px rgba(0, 0, 0, 0.45);
+}
+
+.nav-account-dropdown .dropdown-item {
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-account-dropdown .dropdown-item:hover {
+  transform: translateX(3px);
+}
+
+html[dir="rtl"] .nav-account-dropdown .dropdown-item:hover {
+  transform: translateX(-3px);
+}
+
+@keyframes navDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Buttons & CTAs
+   -------------------------------------------------------------------------- */
+.btn-artisan-primary {
+  background: linear-gradient(135deg, #A82222 0%, #8B1E1E 100%);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(139, 30, 30, 0.3);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-artisan-primary:hover {
+  background: linear-gradient(135deg, #B91C1C 0%, #991B1B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 30, 30, 0.45);
+}
+
+.btn-artisan-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89020 100%);
+  color: #1A1A1A !important;
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-artisan-gold:hover {
+  background: linear-gradient(135deg, #E5C04A 0%, #C59B27 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.45);
+}
+
+.btn-artisan-outline {
+  background: transparent;
+  color: var(--text-main) !important;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border-color);
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.btn-artisan-outline:hover {
+  border-color: var(--primary-bright);
+  color: var(--primary-bright) !important;
+  background-color: var(--bg-card-subtle);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Cards & Product Hover Effects
+   -------------------------------------------------------------------------- */
+.meat-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.meat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(139, 30, 30, 0.35);
+}
+
+html.dark .meat-card:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+.meat-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 230px;
+  background-color: #242428;
+}
+
+.meat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.meat-card:hover .meat-img {
+  transform: scale(1.06);
+}
+
+/* Badges */
+.badge-meat-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-pill);
+  max-width: 100%;
+  white-space: normal;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1.25;
+}
+
+.badge-beef {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+html.dark .badge-beef {
+  background-color: #7F1D1D;
+  color: #FCA5A5;
+}
+
+.badge-chicken {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+html.dark .badge-chicken {
+  background-color: #78350F;
+  color: #FDE68A;
+}
+
+.badge-mutton {
+  background-color: #E0E7FF;
+  color: #3730A3;
+}
+html.dark .badge-mutton {
+  background-color: #312E81;
+  color: #C7D2FE;
+}
+
+.badge-pork {
+  background-color: #FCE7F3;
+  color: #9D174D;
+}
+html.dark .badge-pork {
+  background-color: #831843;
+  color: #FBCFE8;
+}
+
+/* --------------------------------------------------------------------------
+   Uniform 2-Line Product & Menu Card Typography & Even Alignment
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Uniform 2-Line Bold Title & 3-4 Line Normal Description Card Typography
+   -------------------------------------------------------------------------- */
+.meat-card-title,
+.service-card h3,
+.pricing-card-title,
+.journal-product-card h3 {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  line-height: 1.35 !important;
+  height: 2.7em !important;
+  min-height: 2.7em !important;
+  max-height: 2.7em !important;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem !important;
+  overflow: hidden !important;
+}
+
+.meat-card-title a,
+.journal-product-card h3 a {
+  display: flex !important;
+  flex-direction: column !important;
+  text-decoration: none !important;
+  height: 100% !important;
+}
+
+.meat-card-title span,
+.meat-card-title a span,
+.service-card h3 span,
+.pricing-card-title span,
+.journal-product-card h3 span,
+.journal-product-card h3 a span {
+  display: block !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.blog-title,
+.blog-title a {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.35 !important;
+  height: 2.7em !important;
+  min-height: 2.7em !important;
+  max-height: 2.7em !important;
+  margin-bottom: 0.5rem !important;
+}
+
+@media (min-width: 1280px) {
+  .meat-card-title,
+  .service-card h3,
+  .pricing-card-title,
+  .blog-title,
+  .journal-product-card h3 {
+    font-size: 1rem;
+  }
+}
+
+.meat-card-desc,
+.service-card p,
+.blog-excerpt,
+.journal-product-card p {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+  height: 5.8em !important;
+  min-height: 5.8em !important;
+  max-height: 5.8em !important;
+  font-size: 0.8125rem;
+  word-break: normal;
+  overflow-wrap: break-word;
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 640px) {
+  .meat-card-desc,
+  .service-card p,
+  .blog-excerpt,
+  .journal-product-card p {
+    font-size: 0.84rem;
+  }
+}
+
+.meat-card-footer {
+  margin-top: auto !important;
+}
+
+/* Pricing Package Cards Uniform Description */
+.pricing-card-desc {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.4 !important;
+  height: 2.8em !important;
+  min-height: 2.8em !important;
+  max-height: 2.8em !important;
+  font-size: 0.8125rem;
+  margin-bottom: 1rem !important;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Cuts - Butcher Ticket Receipt Styling
+   -------------------------------------------------------------------------- */
+.butcher-ticket {
+  background-color: #FFFDF9;
+  border: 1px dashed #C8BCA8;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+html.dark .butcher-ticket {
+  background-color: #1E1E22;
+  border-color: #4A4A55;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.butcher-ticket::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 10%;
+  right: 10%;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, #D4AF37, #D4AF37 10px, transparent 10px, transparent 20px);
+}
+
+.ticket-stamp {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  border: 2px solid #8B1E1E;
+  color: #8B1E1E;
+  border-radius: 6px;
+  transform: rotate(-3deg);
+}
+
+html.dark .ticket-stamp {
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ Accordion Custom Styling
+   -------------------------------------------------------------------------- */
+.accordion-artisan .accordion-item {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md) !important;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.accordion-artisan .accordion-item:hover {
+  border-color: var(--primary-bright);
+}
+
+.accordion-artisan .accordion-button {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  font-weight: 600;
+  padding: 1.25rem 1.5rem;
+  box-shadow: none;
+}
+
+.accordion-artisan .accordion-button:not(.collapsed) {
+  background-color: var(--bg-card-subtle);
+  color: var(--primary-bright);
+}
+
+.accordion-artisan .accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.accordion-artisan .accordion-body {
+  color: var(--text-muted);
+  line-height: 1.7;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--bg-card);
+}
+
+/* --------------------------------------------------------------------------
+   Forms & Floating Labels
+   -------------------------------------------------------------------------- */
+.form-control-artisan {
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1.1rem;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+
+.form-control-artisan:focus {
+  background-color: var(--bg-card);
+  border-color: var(--primary-bright);
+  color: var(--text-main);
+  box-shadow: 0 0 0 4px var(--primary-glow);
+  outline: none;
+}
+
+html.dark .form-control-artisan {
+  background-color: #1F1F23;
+  color: #F3F4F6;
+  border-color: #33333C;
+}
+
+html.dark .form-control-artisan:focus {
+  background-color: #24242A;
+  color: #FFFFFF;
+}
+
+/* Form error states */
+.form-control-artisan.is-invalid {
+  border-color: #DC2626 !important;
+  background-image: none !important;
+}
+
+.invalid-feedback-custom {
+  color: #DC2626;
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+  display: none;
+}
+
+.form-control-artisan.is-invalid + .invalid-feedback-custom {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll-To-Top Button
+   -------------------------------------------------------------------------- */
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #8B1E1E;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  z-index: 990;
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTopBtn:hover {
+  background: #A82222;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 30, 30, 0.4);
+}
+
+html[dir="rtl"] #scrollToTopBtn {
+  right: auto;
+  left: 2rem;
+}
+
+
+/* --------------------------------------------------------------------------
+   Enquiry Cart Badge & Offcanvas
+   -------------------------------------------------------------------------- */
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #8B1E1E;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-card);
+}
+
+html[dir="rtl"] .cart-badge {
+  right: auto;
+  left: -8px;
+}
+
+/* Demo-style Amber circular cart badge inside mobile drawer */
+#mobileNavMenu .cart-badge {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  left: auto !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  padding: 0 !important;
+  border-radius: 9999px !important;
+  background-color: #d97706 !important; /* amber-600 */
+  color: #ffffff !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Drawer Navigation (Demo Image Format)
+   -------------------------------------------------------------------------- */
+#mobileNavMenu {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.35);
+  animation: mobileMenuSlideDown 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes mobileMenuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom slim scrollbar for mobileNavMenu matching demo */
+#mobileNavMenu::-webkit-scrollbar {
+  width: 5px;
+}
+#mobileNavMenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+#mobileNavMenu::-webkit-scrollbar-thumb {
+  background: rgba(168, 162, 158, 0.4);
+  border-radius: 9999px;
+}
+#mobileNavMenu::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 162, 158, 0.7);
+}
+
+/* Backdrop smooth fade */
+#mobileNavBackdrop {
+  animation: mobileBackdropFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes mobileBackdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   Toast / Notification Toast
+   -------------------------------------------------------------------------- */
+.toast-container-custom {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1080;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+html[dir="rtl"] .toast-container-custom {
+  right: auto;
+  left: 1.5rem;
+}
+
+.toast-custom {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary-bright);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.25rem;
+  min-width: 300px;
+  max-width: 400px;
+  animation: slideInToast 0.3s ease forwards;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+html[dir="rtl"] .toast-custom {
+  border-left: 1px solid var(--border-color);
+  border-right: 4px solid var(--primary-bright);
+}
+
+@keyframes slideInToast {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Hero & Showcase Dynamic Keyframe Animations
+   -------------------------------------------------------------------------- */
+@keyframes heroFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0.8deg);
+  }
+}
+
+@keyframes heroFloatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(9px) rotate(-0.8deg);
+  }
+}
+
+@keyframes pulseGlowSlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-float-slow {
+  animation: heroFloatSlow 5.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: heroFloatReverse 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlowSlow 4.5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 16s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   High-Quality Interactive Animations: 3D Parallax Tilt, Ember Aura & Particles
+   -------------------------------------------------------------------------- */
+@keyframes emberRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes particleFloat1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.8);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.9;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(-15px, -65px, 0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes particleFloat2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(18px, -80px, 0) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes particleFloat3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.7);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(-10px, -70px, 0) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes buttonPop {
+  0% { transform: scale(1); }
+  40% { transform: scale(0.92); }
+  75% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.animate-button-pop {
+  animation: buttonPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 3D Showcase Card Perspective Wrapper */
+.showcase-tilt-wrapper {
+  perspective: 1200px;
+}
+
+.showcase-tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease;
+}
+
+.showcase-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(circle 280px at var(--sheen-x, 50%) var(--sheen-y, 50%), rgba(251, 191, 36, 0.22), transparent 70%);
+  border-radius: inherit;
+  z-index: 15;
+}
+
+.showcase-tilt-card:hover .showcase-sheen {
+  opacity: 1;
+}
+
+/* Animated Rotating Ember Aura Border */
+.ember-aura-wrapper {
+  position: relative;
+}
+
+.ember-aura-glow {
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.6rem;
+  background: conic-gradient(from 0deg, #dc2626, #f59e0b, #b91c1c, #fbbf24, #dc2626);
+  filter: blur(10px);
+  opacity: 0.45;
+  animation: emberRotate 9s linear infinite;
+  z-index: 0;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.ember-aura-wrapper:hover .ember-aura-glow {
+  opacity: 0.75;
+  filter: blur(14px);
+}
+
+/* Ambient Floating Micro-Particles */
+.particle-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: 12;
+}
+
+.particle-ember {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.particle-ember-1 {
+  bottom: 25%;
+  left: 20%;
+  width: 5px;
+  height: 5px;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b, 0 0 16px rgba(245, 158, 11, 0.6);
+  animation: particleFloat1 4.5s ease-in-out infinite;
+}
+
+.particle-ember-2 {
+  bottom: 30%;
+  right: 25%;
+  width: 6px;
+  height: 6px;
+  background: #f43f5e;
+  box-shadow: 0 0 10px #f43f5e, 0 0 18px rgba(244, 63, 94, 0.6);
+  animation: particleFloat2 5.2s ease-in-out infinite 1.2s;
+}
+
+.particle-ember-3 {
+  bottom: 18%;
+  right: 40%;
+  width: 4px;
+  height: 4px;
+  background: #fbbf24;
+  box-shadow: 0 0 6px #fbbf24;
+  animation: particleFloat3 4.8s ease-in-out infinite 2.4s;
+}
+
+.particle-ember-4 {
+  bottom: 40%;
+  left: 35%;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+  animation: particleFloat1 6s ease-in-out infinite 0.7s;
+}
+
+.particle-ember-5 {
+  bottom: 22%;
+  left: 65%;
+  width: 5px;
+  height: 5px;
+  background: #f97316;
+  box-shadow: 0 0 8px #f97316;
+  animation: particleFloat2 5.6s ease-in-out infinite 1.9s;
+}
+
+/* Staggered Scroll-Reveal Animation */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced Motion Safety */
+@media (prefers-reduced-motion: reduce) {
+  .ember-aura-glow,
+  .particle-ember-1,
+  .particle-ember-2,
+  .particle-ember-3,
+  .particle-ember-4,
+  .particle-ember-5,
+  .animate-float-slow,
+  .animate-float-reverse,
+  .animate-pulse-glow,
+  .animate-spin-slow {
+    animation: none !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .showcase-tilt-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Dark Mode Block & Card Contrast Fixes
+   Overrides Bootstrap 5 !important utilities (like .bg-white) and ensures all
+   cards, blocks, tables, dropdowns, and form elements render with deep dark
+   surfaces and bright, readable text in Dark Mode across every page.
+   -------------------------------------------------------------------------- */
+
+/* 1. Global Container & Surface Dark Mode Adaptation */
+html.dark .bg-white:not(.keep-white) {
+  background-color: var(--bg-card) !important;
+}
+
+html.dark .bg-stone-50:not(.keep-light),
+html.dark .bg-slate-50:not(.keep-light),
+html.dark .bg-gray-50:not(.keep-light) {
+  background-color: var(--bg-card) !important;
+}
+
+html.dark .bg-stone-100:not(.keep-light),
+html.dark .bg-slate-100:not(.keep-light),
+html.dark .bg-gray-100:not(.keep-light) {
+  background-color: var(--bg-card-subtle) !important;
+}
+
+html.dark .bg-stone-200:not(.keep-light) {
+  background-color: #27272a !important;
+}
+
+/* 2. Forced Tailwind Dark Background Utilities (to beat Bootstrap 5 !important) */
+html.dark [class*="dark:bg-zinc-700"] {
+  background-color: #3f3f46 !important;
+}
+
+html.dark [class*="dark:bg-zinc-800"] {
+  background-color: #27272a !important;
+}
+
+html.dark [class*="dark:bg-zinc-800\/80"] {
+  background-color: rgba(39, 39, 42, 0.85) !important;
+}
+
+html.dark [class*="dark:bg-zinc-800\/70"] {
+  background-color: rgba(39, 39, 42, 0.75) !important;
+}
+
+html.dark [class*="dark:bg-zinc-800\/60"] {
+  background-color: rgba(39, 39, 42, 0.65) !important;
+}
+
+html.dark [class*="dark:bg-zinc-850"],
+html.dark [class*="dark:bg-zinc-900"] {
+  background-color: #18181b !important;
+}
+
+html.dark [class*="dark:bg-zinc-900\/90"] {
+  background-color: rgba(24, 24, 27, 0.9) !important;
+}
+
+html.dark [class*="dark:bg-zinc-900\/80"] {
+  background-color: rgba(24, 24, 27, 0.8) !important;
+}
+
+html.dark [class*="dark:bg-zinc-900\/60"] {
+  background-color: rgba(24, 24, 27, 0.6) !important;
+}
+
+html.dark [class*="dark:bg-zinc-900\/50"] {
+  background-color: rgba(24, 24, 27, 0.5) !important;
+}
+
+html.dark [class*="dark:bg-zinc-900\/40"] {
+  background-color: rgba(24, 24, 27, 0.4) !important;
+}
+
+html.dark [class*="dark:bg-zinc-950"] {
+  background-color: #09090b !important;
+}
+
+html.dark [class*="dark:bg-stone-800"] {
+  background-color: #292524 !important;
+}
+
+html.dark [class*="dark:bg-stone-900"] {
+  background-color: #1c1917 !important;
+}
+
+html.dark [class*="dark:bg-stone-950"] {
+  background-color: #0c0a09 !important;
+}
+
+html.dark [class*="dark:bg-\[\#0F0F10\]"] {
+  background-color: #0f0f10 !important;
+}
+
+html.dark [class*="dark:bg-\[\#151518\]"] {
+  background-color: #151518 !important;
+}
+
+/* 3. Dark Mode Borders */
+html.dark .border-stone-100,
+html.dark .border-stone-200 {
+  border-color: #27272a !important;
+}
+
+html.dark .border-stone-300 {
+  border-color: #3f3f46 !important;
+}
+
+/* 4. Bootstrap Components in Dark Mode */
+html.dark .card,
+html.dark .list-group-item {
+  background-color: var(--bg-card) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+html.dark .dropdown-menu {
+  background-color: #18181b !important;
+  border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+}
+
+html.dark .dropdown-item {
+  color: #d4d4d8 !important;
+}
+
+html.dark .dropdown-item:hover,
+html.dark .dropdown-item:focus {
+  background-color: rgba(185, 28, 28, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+html.dark .dropdown-divider {
+  border-color: #27272a !important;
+}
+
+html.dark .table {
+  --bs-table-color: #f4f4f5 !important;
+  --bs-table-bg: transparent !important;
+  --bs-table-border-color: #27272a !important;
+  color: #f4f4f5 !important;
+  border-color: #27272a !important;
+}
+
+html.dark .table th,
+html.dark .table td {
+  color: #f4f4f5 !important;
+  border-color: #27272a !important;
+}
+
+html.dark .table-hover > tbody > tr:hover > * {
+  --bs-table-color-state: #ffffff !important;
+  --bs-table-bg-state: rgba(255, 255, 255, 0.05) !important;
+}
+
+html.dark .modal-content {
+  background-color: #18181b !important;
+  color: #f4f4f5 !important;
+  border-color: #27272a !important;
+}
+
+html.dark .offcanvas {
+  background-color: #121214 !important;
+  color: #f4f4f5 !important;
+  border-color: #27272a !important;
+}
+
+html.dark .form-control,
+html.dark .form-select {
+  background-color: #1f1f23 !important;
+  color: #f4f4f5 !important;
+  border-color: #33333c !important;
+}
+
+html.dark .form-control:focus,
+html.dark .form-select:focus {
+  background-color: #24242a !important;
+  color: #ffffff !important;
+  border-color: #dc2626 !important;
+}
+
+html.dark .form-control::placeholder {
+  color: #71717a !important;
+}
+
+/* 5. Contrast Safety Fallbacks for Text in Dark Mode */
+html.dark .text-stone-900:not([class*="dark:text-"]) {
+  color: #f5f5f4 !important;
+}
+
+html.dark .text-stone-800:not([class*="dark:text-"]) {
+  color: #e7e5e4 !important;
+}
+
+html.dark .text-stone-700:not([class*="dark:text-"]) {
+  color: #d6d3d1 !important;
+}
+
+html.dark .text-stone-600:not([class*="dark:text-"]) {
+  color: #a8a29e !important;
+}
+
+html.dark .text-stone-500:not([class*="dark:text-"]) {
+  color: #a8a29e !important;
+}
+
+html.dark .text-black:not([class*="dark:text-"]),
+html.dark .text-dark:not([class*="dark:text-"]) {
+  color: #f5f5f4 !important;
+}
+
+/* 6. Smooth Scrolling & Anchor Alignment for Catalog Deep Linking */
+html {
+  scroll-behavior: smooth;
+}
+
+#productsCatalogSection {
+  scroll-margin-top: 95px;
+}
+
