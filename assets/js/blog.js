@@ -1084,7 +1084,7 @@ const BUTCHER_ARTICLES = {
       unit: '45oz (Showpiece Cut)',
       category: 'Prime Beef',
       tag: "Today's Reserve Cut",
-      image: 'assets/images/blog/tomahawk-pitmaster-sear.jpg',
+      image: 'assets/images/blog/dry-aged-tomahawk-steak.jpg',
       desc: 'Massive long-bone bone-in ribeye frenched by hand with BMS 7+ marbling aged 35-45 days in our Himalayan salt vaults for nutty steakhouse depth.'
     },
     contentHtml: `
