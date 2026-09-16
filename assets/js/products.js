@@ -87,7 +87,8 @@
       category: 'beef',
       categoryLabel: 'Prime Beef',
       price: 64.00,
-      unit: '45oz (Showpiece Cut)',
+      unit: '45oz',
+      portion: 'Showpiece Cut',
       tag: "Today's Reserve Cut",
       badgeClass: 'badge-beef',
       image: 'assets/images/image.png',
@@ -101,7 +102,8 @@
       category: 'beef',
       categoryLabel: 'Prime Beef',
       price: 38.50,
-      unit: '1.2kg (3-Bone)',
+      unit: '1.2kg',
+      portion: '3-Bone Plate',
       tag: 'Pitmaster Cut',
       badgeClass: 'badge-beef',
       image: 'assets/images/Decoding Beef Rib.jpg',
@@ -205,7 +207,8 @@
       category: 'mutton',
       categoryLabel: 'Spring Mutton',
       price: 29.50,
-      unit: '1kg (2 pcs)',
+      unit: '1kg',
+      portion: '2 pcs',
       tag: 'Slow-Cook Master',
       badgeClass: 'badge-mutton',
       image: 'assets/images/mutton/lamb-shanks.jpg',
@@ -233,7 +236,8 @@
       category: 'mutton',
       categoryLabel: 'Spring Mutton',
       price: 36.00,
-      unit: '600g (4 pcs)',
+      unit: '600g',
+      portion: '4 pcs',
       tag: 'Tender Mini T-Bones',
       badgeClass: 'badge-mutton',
       image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?auto=format&fit=crop&w=800&q=80',
@@ -250,7 +254,7 @@
       unit: '2.2kg',
       tag: 'Centerpiece Cut',
       badgeClass: 'badge-mutton',
-      image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/Bone-In Whole Leg.jpg',
       description: 'A traditional centerpiece roast, naturally aged for seven days. Succulent, earthy flavor and tender slices when carved warm.'
     },
 
@@ -263,7 +267,8 @@
       category: 'pork',
       categoryLabel: 'Berkshire Pork',
       price: 27.50,
-      unit: '700g (2 pcs)',
+      unit: '700g',
+      portion: '2 pcs',
       tag: 'Heritage Kurobuta',
       badgeClass: 'badge-pork',
       image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80',
@@ -319,7 +324,8 @@
       category: 'pork',
       categoryLabel: 'Berkshire Pork',
       price: 16.50,
-      unit: '800g (6 links)',
+      unit: '800g',
+      portion: '6 links',
       tag: 'Natural Hog Casing',
       badgeClass: 'badge-pork',
       image: 'assets/images/products/artisan-butcher-sausages.jpg',
@@ -335,7 +341,8 @@
       category: 'box',
       categoryLabel: 'Curated Box',
       price: 149.00,
-      unit: 'box (approx. 14 lbs)',
+      unit: 'box',
+      portion: 'approx. 14 lbs',
       tag: 'Weekly Essential',
       badgeClass: 'badge-beef',
       image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=600&q=80',
@@ -349,7 +356,8 @@
       category: 'box',
       categoryLabel: 'Curated Box',
       price: 229.00,
-      unit: 'box (approx. 24 lbs)',
+      unit: 'box',
+      portion: 'approx. 24 lbs',
       tag: 'Smokehouse Special',
       badgeClass: 'badge-pork',
       image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
@@ -363,7 +371,8 @@
       category: 'box',
       categoryLabel: 'Curated Box',
       price: 319.00,
-      unit: 'box (Gourmet Cut Flight)',
+      unit: 'box',
+      portion: 'Gourmet Cut Flight',
       tag: 'Dry Aged Reserve',
       badgeClass: 'badge-beef',
       image: 'assets/images/hospitality-supply.jpg',
@@ -377,7 +386,8 @@
       category: 'box',
       categoryLabel: 'Curated Box',
       price: 589.00,
-      unit: 'box (Serves 25–30 guests)',
+      unit: 'box',
+      portion: 'Serves 25–30 guests',
       tag: 'Event & Chef Crate',
       badgeClass: 'badge-mutton',
       image: 'assets/images/whole-roasts.jpg',
@@ -391,7 +401,8 @@
       category: 'box',
       categoryLabel: 'Curated Box',
       price: 195.00,
-      unit: 'box (approx. 16 lbs)',
+      unit: 'box',
+      portion: 'approx. 16 lbs',
       tag: 'Weekend BBQ Reserve',
       badgeClass: 'badge-beef',
       image: 'assets/images/products/grill-master-reserve-box.jpg',
@@ -405,7 +416,8 @@
       category: 'box',
       categoryLabel: 'Curated Box',
       price: 275.00,
-      unit: 'box (approx. 18 lbs)',
+      unit: 'box',
+      portion: 'approx. 18 lbs',
       tag: 'Farmhouse Reserve',
       badgeClass: 'badge-mutton',
       image: 'assets/images/products/farmhouse-feast-crate.jpg',
@@ -763,6 +775,18 @@
     });
   }
 
+  function parseProductUnit(unitStr) {
+    if (!unitStr) return { main: 'cut', note: '' };
+    const match = String(unitStr).match(/^([^(]+)(?:\s*\((.*)\))?$/);
+    if (match) {
+      return {
+        main: match[1].trim(),
+        note: match[2] ? match[2].trim() : ''
+      };
+    }
+    return { main: String(unitStr), note: '' };
+  }
+
   // Render product cards on products.html
   function renderProducts(items) {
     const grid = document.getElementById('productsGrid');
@@ -798,9 +822,11 @@
     grid.innerHTML = items.map((p, idx) => {
       const badge1Text = p.badge1 || p.categoryLabel;
       const badge2Text = p.badge2 || p.tag;
+      const unitInfo = parseProductUnit(p.unit);
+      const displayUnit = unitInfo.main;
       return `
       <div class="meat-card reveal-on-scroll flex flex-col h-full group" data-category="${p.category}" id="card-${p.id}" style="transition-delay: ${(idx % 8) * 55}ms;">
-        <a href="product-details.html?id=${p.id}" class="meat-img-wrapper block relative overflow-hidden" aria-label="View specifications for ${p.name}">
+        <a href="product-details.html?id=${p.id}" class="meat-img-wrapper block relative overflow-hidden flex-shrink-0" aria-label="View specifications for ${p.name}">
           <img src="${p.image}" alt="${p.name} - Fresh Butcher Cut" class="meat-img group-hover:scale-105 transition duration-500" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'250\\' fill=\\'%238B1E1E\\'><rect width=\\'400\\' height=\\'250\\' fill=\\'%2318181B\\'/><text x=\\'50%\\' y=\\'50%\\' font-size=\\'20\\' text-anchor=\\'middle\\' fill=\\'%23D4AF37\\'>${p.name}</text></svg>'">
           <!-- Quality Badges (Stacked vertically at top-start to guarantee zero overlap on any screen size) -->
           <div class="absolute top-3 start-3 flex flex-col items-start gap-1.5 z-10 pointer-events-none max-w-[92%]">
@@ -811,7 +837,7 @@
           </div>
         </a>
 
-        <div class="p-4 sm:p-5 flex flex-col flex-grow justify-between">
+        <div class="p-4 sm:p-5 flex flex-col flex-1 justify-between">
           <div>
             <a href="product-details.html?id=${p.id}" class="text-decoration-none block">
               <h3 class="meat-card-title text-[15px] xl:text-base font-bold text-stone-900 dark:text-stone-100 group-hover:text-red-700 dark:group-hover:text-red-400 transition" title="${p.name}">
@@ -824,22 +850,22 @@
             </p>
           </div>
 
-          <div class="meat-card-footer mt-4 pt-3.5 border-t border-stone-200 dark:border-zinc-800 flex items-center justify-between gap-2">
-            <div>
-              <span class="text-[11px] text-stone-500 dark:text-stone-400 uppercase tracking-wider block">Estimated Price</span>
-              <div class="flex items-baseline gap-1">
-                <span class="text-lg sm:text-xl font-black text-red-700 dark:text-red-400">$${p.price.toFixed(2)}</span>
-                <span class="text-xs text-stone-500 dark:text-stone-400">/ ${p.unit}</span>
+          <div class="meat-card-footer mt-auto pt-3.5 border-t border-stone-200 dark:border-zinc-800 flex items-center justify-between gap-2">
+            <div class="min-w-0 flex-shrink">
+              <span class="text-[10px] sm:text-[11px] text-stone-500 dark:text-stone-400 uppercase tracking-wider block font-semibold truncate">Estimated Price</span>
+              <div class="flex items-baseline gap-1 flex-nowrap">
+                <span class="text-base sm:text-lg xl:text-xl font-black text-red-700 dark:text-red-400 whitespace-nowrap">$${p.price.toFixed(2)}</span>
+                <span class="text-xs text-stone-500 dark:text-stone-400 font-medium whitespace-nowrap">/ ${displayUnit}</span>
               </div>
             </div>
 
-            <div class="flex items-center gap-2">
-              <a href="product-details.html?id=${p.id}" class="p-2.5 rounded-xl border border-stone-300 dark:border-zinc-700 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800 transition text-xs flex items-center justify-center" title="View Cut Details" aria-label="View Cut Details for ${p.name}">
+            <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
+              <a href="product-details.html?id=${p.id}" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl border border-stone-300 dark:border-zinc-700 text-stone-700 dark:text-stone-300 hover:bg-stone-100 dark:hover:bg-zinc-800 hover:text-red-700 dark:hover:text-red-400 transition text-xs flex items-center justify-center flex-shrink-0" title="View Cut Details" aria-label="View Cut Details for ${p.name}">
                 <i class="bi bi-eye"></i>
               </a>
-              <button class="add-enquiry-btn btn-artisan-primary text-xs !py-2.5 !px-3" data-id="${p.id}" aria-label="Add ${p.name} to enquiry">
+              <button class="add-enquiry-btn btn-artisan-primary text-xs !py-2 sm:!py-2.5 !px-2.5 sm:!px-3 flex items-center justify-center gap-1 flex-shrink-0" data-id="${p.id}" aria-label="Add ${p.name} to enquiry">
                 <i class="bi bi-cart-plus"></i>
-                <span class="hidden sm:inline ms-1">Add</span>
+                <span class="hidden sm:inline ms-1 font-bold">Add</span>
               </button>
             </div>
           </div>

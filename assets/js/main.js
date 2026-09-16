@@ -252,6 +252,83 @@
     });
   }
 
+  // --------------------------------------------------------------------------
+  // Animated Stat Counters (Count-up from 0 to end value on scroll)
+  // --------------------------------------------------------------------------
+  function initStatCounters() {
+    const counterEls = document.querySelectorAll('.stat-counter, [data-counter-target]');
+    if (!counterEls.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function animateCounter(el) {
+      let target = el.getAttribute('data-counter-target') || el.getAttribute('data-target');
+      let prefix = el.getAttribute('data-counter-prefix') || el.getAttribute('data-prefix') || '';
+      let suffix = el.getAttribute('data-counter-suffix') || el.getAttribute('data-suffix') || '';
+      const duration = parseInt(el.getAttribute('data-counter-duration') || '1800', 10);
+      const decimals = parseInt(el.getAttribute('data-counter-decimals') || '0', 10);
+
+      if (target === null || target === undefined) {
+        const text = el.textContent.trim();
+        const match = text.match(/^(.*?)(\d+(?:\.\d+)?)([^0-9]*)$/);
+        if (match) {
+          prefix = match[1];
+          target = parseFloat(match[2]);
+          suffix = match[3];
+        } else {
+          return;
+        }
+      } else {
+        target = parseFloat(target);
+      }
+
+      if (prefersReducedMotion) {
+        el.textContent = `${prefix}${decimals > 0 ? target.toFixed(decimals) : Math.round(target)}${suffix}`;
+        return;
+      }
+
+      // Initialize starting display to 0
+      el.textContent = `${prefix}0${suffix}`;
+
+      const startTime = performance.now();
+
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease-out cubic: fast start, soft deceleration
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+        const currentVal = easeOut * target;
+
+        const formattedVal = decimals > 0 ? currentVal.toFixed(decimals) : Math.round(currentVal);
+        el.textContent = `${prefix}${formattedVal}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = `${prefix}${decimals > 0 ? target.toFixed(decimals) : Math.round(target)}${suffix}`;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
+
+      counterEls.forEach(el => observer.observe(el));
+    } else {
+      counterEls.forEach(el => animateCounter(el));
+    }
+  }
+
   // Document Ready
   document.addEventListener('DOMContentLoaded', () => {
     initStickyNavbar();
@@ -260,5 +337,6 @@
     initDynamicYear();
     initCartTriggers();
     initImageLightbox();
+    initStatCounters();
   });
 })();

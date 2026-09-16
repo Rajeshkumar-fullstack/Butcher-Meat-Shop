@@ -297,6 +297,32 @@
 }
 
 /* --------------------------------------------------------------------------
+   Product Cards Equal Height & Alignment Optimization
+   -------------------------------------------------------------------------- */
+#productsGrid,
+#journalProductsGrid {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+
+.meat-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.meat-card-footer {
+  margin-top: auto !important;
+  flex-shrink: 0 !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279.98px) {
+  .meat-card .meat-img-wrapper {
+    height: 210px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Print Styles for Butcher Ticket & Receipts
    -------------------------------------------------------------------------- */
 @media print {

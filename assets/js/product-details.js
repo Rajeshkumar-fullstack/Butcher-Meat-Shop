@@ -851,9 +851,9 @@
       badge1: 'Spring Mutton • Centerpiece Cut',
       badge2: 'Naturally 7-Day Aged',
       portionNote: 'A traditional centerpiece roast, naturally aged for seven days. Succulent, earthy flavor and tender slices when carved warm. Serves 6–8.',
-      image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/Bone-In Whole Leg.jpg',
       gallery: [
-        'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=800&q=80',
+        'assets/images/Bone-In Whole Leg.jpg',
         'assets/images/mutton/rack-of-lamb.jpg',
         'assets/images/mutton/lamb-shanks.jpg',
         'assets/images/mutton/mutton-curry-cut.jpg'
@@ -1172,6 +1172,7 @@
     if (mainImg) {
       mainImg.src = product.image;
       mainImg.alt = product.name;
+      mainImg.style.objectPosition = (product.id === 'mut-5') ? 'center 52%' : '';
     }
 
     // Breadcrumbs

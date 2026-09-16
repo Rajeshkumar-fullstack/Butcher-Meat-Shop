@@ -1070,7 +1070,7 @@ const BUTCHER_ARTICLES = {
     author: 'Marco Rossi, Head Butcher',
     readTime: '8 Min Read',
     comments: '16 Comments',
-    heroImage: 'assets/images/blog/dry-aged-tomahawk-steak.jpg',
+    heroImage: 'assets/images/blog/tomahawk-pitmaster-sear.jpg',
     heroImagePosition: 'center 50%',
     heroAlt: 'The Dry-Aged Tomahawk: Fire, Bone & Pitmaster Carving',
     heroCaption: '45-day Himalayan dry-aged Prime Tomahawk ribeye with an 8-inch frenched bone handle, carved tableside over hardwood embers.',
@@ -1084,7 +1084,7 @@ const BUTCHER_ARTICLES = {
       unit: '45oz (Showpiece Cut)',
       category: 'Prime Beef',
       tag: "Today's Reserve Cut",
-      image: 'assets/images/blog/dry-aged-tomahawk-steak.jpg',
+      image: 'assets/images/blog/tomahawk-pitmaster-sear.jpg',
       desc: 'Massive long-bone bone-in ribeye frenched by hand with BMS 7+ marbling aged 35-45 days in our Himalayan salt vaults for nutty steakhouse depth.'
     },
     contentHtml: `
