@@ -329,8 +329,103 @@
     }
   }
 
+  // --------------------------------------------------------------------------
+  // Global Phone Number Input Protection (Disallow Alphabets)
+  // --------------------------------------------------------------------------
+  function initPhoneInputs() {
+    function restrictPhoneInput(input) {
+      if (!input) return;
+      input.setAttribute('inputmode', 'tel');
+      input.setAttribute('autocomplete', 'tel');
+
+      if (input.dataset.phoneRestricted) return;
+      input.dataset.phoneRestricted = 'true';
+
+      // Disallow alphabetic characters on beforeinput (modern keyboards & mobile)
+      input.addEventListener('beforeinput', (e) => {
+        if (e.data && /[a-zA-Z]/.test(e.data)) {
+          e.preventDefault();
+        }
+      });
+
+      // Disallow alphabetic characters on keydown
+      input.addEventListener('keydown', (e) => {
+        // Allow control keys (backspace, delete, tab, arrows, enter, escape, ctrl/cmd combos)
+        if (
+          e.key === 'Backspace' ||
+          e.key === 'Delete' ||
+          e.key === 'Tab' ||
+          e.key === 'Escape' ||
+          e.key === 'Enter' ||
+          e.key.startsWith('Arrow') ||
+          e.key === 'Home' ||
+          e.key === 'End' ||
+          e.ctrlKey ||
+          e.metaKey
+        ) {
+          return;
+        }
+
+        // Strictly reject alphabetic characters
+        if (/^[a-zA-Z]$/.test(e.key)) {
+          e.preventDefault();
+        }
+      });
+
+      // Sanitize input in real-time (removes any pasted/entered letters)
+      input.addEventListener('input', (e) => {
+        const originalVal = e.target.value;
+        const cleaned = originalVal.replace(/[^0-9+\-()\s]/g, '');
+        if (originalVal !== cleaned) {
+          e.target.value = cleaned;
+        }
+      });
+
+      // Handle paste explicitly to strip letters before insertion
+      input.addEventListener('paste', (e) => {
+        const pastedText = (e.clipboardData || window.clipboardData)?.getData('text') || '';
+        if (/[a-zA-Z]/.test(pastedText)) {
+          e.preventDefault();
+          const cleanText = pastedText.replace(/[^0-9+\-()\s]/g, '');
+          const start = input.selectionStart || 0;
+          const end = input.selectionEnd || 0;
+          input.value = input.value.substring(0, start) + cleanText + input.value.substring(end);
+          input.selectionStart = input.selectionEnd = start + cleanText.length;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+      });
+    }
+
+    document.querySelectorAll('input[type="tel"], #modalCustPhone, #customerPhone, #contactPhone, #serviceCustPhone, #regPhone').forEach(restrictPhoneInput);
+
+    // Watch for dynamically loaded inputs (e.g. modals)
+    if ('MutationObserver' in window) {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach(m => {
+          m.addedNodes.forEach(node => {
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              if (node.matches && (node.matches('input[type="tel"]') || node.id === 'modalCustPhone')) {
+                restrictPhoneInput(node);
+              }
+              if (node.querySelectorAll) {
+                node.querySelectorAll('input[type="tel"], #modalCustPhone, #customerPhone, #contactPhone, #serviceCustPhone, #regPhone').forEach(restrictPhoneInput);
+              }
+            }
+          });
+        });
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  }
+
+  // Run phone protection immediately if document is already ready
+  if (document.readyState !== 'loading') {
+    initPhoneInputs();
+  }
+
   // Document Ready
   document.addEventListener('DOMContentLoaded', () => {
+    initPhoneInputs();
     initStickyNavbar();
     initMobileNav();
     initScrollToTop();

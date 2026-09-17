@@ -43,9 +43,94 @@
     ]
   };
 
-  // Helper validation regexes
+  // Helper validation regexes & functions
   const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const PHONE_REGEX = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/;
+  function isValidPhone(val) {
+    if (!val || /[a-zA-Z]/.test(val)) return false;
+    const digits = val.replace(/\D/g, '');
+    return digits.length >= 7 && digits.length <= 15;
+  }
+
+  function isValidName(val) {
+    if (!val || val.trim().length < 2) return false;
+    if (/^\d+$/.test(val.trim())) return false;
+    return true;
+  }
+
+  function attachPhoneInputRestrictions(phoneInput) {
+    if (!phoneInput || phoneInput.dataset.phoneBound) return;
+    phoneInput.dataset.phoneBound = 'true';
+    phoneInput.setAttribute('inputmode', 'tel');
+    phoneInput.setAttribute('autocomplete', 'tel');
+    phoneInput.setAttribute('maxlength', '20');
+
+    phoneInput.addEventListener('keydown', (e) => {
+      if (
+        e.key === 'Backspace' ||
+        e.key === 'Delete' ||
+        e.key === 'Tab' ||
+        e.key === 'Escape' ||
+        e.key === 'Enter' ||
+        e.key.startsWith('Arrow') ||
+        e.key === 'Home' ||
+        e.key === 'End' ||
+        e.ctrlKey ||
+        e.metaKey
+      ) {
+        return;
+      }
+      if (/^[a-zA-Z]$/.test(e.key)) {
+        e.preventDefault();
+        validateField(phoneInput, () => false, 'Letters are not allowed in phone number.');
+        setTimeout(() => {
+          if (isValidPhone(phoneInput.value.trim())) {
+            validateField(phoneInput, () => true, '');
+          }
+        }, 2500);
+        return;
+      }
+      if (!/^[0-9+\-()\s]$/.test(e.key)) {
+        e.preventDefault();
+        validateField(phoneInput, () => false, 'Only digits and +, -, (, ) are allowed.');
+        setTimeout(() => {
+          if (isValidPhone(phoneInput.value.trim())) {
+            validateField(phoneInput, () => true, '');
+          }
+        }, 2500);
+      }
+    });
+
+    phoneInput.addEventListener('input', (e) => {
+      const original = e.target.value;
+      const cleaned = original.replace(/[^0-9+\-()\s]/g, '');
+      if (original !== cleaned) {
+        e.target.value = cleaned;
+        validateField(phoneInput, () => false, 'Letters are not allowed in phone number.');
+      } else if (cleaned.length > 0 && !isValidPhone(cleaned)) {
+        const digits = cleaned.replace(/\D/g, '');
+        if (digits.length < 7) {
+          validateField(phoneInput, () => false, 'Phone number must have at least 7 digits.');
+        } else {
+          validateField(phoneInput, () => true, '');
+        }
+      } else {
+        validateField(phoneInput, () => true, '');
+      }
+    });
+
+    phoneInput.addEventListener('paste', (e) => {
+      const pasted = (e.clipboardData || window.clipboardData)?.getData('text') || '';
+      if (/[a-zA-Z]/.test(pasted)) {
+        e.preventDefault();
+        const cleanText = pasted.replace(/[^0-9+\-()\s]/g, '');
+        const start = phoneInput.selectionStart || 0;
+        const end = phoneInput.selectionEnd || 0;
+        phoneInput.value = phoneInput.value.substring(0, start) + cleanText + phoneInput.value.substring(end);
+        phoneInput.selectionStart = phoneInput.selectionEnd = start + cleanText.length;
+        phoneInput.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
+  }
 
   // Validate a single field
   function validateField(input, testFn, errorMsg) {
@@ -226,9 +311,9 @@
       const dateInput = document.getElementById('preferredDeliveryDate');
 
       let isValid = true;
-
-      isValid = validateField(nameInput, val => val.length >= 2, 'Please enter your full name (at least 2 characters)') && isValid;
-      isValid = validateField(phoneInput, val => PHONE_REGEX.test(val) || val.length >= 8, 'Please enter a valid phone number') && isValid;
+      if (phoneInput) attachPhoneInputRestrictions(phoneInput);
+      isValid = validateField(nameInput, val => isValidName(val), 'Please enter your full name (at least 2 characters, cannot be numbers only)') && isValid;
+      isValid = validateField(phoneInput, val => isValidPhone(val), 'Please enter a valid phone number (digits only)') && isValid;
       isValid = validateField(emailInput, val => EMAIL_REGEX.test(val), 'Please enter a valid email address') && isValid;
       isValid = validateField(addressInput, val => val.length >= 6, 'Please enter your complete delivery address') && isValid;
       if (dateInput) {
@@ -281,9 +366,9 @@
       const messageInput = document.getElementById('contactMessage');
 
       let isValid = true;
-
-      isValid = validateField(nameInput, val => val.length >= 2, 'Please provide your full name') && isValid;
-      isValid = validateField(phoneInput, val => PHONE_REGEX.test(val) || val.length >= 8, 'Please provide a valid phone number') && isValid;
+      if (phoneInput) attachPhoneInputRestrictions(phoneInput);
+      isValid = validateField(nameInput, val => isValidName(val), 'Please provide your full name (cannot be numbers only)') && isValid;
+      isValid = validateField(phoneInput, val => isValidPhone(val), 'Please provide a valid phone number (digits only)') && isValid;
       isValid = validateField(emailInput, val => EMAIL_REGEX.test(val), 'Please provide a valid email address') && isValid;
       isValid = validateField(messageInput, val => val.length >= 10, 'Please write a message of at least 10 characters') && isValid;
 
@@ -316,21 +401,34 @@
     const form = document.getElementById('cartEnquiryModalForm');
     if (!form) return;
 
+    const name = document.getElementById('modalCustName');
+    const phone = document.getElementById('modalCustPhone');
+    const email = document.getElementById('modalCustEmail');
+    const address = document.getElementById('modalCustAddress');
+
+    if (phone) attachPhoneInputRestrictions(phone);
+
+    if (name) {
+      name.addEventListener('input', () => {
+        validateField(name, val => isValidName(val), 'Please enter your full name (cannot be numbers only)');
+      });
+    }
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const name = document.getElementById('modalCustName');
-      const phone = document.getElementById('modalCustPhone');
-      const email = document.getElementById('modalCustEmail');
-      const address = document.getElementById('modalCustAddress');
-
       let isValid = true;
-      isValid = validateField(name, val => val.length >= 2, 'Enter your name') && isValid;
-      isValid = validateField(phone, val => PHONE_REGEX.test(val) || val.length >= 8, 'Enter your phone number') && isValid;
+      isValid = validateField(name, val => isValidName(val), 'Please enter your full name (cannot be numbers only)') && isValid;
+      isValid = validateField(phone, val => isValidPhone(val), 'Enter a valid phone number (digits only)') && isValid;
       isValid = validateField(email, val => EMAIL_REGEX.test(val), 'Enter a valid email') && isValid;
       isValid = validateField(address, val => val.length >= 5, 'Enter your delivery address') && isValid;
 
-      if (!isValid) return;
+      if (!isValid) {
+        if (window.showToast) {
+          window.showToast('Please correct the highlighted errors in the form.', 'error');
+        }
+        return;
+      }
 
       // Close modal
       const modalEl = document.getElementById('enquiryModal');
@@ -352,8 +450,20 @@
     });
   }
 
+  function initAllPhoneInputs() {
+    document.querySelectorAll('input[type="tel"]').forEach(attachPhoneInputRestrictions);
+    const modalEl = document.getElementById('enquiryModal');
+    if (modalEl) {
+      modalEl.addEventListener('show.bs.modal', () => {
+        const p = document.getElementById('modalCustPhone');
+        if (p) attachPhoneInputRestrictions(p);
+      });
+    }
+  }
+
   // Init on DOM ready
   document.addEventListener('DOMContentLoaded', () => {
+    initAllPhoneInputs();
     initCustomCutsForm();
     initContactForm();
     initEnquiryModalForm();

@@ -137,46 +137,51 @@
       </div>
 
       <!-- Registration Form -->
-      <form id="registerForm" class="space-y-4">
+      <form id="registerForm" class="space-y-4" novalidate>
         <div>
-          <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Full Name *</label>
+          <label for="regFullName" class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Full Name *</label>
           <div class="relative">
             <i class="bi bi-person absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
-            <input type="text" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Julian Vance" required>
+            <input type="text" id="regFullName" name="fullname" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Julian Vance" autocomplete="name" required>
           </div>
+          <div id="nameFeedback" class="invalid-feedback-custom text-xs text-red-600 dark:text-red-400 mt-1"></div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Email Address *</label>
+            <label for="regEmail" class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Email Address *</label>
             <div class="relative">
               <i class="bi bi-envelope absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
-              <input type="email" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="julian@example.com" required>
+              <input type="email" id="regEmail" name="email" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="julian@example.com" autocomplete="email" required>
             </div>
+            <div id="emailFeedback" class="invalid-feedback-custom text-xs text-red-600 dark:text-red-400 mt-1"></div>
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Mobile Phone *</label>
+            <label for="regPhone" class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Mobile Phone *</label>
             <div class="relative">
               <i class="bi bi-telephone absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
-              <input type="tel" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="(555) 382-0199" required>
+              <input type="tel" id="regPhone" name="phone" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="(555) 382-0199" inputmode="tel" autocomplete="tel" maxlength="20" required>
             </div>
+            <div id="phoneFeedback" class="invalid-feedback-custom text-xs text-red-600 dark:text-red-400 mt-1"></div>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Password *</label>
+            <label for="regPassword" class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Password *</label>
             <div class="relative">
               <i class="bi bi-lock absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
               <input type="password" id="regPassword" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Min. 8 characters" required minlength="8">
             </div>
+            <div id="passFeedback" class="invalid-feedback-custom text-xs text-red-600 dark:text-red-400 mt-1"></div>
           </div>
           <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Confirm Password *</label>
+            <label for="regConfirmPassword" class="block text-xs font-bold uppercase tracking-wider text-stone-700 dark:text-stone-300 mb-1.5">Confirm Password *</label>
             <div class="relative">
               <i class="bi bi-shield-lock absolute start-3.5 top-1/2 -translate-y-1/2 text-stone-400 dark:text-stone-500 text-sm"></i>
               <input type="password" id="regConfirmPassword" class="form-control-artisan w-full ps-10 pe-4 py-2.5 rounded-xl text-xs bg-stone-50 dark:bg-stone-800/80 border border-stone-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 placeholder:text-stone-400 dark:placeholder:text-stone-500 focus:bg-white dark:focus:bg-stone-800 focus:outline-none focus:border-red-600 dark:focus:border-red-500 transition" placeholder="Repeat password" required>
             </div>
+            <div id="confirmFeedback" class="invalid-feedback-custom text-xs text-red-600 dark:text-red-400 mt-1"></div>
           </div>
         </div>
 
@@ -205,9 +210,10 @@
 
         <div class="pt-2">
           <label class="flex items-start gap-2 cursor-pointer text-xs text-stone-600 dark:text-stone-400">
-            <input type="checkbox" required class="rounded mt-0.5 bg-stone-100 dark:bg-stone-800 border-stone-300 dark:border-stone-700 text-red-700 focus:ring-red-700">
+            <input type="checkbox" id="termsCheck" required class="rounded mt-0.5 bg-stone-100 dark:bg-stone-800 border-stone-300 dark:border-stone-700 text-red-700 focus:ring-red-700">
             <span>I agree to Prime &amp; Cut's 0°C–4°C Cold Chain Transit Protocol and Terms of Service.</span>
           </label>
+          <div id="termsFeedback" class="invalid-feedback-custom text-xs text-red-600 dark:text-red-400 mt-1"></div>
         </div>
 
         <button type="submit" class="w-full btn-artisan-primary py-3 text-xs font-bold shadow-lg mt-3">
@@ -240,18 +246,272 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const regForm = document.getElementById('registerForm');
+      const fullName = document.getElementById('regFullName');
+      const email = document.getElementById('regEmail');
+      const phone = document.getElementById('regPhone');
       const pass = document.getElementById('regPassword');
       const confirmPass = document.getElementById('regConfirmPassword');
+      const terms = document.getElementById('termsCheck');
 
+      const nameFeedback = document.getElementById('nameFeedback');
+      const emailFeedback = document.getElementById('emailFeedback');
+      const phoneFeedback = document.getElementById('phoneFeedback');
+      const passFeedback = document.getElementById('passFeedback');
+      const confirmFeedback = document.getElementById('confirmFeedback');
+      const termsFeedback = document.getElementById('termsFeedback');
+
+      function showFieldError(input, feedbackEl, message) {
+        if (input) input.classList.add('is-invalid', 'border-red-500');
+        if (feedbackEl) {
+          feedbackEl.textContent = message;
+          feedbackEl.style.display = 'block';
+        }
+      }
+
+      function clearFieldError(input, feedbackEl) {
+        if (input) input.classList.remove('is-invalid', 'border-red-500');
+        if (feedbackEl) {
+          feedbackEl.textContent = '';
+          feedbackEl.style.display = 'none';
+        }
+      }
+
+      // --- Real-time restriction & validation for Mobile Phone ---
+      if (phone) {
+        // Intercept and prevent typing alphabets immediately
+        phone.addEventListener('keydown', (e) => {
+          if (
+            e.key === 'Backspace' ||
+            e.key === 'Delete' ||
+            e.key === 'Tab' ||
+            e.key === 'Escape' ||
+            e.key === 'Enter' ||
+            e.key.startsWith('Arrow') ||
+            e.key === 'Home' ||
+            e.key === 'End' ||
+            e.ctrlKey ||
+            e.metaKey
+          ) {
+            return;
+          }
+
+          if (/^[a-zA-Z]$/.test(e.key)) {
+            e.preventDefault();
+            showFieldError(phone, phoneFeedback, 'Letters are not allowed in phone number.');
+            setTimeout(() => {
+              if (phone.value.trim().length >= 7) {
+                clearFieldError(phone, phoneFeedback);
+              }
+            }, 2500);
+            return;
+          }
+
+          if (!/^[0-9+\-()\s]$/.test(e.key)) {
+            e.preventDefault();
+            showFieldError(phone, phoneFeedback, 'Only numbers and +, -, (, ) are allowed.');
+            setTimeout(() => {
+              if (phone.value.trim().length >= 7) {
+                clearFieldError(phone, phoneFeedback);
+              }
+            }, 2500);
+          }
+        });
+
+        // Strip any pasted/inserted alphabets on input
+        phone.addEventListener('input', () => {
+          const hadLetters = /[a-zA-Z]/.test(phone.value);
+          const cleaned = phone.value.replace(/[^0-9+\-()\s]/g, '');
+          if (phone.value !== cleaned) {
+            phone.value = cleaned;
+          }
+
+          if (hadLetters) {
+            showFieldError(phone, phoneFeedback, 'Letters are not allowed in phone number.');
+            return;
+          }
+
+          const digits = phone.value.replace(/\D/g, '');
+          if (phone.value.trim() && digits.length < 7) {
+            showFieldError(phone, phoneFeedback, 'Phone number must have at least 7 digits.');
+          } else {
+            clearFieldError(phone, phoneFeedback);
+          }
+        });
+
+        phone.addEventListener('paste', (e) => {
+          const pastedText = (e.clipboardData || window.clipboardData)?.getData('text') || '';
+          if (/[a-zA-Z]/.test(pastedText)) {
+            e.preventDefault();
+            const cleanText = pastedText.replace(/[^0-9+\-()\s]/g, '');
+            const start = phone.selectionStart || 0;
+            const end = phone.selectionEnd || 0;
+            phone.value = phone.value.substring(0, start) + cleanText + phone.value.substring(end);
+            phone.selectionStart = phone.selectionEnd = start + cleanText.length;
+            showFieldError(phone, phoneFeedback, 'Letters were removed from pasted phone number.');
+            setTimeout(() => {
+              if (phone.value.replace(/\D/g, '').length >= 7) {
+                clearFieldError(phone, phoneFeedback);
+              }
+            }, 2500);
+          }
+        });
+      }
+
+      // --- Real-time validation for Full Name ---
+      if (fullName) {
+        fullName.addEventListener('input', () => {
+          const val = fullName.value.trim();
+          if (val && /^\d+$/.test(val)) {
+            showFieldError(fullName, nameFeedback, 'Full name cannot be numbers only.');
+          } else if (val && val.length < 2) {
+            showFieldError(fullName, nameFeedback, 'Full name must be at least 2 characters.');
+          } else {
+            clearFieldError(fullName, nameFeedback);
+          }
+        });
+      }
+
+      // --- Real-time validation for Email ---
+      if (email) {
+        email.addEventListener('input', () => {
+          const val = email.value.trim();
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (val && !emailRegex.test(val)) {
+            showFieldError(email, emailFeedback, 'Please enter a valid email address.');
+          } else {
+            clearFieldError(email, emailFeedback);
+          }
+        });
+      }
+
+      // --- Real-time validation for Passwords ---
+      if (pass) {
+        pass.addEventListener('input', () => {
+          if (pass.value.length > 0 && pass.value.length < 8) {
+            showFieldError(pass, passFeedback, 'Password must be at least 8 characters.');
+          } else {
+            clearFieldError(pass, passFeedback);
+          }
+          if (confirmPass && confirmPass.value.length > 0) {
+            if (pass.value !== confirmPass.value) {
+              showFieldError(confirmPass, confirmFeedback, 'Passwords do not match.');
+            } else {
+              clearFieldError(confirmPass, confirmFeedback);
+            }
+          }
+        });
+      }
+
+      if (confirmPass) {
+        confirmPass.addEventListener('input', () => {
+          if (confirmPass.value && pass.value !== confirmPass.value) {
+            showFieldError(confirmPass, confirmFeedback, 'Passwords do not match.');
+          } else {
+            clearFieldError(confirmPass, confirmFeedback);
+          }
+        });
+      }
+
+      if (terms) {
+        terms.addEventListener('change', () => {
+          if (terms.checked) {
+            clearFieldError(terms, termsFeedback);
+          }
+        });
+      }
+
+      // --- Form Submission Validation ---
       if (regForm) {
         regForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          if (pass.value !== confirmPass.value) {
-            alert('Passwords do not match. Please verify your passwords.');
+          let isValid = true;
+          let firstInvalid = null;
+
+          // 1. Full Name
+          const nameVal = fullName ? fullName.value.trim() : '';
+          if (!nameVal || nameVal.length < 2) {
+            showFieldError(fullName, nameFeedback, 'Please enter your full name (at least 2 characters).');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = fullName;
+          } else if (/^\d+$/.test(nameVal)) {
+            showFieldError(fullName, nameFeedback, 'Full name cannot contain only numbers.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = fullName;
+          } else {
+            clearFieldError(fullName, nameFeedback);
+          }
+
+          // 2. Email Address
+          const emailVal = email ? email.value.trim() : '';
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailVal || !emailRegex.test(emailVal)) {
+            showFieldError(email, emailFeedback, 'Please enter a valid email address.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = email;
+          } else {
+            clearFieldError(email, emailFeedback);
+          }
+
+          // 3. Mobile Phone
+          const phoneVal = phone ? phone.value.trim() : '';
+          const digits = phoneVal.replace(/\D/g, '');
+          if (!phoneVal) {
+            showFieldError(phone, phoneFeedback, 'Please enter your mobile phone number.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = phone;
+          } else if (/[a-zA-Z]/.test(phoneVal)) {
+            showFieldError(phone, phoneFeedback, 'Alphabets are not allowed. Please enter digits only.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = phone;
+          } else if (digits.length < 7 || digits.length > 15) {
+            showFieldError(phone, phoneFeedback, 'Please enter a valid phone number (7 to 15 digits).');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = phone;
+          } else {
+            clearFieldError(phone, phoneFeedback);
+          }
+
+          // 4. Passwords
+          const passVal = pass ? pass.value : '';
+          const confirmVal = confirmPass ? confirmPass.value : '';
+          if (!passVal || passVal.length < 8) {
+            showFieldError(pass, passFeedback, 'Password must be at least 8 characters.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = pass;
+          } else {
+            clearFieldError(pass, passFeedback);
+          }
+
+          if (passVal !== confirmVal) {
+            showFieldError(confirmPass, confirmFeedback, 'Passwords do not match. Please verify your passwords.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = confirmPass;
+          } else {
+            clearFieldError(confirmPass, confirmFeedback);
+          }
+
+          // 5. Terms
+          if (terms && !terms.checked) {
+            showFieldError(terms, termsFeedback, 'You must agree to the Cold Chain Transit Protocol and Terms.');
+            isValid = false;
+            if (!firstInvalid) firstInvalid = terms;
+          } else if (terms) {
+            clearFieldError(terms, termsFeedback);
+          }
+
+          if (!isValid) {
+            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+              firstInvalid.focus();
+            }
+            if (window.showToast) {
+              window.showToast('Please correct the highlighted errors before proceeding.', 'error');
+            }
             return;
           }
+
+          // Successful Registration
           if (window.showToast) {
-            window.showToast('Account created successfully! Welcome to the Prime & Cut counter.');
+            window.showToast('Account created successfully! Welcome to the Prime & Cut counter.', 'success');
           } else {
             alert('Account created successfully! Welcome to the Prime & Cut counter.');
           }

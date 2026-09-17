@@ -258,19 +258,37 @@
   }
 
   /* Dropdown animations */
-  .nav-item.dropdown:hover .dropdown-menu {
+  .nav-item.dropdown:hover .dropdown-menu,
+  .dropdown:hover > .dropdown-menu {
     display: block;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
   }
 
-  .nav-item.dropdown .dropdown-menu {
+  .nav-item.dropdown .dropdown-menu,
+  .dropdown > .dropdown-menu {
     display: block;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(8px);
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+    pointer-events: none;
+  }
+
+  .dropdown > .dropdown-menu.show,
+  .nav-item.dropdown .dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+  }
+
+  .dropdown:hover > .dropdown-toggle .bi-chevron-down,
+  .dropdown-toggle[aria-expanded="true"] .bi-chevron-down {
+    transform: rotate(180deg);
   }
 }
 

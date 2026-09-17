@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavbarActiveLink();
   initMobileMenuHandler();
   initDropdownKeyboardAccess();
+  initNavbarDropdowns();
 });
 
 /**
@@ -100,3 +101,71 @@ function initDropdownKeyboardAccess() {
     }
   });
 }
+
+/**
+ * Robust dropdown interaction handler for desktop hover and universal click
+ */
+function initNavbarDropdowns() {
+  const dropdowns = document.querySelectorAll('.dropdown');
+
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    if (!toggle || !menu) return;
+
+    let timeoutId;
+
+    // Desktop hover handling
+    dropdown.addEventListener('mouseenter', () => {
+      if (window.innerWidth >= 992) {
+        clearTimeout(timeoutId);
+        menu.classList.add('show');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    dropdown.addEventListener('mouseleave', () => {
+      if (window.innerWidth >= 992) {
+        timeoutId = setTimeout(() => {
+          menu.classList.remove('show');
+          toggle.setAttribute('aria-expanded', 'false');
+        }, 150);
+      }
+    });
+
+    // Universal click toggle
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = menu.classList.contains('show');
+
+      // Close other open dropdowns
+      document.querySelectorAll('.dropdown-menu.show').forEach(m => {
+        if (m !== menu) {
+          m.classList.remove('show');
+          const otherToggle = m.closest('.dropdown')?.querySelector('.dropdown-toggle');
+          if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      if (isOpen) {
+        menu.classList.remove('show');
+        toggle.setAttribute('aria-expanded', 'false');
+      } else {
+        menu.classList.add('show');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Close open dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+        menu.classList.remove('show');
+        const toggle = menu.closest('.dropdown')?.querySelector('.dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+}
+
