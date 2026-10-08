@@ -930,10 +930,10 @@
     filterPills.forEach(p => {
       if (p.dataset.category === cat) {
         p.classList.add('active', 'bg-red-700', 'text-white');
-        p.classList.remove('bg-stone-200', 'dark:bg-zinc-800', 'text-stone-700', 'dark:text-stone-300');
+        p.classList.remove('bg-stone-200', 'bg-stone-100', 'dark:bg-zinc-800', 'text-stone-700', 'dark:text-stone-300');
       } else {
         p.classList.remove('active', 'bg-red-700', 'text-white');
-        p.classList.add('bg-stone-200', 'dark:bg-zinc-800', 'text-stone-700', 'dark:text-stone-300');
+        p.classList.add('bg-stone-100', 'dark:bg-zinc-800', 'text-stone-700', 'dark:text-stone-300');
       }
     });
   }

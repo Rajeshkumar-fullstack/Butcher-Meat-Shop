@@ -48,7 +48,7 @@
   function isValidPhone(val) {
     if (!val || /[a-zA-Z]/.test(val)) return false;
     const digits = val.replace(/\D/g, '');
-    return digits.length >= 7 && digits.length <= 15;
+    return digits.length >= 10 && digits.length <= 15;
   }
 
   function isValidName(val) {
@@ -62,6 +62,7 @@
     phoneInput.dataset.phoneBound = 'true';
     phoneInput.setAttribute('inputmode', 'tel');
     phoneInput.setAttribute('autocomplete', 'tel');
+    phoneInput.setAttribute('minlength', '10');
     phoneInput.setAttribute('maxlength', '20');
 
     phoneInput.addEventListener('keydown', (e) => {
@@ -108,13 +109,27 @@
         validateField(phoneInput, () => false, 'Letters are not allowed in phone number.');
       } else if (cleaned.length > 0 && !isValidPhone(cleaned)) {
         const digits = cleaned.replace(/\D/g, '');
-        if (digits.length < 7) {
-          validateField(phoneInput, () => false, 'Phone number must have at least 7 digits.');
+        if (digits.length < 10) {
+          validateField(phoneInput, () => false, 'Phone number must have at least 10 digits.');
         } else {
           validateField(phoneInput, () => true, '');
         }
       } else {
         validateField(phoneInput, () => true, '');
+      }
+    });
+
+    phoneInput.addEventListener('blur', () => {
+      const val = phoneInput.value.trim();
+      if (!val && phoneInput.hasAttribute('required')) {
+        validateField(phoneInput, () => false, 'Phone number is required.');
+      } else if (val) {
+        const digits = val.replace(/\D/g, '');
+        if (digits.length < 10) {
+          validateField(phoneInput, () => false, 'Phone number must have at least 10 digits.');
+        } else if (isValidPhone(val)) {
+          validateField(phoneInput, () => true, '');
+        }
       }
     });
 
@@ -313,7 +328,7 @@
       let isValid = true;
       if (phoneInput) attachPhoneInputRestrictions(phoneInput);
       isValid = validateField(nameInput, val => isValidName(val), 'Please enter your full name (at least 2 characters, cannot be numbers only)') && isValid;
-      isValid = validateField(phoneInput, val => isValidPhone(val), 'Please enter a valid phone number (digits only)') && isValid;
+      isValid = validateField(phoneInput, val => isValidPhone(val), 'Phone number must have at least 10 digits.') && isValid;
       isValid = validateField(emailInput, val => EMAIL_REGEX.test(val), 'Please enter a valid email address') && isValid;
       isValid = validateField(addressInput, val => val.length >= 6, 'Please enter your complete delivery address') && isValid;
       if (dateInput) {
@@ -368,7 +383,7 @@
       let isValid = true;
       if (phoneInput) attachPhoneInputRestrictions(phoneInput);
       isValid = validateField(nameInput, val => isValidName(val), 'Please provide your full name (cannot be numbers only)') && isValid;
-      isValid = validateField(phoneInput, val => isValidPhone(val), 'Please provide a valid phone number (digits only)') && isValid;
+      isValid = validateField(phoneInput, val => isValidPhone(val), 'Phone number must have at least 10 digits.') && isValid;
       isValid = validateField(emailInput, val => EMAIL_REGEX.test(val), 'Please provide a valid email address') && isValid;
       isValid = validateField(messageInput, val => val.length >= 10, 'Please write a message of at least 10 characters') && isValid;
 
@@ -419,7 +434,7 @@
 
       let isValid = true;
       isValid = validateField(name, val => isValidName(val), 'Please enter your full name (cannot be numbers only)') && isValid;
-      isValid = validateField(phone, val => isValidPhone(val), 'Enter a valid phone number (digits only)') && isValid;
+      isValid = validateField(phone, val => isValidPhone(val), 'Phone number must have at least 10 digits.') && isValid;
       isValid = validateField(email, val => EMAIL_REGEX.test(val), 'Enter a valid email') && isValid;
       isValid = validateField(address, val => val.length >= 5, 'Enter your delivery address') && isValid;
 

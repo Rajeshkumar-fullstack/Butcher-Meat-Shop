@@ -26,6 +26,7 @@
           },
           fontFamily: {
             heading: ['Cinzel', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
             body: ['Outfit', 'sans-serif'],
             rtl: ['Cairo', 'sans-serif']
           }
@@ -44,10 +45,12 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png?v=3">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png?v=3">
 </head>
 <body class="bg-stone-50 dark:bg-zinc-950 text-stone-900 dark:text-stone-100 min-h-full flex flex-col justify-between antialiased selection:bg-red-700 selection:text-white transition-colors duration-300">
 
@@ -76,30 +79,6 @@
           <i class="bi bi-arrow-left-right text-xs sm:text-sm text-red-700 dark:text-red-400"></i>
           <span class="rtl-label sr-only">RTL</span>
         </button>
-
-        <!-- Customer Account / Login Dropdown (At Navbar End) -->
-        <div class="dropdown nav-account-dropdown flex-shrink-0">
-          <button type="button" class="nav-account-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 dropdown-toggle shadow-xs" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Customer Account and Login" title="Account &amp; Sign In">
-            <i class="bi bi-person-fill text-sm sm:text-base text-stone-700 dark:text-stone-200"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs mt-2">
-            <li class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 border-b border-stone-200/80 dark:border-zinc-800 mb-1">
-              Account Access
-            </li>
-            <li>
-              <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="login.html">
-                <i class="bi bi-box-arrow-in-right text-red-600 text-sm"></i>
-                <span>Customer Login</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="register.html">
-                <i class="bi bi-person-plus text-amber-500 text-sm"></i>
-                <span>Create Account</span>
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   </header>
@@ -140,7 +119,6 @@
       <p class="text-stone-600 dark:text-stone-300 text-sm sm:text-base leading-relaxed mb-8 max-w-md mx-auto">
         The link you followed has either been trimmed from our counter, moved to our Himalayan salt room, or was simply butchered incorrectly.
       </p>
-
       <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
         <a href="index.html" class="btn-artisan-primary text-xs py-3 px-6">
           <i class="bi bi-house-door-fill me-1.5"></i> Back to Homepage

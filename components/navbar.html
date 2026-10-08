@@ -1,9 +1,9 @@
-<!-- Main Sticky Navbar -->
-<header class="sticky top-0 z-50 navbar-glass">
-  <nav class="container mx-auto px-4 py-3.5 flex items-center justify-between" aria-label="Main Navigation">
+<!-- Main Sticky Navbar Master Reference Component -->
+<header class="navbar navbar-glass sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-3 flex items-center justify-between" aria-label="Main Navigation">
     <!-- Brand Logo -->
-    <a href="index.html" class="flex items-center gap-2 sm:gap-3 group text-decoration-none flex-shrink-0" aria-label="Prime & Cut Butcher Shop Homepage">
-      <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition flex-shrink-0">
+    <a href="index.html" class="navbar-brand flex items-center gap-2 sm:gap-3 group text-decoration-none flex-shrink-0" aria-label="Prime & Cut Butcher Shop Homepage">
+      <div class="logo-icon-box w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition flex-shrink-0">
         <!-- SVG Cleaver Logo -->
         <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current text-amber-400" viewBox="0 0 100 100">
           <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
@@ -21,10 +21,10 @@
     </a>
 
     <!-- Desktop Navigation Links -->
-    <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+    <div class="desktop-nav-menu hidden lg:flex items-center gap-1 xl:gap-2 flex-shrink-0">
       <!-- Home Dropdown -->
       <div class="dropdown">
-        <button class="nav-link-custom text-sm flex items-center gap-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="homeDropdown">
+        <button class="nav-link nav-link-custom text-sm flex items-center gap-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="homeDropdown">
           <span>Home</span>
           <i class="bi bi-chevron-down text-[10px] ms-1 transition-transform duration-200"></i>
         </button>
@@ -42,19 +42,16 @@
         </ul>
       </div>
 
-      <a href="about.html" class="nav-link-custom text-sm" id="nav-about">About Us</a>
-
-      <a href="products.html" class="nav-link-custom text-sm" id="nav-products">Shop Cuts</a>
-
-      <a href="shop-services.html" class="nav-link-custom text-sm" id="nav-services">Services</a>
-
-      <a href="blog.html" class="nav-link-custom text-sm" id="nav-blog">Blog</a>
-
-      <a href="contact.html" class="nav-link-custom text-sm" id="nav-contact">Contact</a>
+      <a href="about.html" class="nav-link nav-link-custom text-sm" id="nav-about">About Us</a>
+      <a href="products.html" class="nav-link nav-link-custom text-sm" id="nav-products">Shop Cuts</a>
+      <a href="shop-services.html" class="nav-link nav-link-custom text-sm" id="nav-services">Services</a>
+      <a href="pricing.html" class="nav-link nav-link-custom text-sm" id="nav-pricing">Pricing</a>
+      <a href="blog.html" class="nav-link nav-link-custom text-sm" id="nav-blog">Blog</a>
+      <a href="contact.html" class="nav-link nav-link-custom text-sm" id="nav-contact">Contact</a>
     </div>
 
-    <!-- Right Controls: Theme Toggle, RTL Toggle, Basket, Shop Cuts CTA, Account Dropdown, Mobile Toggle -->
-    <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+    <!-- Right Controls: Theme Toggle, RTL Toggle, Basket, Shop Cuts CTA, Mobile Toggle -->
+    <div class="navbar-actions flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
       <!-- Dark/Light Theme Toggle (Circular) -->
       <button type="button" class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle Dark / Light Theme" title="Toggle theme">
         <i class="bi bi-sun-fill text-amber-500 text-xs sm:text-sm theme-icon-sun hidden"></i>
@@ -74,37 +71,13 @@
       </button>
 
       <!-- Order Online CTA (Desktop) -->
-      <a href="products.html" class="hidden md:inline-flex btn-artisan-primary text-xs !py-2 !px-3.5 flex-shrink-0">
+      <a href="products.html" class="nav-cta-btn hidden xl:inline-flex btn-artisan-primary text-xs !py-2 !px-3.5 flex-shrink-0">
         <span>Shop Cuts</span>
         <i class="bi bi-arrow-right rtl-flip text-xs"></i>
       </a>
 
-      <!-- Customer Account / Login Dropdown (At Navbar End) -->
-      <div class="dropdown nav-account-dropdown hidden sm:block flex-shrink-0">
-        <button type="button" class="nav-account-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 dropdown-toggle shadow-xs" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Customer Account and Login" title="Account &amp; Sign In">
-          <i class="bi bi-person-fill text-sm sm:text-base text-stone-700 dark:text-stone-200"></i>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs mt-2">
-          <li class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 border-b border-stone-200/80 dark:border-zinc-800 mb-1">
-            Account Access
-          </li>
-          <li>
-            <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="login.html">
-              <i class="bi bi-box-arrow-in-right text-red-600 text-sm"></i>
-              <span>Customer Login</span>
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="register.html">
-              <i class="bi bi-person-plus text-amber-500 text-sm"></i>
-              <span>Create Account</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
       <!-- Mobile Hamburger Menu Button (Circular) -->
-      <button type="button" id="mobileNavToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 shadow-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle mobile menu" title="Toggle navigation menu">
+      <button type="button" id="mobileNavToggle" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 shadow-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle mobile menu" title="Toggle navigation menu">
         <i class="bi bi-list text-lg sm:text-xl"></i>
       </button>
     </div>
@@ -141,7 +114,7 @@
 
     <!-- Navigation List (Demo Format) -->
     <div class="flex flex-col text-sm">
-      <a href="index.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition bg-red-100/70 dark:bg-red-950/50 text-red-900 dark:text-red-300 font-semibold">Home &ndash; Artisan Butchery</a>
+      <a href="index.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Home &ndash; Artisan Butchery</a>
       <a href="home-2.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Home &ndash; Steakhouse &amp; BBQ</a>
       <a href="about.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">About Us</a>
       <a href="products.html" class="block px-5 py-3.5 border-b border-stone-200/80 dark:border-zinc-800 transition text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 font-medium">Shop Cuts</a>
@@ -158,20 +131,6 @@
         </div>
         <span class="cart-badge w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">0</span>
       </button>
-
-      <!-- Login Entry (Demo Format: Login Icon) -->
-      <a href="login.html" class="block px-5 py-3.5 flex items-center gap-3 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 border-b border-stone-200/80 dark:border-zinc-800 transition text-sm font-medium">
-        <i class="bi bi-box-arrow-in-right text-stone-700 dark:text-stone-300 text-base"></i>
-        <span>Login</span>
-      </a>
-    </div>
-
-    <!-- Sign Up Wide Pill Button Container (Demo Format) -->
-    <div class="p-4 sm:p-5 bg-stone-50/50 dark:bg-zinc-900/50">
-      <a href="register.html" class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 text-decoration-none">
-        <i class="bi bi-person-plus-fill text-base"></i>
-        <span>Sign Up</span>
-      </a>
     </div>
   </div>
 </header>

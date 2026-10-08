@@ -337,6 +337,10 @@
       if (!input) return;
       input.setAttribute('inputmode', 'tel');
       input.setAttribute('autocomplete', 'tel');
+      input.setAttribute('minlength', '10');
+      input.setAttribute('maxlength', '20');
+      input.setAttribute('pattern', '.{10,20}');
+      input.setAttribute('title', 'Phone number must have at least 10 digits');
 
       if (input.dataset.phoneRestricted) return;
       input.dataset.phoneRestricted = 'true';
@@ -372,12 +376,27 @@
         }
       });
 
-      // Sanitize input in real-time (removes any pasted/entered letters)
+      // Sanitize input in real-time (removes any pasted/entered letters) and enforce 10-digit min
       input.addEventListener('input', (e) => {
         const originalVal = e.target.value;
         const cleaned = originalVal.replace(/[^0-9+\-()\s]/g, '');
         if (originalVal !== cleaned) {
           e.target.value = cleaned;
+        }
+        const digits = cleaned.replace(/\D/g, '');
+        if (cleaned.length > 0 && digits.length < 10) {
+          input.setCustomValidity('Phone number must have at least 10 digits.');
+        } else {
+          input.setCustomValidity('');
+        }
+      });
+
+      input.addEventListener('blur', () => {
+        const digits = input.value.replace(/\D/g, '');
+        if (input.value.trim().length > 0 && digits.length < 10) {
+          input.setCustomValidity('Phone number must have at least 10 digits.');
+        } else {
+          input.setCustomValidity('');
         }
       });
 
@@ -396,7 +415,7 @@
       });
     }
 
-    document.querySelectorAll('input[type="tel"], #modalCustPhone, #customerPhone, #contactPhone, #serviceCustPhone, #regPhone').forEach(restrictPhoneInput);
+    document.querySelectorAll('input[type="tel"], #modalCustPhone, #customerPhone, #contactPhone, #serviceCustPhone').forEach(restrictPhoneInput);
 
     // Watch for dynamically loaded inputs (e.g. modals)
     if ('MutationObserver' in window) {
@@ -408,7 +427,7 @@
                 restrictPhoneInput(node);
               }
               if (node.querySelectorAll) {
-                node.querySelectorAll('input[type="tel"], #modalCustPhone, #customerPhone, #contactPhone, #serviceCustPhone, #regPhone').forEach(restrictPhoneInput);
+                node.querySelectorAll('input[type="tel"], #modalCustPhone, #customerPhone, #contactPhone, #serviceCustPhone').forEach(restrictPhoneInput);
               }
             }
           });

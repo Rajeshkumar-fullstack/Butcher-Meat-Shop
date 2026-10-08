@@ -158,3 +158,9 @@
   margin-left: 0.5rem;
   margin-right: 0;
 }
+
+/* Header profile icon dropdown menu in RTL */
+[dir="rtl"] .nav-account-dropdown .dropdown-menu {
+  right: auto !important;
+  left: 0 !important;
+}

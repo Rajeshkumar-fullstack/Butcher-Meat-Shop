@@ -27,7 +27,7 @@ function initNavbarActiveLink() {
     let isMatch = (href === currentPath || (currentPath === '' && href === 'index.html'));
 
     // Associate sub-pages with parent single page link
-    if (!isMatch && href === 'products.html' && (currentPath === 'product-details.html' || currentPath === 'custom-cuts.html' || currentPath === 'pricing.html')) {
+    if (!isMatch && href === 'products.html' && (currentPath === 'product-details.html' || currentPath === 'custom-cuts.html')) {
       isMatch = true;
     }
     if (!isMatch && href === 'blog.html' && currentPath === 'blog-details.html') {
@@ -115,10 +115,28 @@ function initNavbarDropdowns() {
 
     let timeoutId;
 
+    // Helper to position account/end-aligned dropdown cleanly inside viewport
+    function alignDropdownMenu() {
+      if (dropdown.classList.contains('nav-account-dropdown') || menu.classList.contains('dropdown-menu-end')) {
+        const isRtl = document.documentElement.getAttribute('dir') === 'rtl';
+        if (isRtl) {
+          menu.style.setProperty('right', 'auto', 'important');
+          menu.style.setProperty('left', '0px', 'important');
+          menu.style.setProperty('inset', 'auto auto auto 0px', 'important');
+        } else {
+          menu.style.setProperty('left', 'auto', 'important');
+          menu.style.setProperty('right', '0px', 'important');
+          menu.style.setProperty('inset', 'auto 0px auto auto', 'important');
+        }
+        menu.style.setProperty('transform', 'translateY(0)', 'important');
+      }
+    }
+
     // Desktop hover handling
     dropdown.addEventListener('mouseenter', () => {
       if (window.innerWidth >= 992) {
         clearTimeout(timeoutId);
+        alignDropdownMenu();
         menu.classList.add('show');
         toggle.setAttribute('aria-expanded', 'true');
       }
@@ -151,6 +169,7 @@ function initNavbarDropdowns() {
         menu.classList.remove('show');
         toggle.setAttribute('aria-expanded', 'false');
       } else {
+        alignDropdownMenu();
         menu.classList.add('show');
         toggle.setAttribute('aria-expanded', 'true');
       }

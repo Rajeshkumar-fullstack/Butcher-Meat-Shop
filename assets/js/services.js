@@ -69,7 +69,7 @@
       subtitle: 'Coarse Peppercorn Crusts, Garlic Tallow & Texas BBQ',
       tag: 'Chef-Grade Spices',
       badge: 'Zero Additives • Deep Tallow Massage',
-      image: 'assets/images/salt.png',
+      image: 'assets/images/House Rubs & Marinades.jpg',
       overview: 'House-formulated spice rubs, whole cracked tellicherry peppercorns, crushed pink Himalayan salt blocks, and roasted garlic beef tallow rubs massaged directly into your cut fibers. Infuses deep aromatic flavor while forming an extraordinary caramelized bark when seared.',
       specs: [
         { label: 'House Blends', value: 'Montreal Peppercorn, Rosemary Garlic Tallow, Texas Oak BBQ' },
@@ -141,7 +141,7 @@
       subtitle: 'Japanese Whetstone Honing & Weekend Butchery Demos',
       tag: 'Weekend Bookings',
       badge: '1000/6000 Grit Waterstones • Razor Edge',
-      image: 'assets/images/knife-sharpening.jpg',
+      image: 'assets/images/Knife Care & Masterclasses.jpg',
       overview: 'Professional hand sharpening on Japanese Naniwa waterstones (400, 1000, 3000, 8000 grit) followed by leather stropping to restore razor-sharp 15° cutting bevels to boning, chef, and cimeter knives. We also host intimate weekend evening workshops on pig breakdown and sausage linking.',
       specs: [
         { label: 'Sharpening Tech', value: '100% hand waterstone grinding, zero electric heat burn' },
@@ -166,11 +166,16 @@
     const modalSpecs = document.getElementById('srvModalSpecs');
     const bookBtn = document.getElementById('srvModalBookBtn');
 
+    // Dynamically retrieve exact card image to guarantee 100% fidelity between card and modal
+    const cardEl = document.querySelector(`.service-card[data-service="${serviceKey}"]`);
+    const cardImgEl = cardEl ? cardEl.querySelector('img') : null;
+    const resolvedImg = (cardImgEl && cardImgEl.getAttribute('src')) ? cardImgEl.getAttribute('src') : s.image;
+
     if (modalTitle) modalTitle.textContent = s.title;
     if (modalBadge) modalBadge.textContent = s.badge;
     if (modalSubtitle) modalSubtitle.textContent = s.subtitle;
     if (modalImg) {
-      modalImg.src = s.image;
+      modalImg.src = resolvedImg;
       modalImg.alt = s.title;
     }
     if (modalOverview) modalOverview.textContent = s.overview;
@@ -283,6 +288,13 @@
         }
         if (!phoneInput || !phoneInput.value.trim()) {
           if (window.showToast) window.showToast('Please enter your phone number.', 'error');
+          if (phoneInput) phoneInput.focus();
+          return;
+        }
+        const phoneDigits = phoneInput.value.replace(/\D/g, '');
+        if (phoneDigits.length < 10) {
+          if (window.showToast) window.showToast('Phone number must have at least 10 digits.', 'error');
+          phoneInput.focus();
           return;
         }
         if (!emailInput || !emailInput.value.trim()) {

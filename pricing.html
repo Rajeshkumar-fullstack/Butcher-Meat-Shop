@@ -31,6 +31,7 @@
           },
           fontFamily: {
             heading: ['Cinzel', 'serif'],
+            sans: ['Outfit', 'sans-serif'],
             body: ['Outfit', 'sans-serif'],
             rtl: ['Cairo', 'sans-serif']
           }
@@ -49,18 +50,20 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png?v=3">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico?v=3">
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png?v=3">
 </head>
 <body class="bg-stone-50 dark:bg-zinc-950 text-stone-900 dark:text-stone-100 antialiased selection:bg-red-700 selection:text-white transition-colors duration-300">
 
   <!-- Main Sticky Navbar -->
-  <header class="sticky top-0 z-50 navbar-glass">
-    <nav class="container mx-auto px-4 py-3.5 flex items-center justify-between" aria-label="Main Navigation">
-      <a href="index.html" class="flex items-center gap-2 sm:gap-3 group text-decoration-none flex-shrink-0" aria-label="Prime & Cut Butcher Shop Homepage">
-        <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition flex-shrink-0">
+  <header class="navbar navbar-glass sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-3 flex items-center justify-between" aria-label="Main Navigation">
+      <a href="index.html" class="navbar-brand flex items-center gap-2 sm:gap-3 group text-decoration-none flex-shrink-0" aria-label="Prime & Cut Butcher Shop Homepage">
+        <div class="logo-icon-box w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-red-800 to-red-950 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition flex-shrink-0">
           <svg class="w-5 h-5 sm:w-6 sm:h-6 fill-current text-amber-400" viewBox="0 0 100 100">
             <path d="M50,4 C72,4 90,14 90,36 C90,66 50,96 50,96 C50,96 10,66 10,36 C10,14 28,4 50,4 Z" fill="#8B1E1E" stroke="#D4AF37" stroke-width="4"/>
             <g transform="translate(32, 28) rotate(-15)">
@@ -77,10 +80,10 @@
       </a>
 
       <!-- Desktop Links -->
-      <div class="hidden lg:flex items-center gap-1 xl:gap-2">
+      <div class="desktop-nav-menu hidden lg:flex items-center gap-1 xl:gap-2 flex-shrink-0">
         <!-- Home Dropdown (Only dropdown in navbar) -->
         <div class="dropdown">
-          <button class="nav-link-custom text-sm flex items-center gap-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="homeDropdown">
+          <button class="nav-link nav-link-custom text-sm flex items-center gap-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="homeDropdown">
             <span>Home</span>
             <i class="bi bi-chevron-down text-[10px] ms-1 transition-transform duration-200"></i>
           </button>
@@ -90,19 +93,16 @@
           </ul>
         </div>
 
-        <a href="about.html" class="nav-link-custom text-sm" id="nav-about">About Us</a>
-
-        <a href="products.html" class="nav-link-custom text-sm active" id="nav-products">Shop Cuts</a>
-
-        <a href="shop-services.html" class="nav-link-custom text-sm" id="nav-services">Services</a>
-
-        <a href="blog.html" class="nav-link-custom text-sm" id="nav-blog">Blog</a>
-
-        <a href="contact.html" class="nav-link-custom text-sm" id="nav-contact">Contact</a>
+        <a href="about.html" class="nav-link nav-link-custom text-sm" id="nav-about">About Us</a>
+        <a href="products.html" class="nav-link nav-link-custom text-sm" id="nav-products">Shop Cuts</a>
+        <a href="shop-services.html" class="nav-link nav-link-custom text-sm" id="nav-services">Services</a>
+        <a href="pricing.html" class="nav-link nav-link-custom text-sm active" id="nav-pricing">Pricing</a>
+        <a href="blog.html" class="nav-link nav-link-custom text-sm" id="nav-blog">Blog</a>
+        <a href="contact.html" class="nav-link nav-link-custom text-sm" id="nav-contact">Contact</a>
       </div>
 
-      <!-- Right Controls: Theme Toggle, RTL Toggle, Basket, Shop Cuts CTA, Account Dropdown, Mobile Toggle -->
-      <div class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
+      <!-- Right Controls: Theme Toggle, RTL Toggle, Basket, Shop Cuts CTA, Mobile Toggle -->
+      <div class="navbar-actions flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
         <!-- Dark/Light Theme Toggle (Circular) -->
         <button type="button" class="theme-toggle-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0" aria-label="Toggle Dark / Light Theme" title="Toggle theme">
           <i class="bi bi-sun-fill text-amber-500 text-xs sm:text-sm theme-icon-sun hidden"></i>
@@ -122,37 +122,13 @@
         </button>
 
         <!-- Order Online CTA (Desktop) -->
-        <a href="products.html" class="hidden md:inline-flex btn-artisan-primary text-xs !py-2 !px-3.5 flex-shrink-0">
+        <a href="products.html" class="nav-cta-btn hidden xl:inline-flex btn-artisan-primary text-xs !py-2 !px-3.5 flex-shrink-0">
           <span>Shop Cuts</span>
           <i class="bi bi-arrow-right rtl-flip text-xs"></i>
         </a>
 
-        <!-- Customer Account / Login Dropdown (At Navbar End) -->
-        <div class="dropdown nav-account-dropdown hidden sm:block flex-shrink-0">
-          <button type="button" class="nav-account-btn w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-700 dark:text-stone-200 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 dropdown-toggle shadow-xs" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Customer Account and Login" title="Account &amp; Sign In">
-            <i class="bi bi-person-fill text-sm sm:text-base text-stone-700 dark:text-stone-200"></i>
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end bg-stone-50 dark:bg-zinc-900 border border-stone-200 dark:border-zinc-800 shadow-xl py-1 text-xs mt-2">
-            <li class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-stone-400 dark:text-stone-500 border-b border-stone-200/80 dark:border-zinc-800 mb-1">
-              Account Access
-            </li>
-            <li>
-              <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="login.html">
-                <i class="bi bi-box-arrow-in-right text-red-600 text-sm"></i>
-                <span>Customer Login</span>
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item py-2 px-3 hover:bg-red-700/10 hover:text-red-700 flex items-center gap-2 font-medium" href="register.html">
-                <i class="bi bi-person-plus text-amber-500 text-sm"></i>
-                <span>Create Account</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
         <!-- Mobile Hamburger Menu Button (Circular) -->
-        <button type="button" id="mobileNavToggle" class="lg:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 shadow-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle mobile menu" title="Toggle navigation menu">
+        <button type="button" id="mobileNavToggle" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-stone-100 dark:bg-zinc-800 text-stone-800 dark:text-stone-100 border border-stone-200 dark:border-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-700 transition flex items-center justify-center flex-shrink-0 shadow-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Toggle mobile menu" title="Toggle navigation menu">
           <i class="bi bi-list text-lg sm:text-xl"></i>
         </button>
       </div>
@@ -206,45 +182,77 @@
           </div>
           <span class="cart-badge w-6 h-6 rounded-full bg-amber-500 text-white font-bold text-xs flex items-center justify-center shadow-sm">0</span>
         </button>
-
-        <!-- Login Entry (Demo Format: Login Icon) -->
-        <a href="login.html" class="block px-5 py-3.5 flex items-center gap-3 text-stone-800 dark:text-stone-200 hover:bg-stone-100 dark:hover:bg-zinc-800/60 border-b border-stone-200/80 dark:border-zinc-800 transition text-sm font-medium">
-          <i class="bi bi-box-arrow-in-right text-stone-700 dark:text-stone-300 text-base"></i>
-          <span>Login</span>
-        </a>
-      </div>
-
-      <!-- Sign Up Wide Pill Button Container (Demo Format) -->
-      <div class="p-4 sm:p-5 bg-stone-50/50 dark:bg-zinc-900/50">
-        <a href="register.html" class="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-red-700 to-red-800 hover:from-red-800 hover:to-red-900 text-white font-bold text-sm shadow-md hover:shadow-lg transition flex items-center justify-center gap-2 text-decoration-none">
-          <i class="bi bi-person-plus-fill text-base"></i>
-          <span>Sign Up</span>
-        </a>
       </div>
     </div>
   </header>
 
   <!-- Breadcrumbs Bar -->
-  <div class="bg-stone-100 dark:bg-zinc-900/60 border-b border-stone-200 dark:border-zinc-800 py-3 text-xs">
-    <div class="container mx-auto px-4 flex items-center gap-2 text-stone-500 dark:text-stone-400">
-      <a href="index.html" class="hover:text-red-700 transition"><i class="bi bi-house-door"></i> Home</a>
-      <span>/</span>
-      <span class="text-stone-900 dark:text-stone-200 font-semibold">Meat Packages &amp; Pricing</span>
+  <div class="bg-stone-900/90 dark:bg-zinc-950 border-b border-stone-800/80 py-3 text-xs">
+    <div class="container mx-auto px-4 flex items-center gap-2 text-stone-400">
+      <a href="index.html" class="hover:text-amber-400 transition text-decoration-none flex items-center gap-1.5"><i class="bi bi-house-door text-xs"></i> Home</a>
+      <span class="text-stone-600">/</span>
+      <span class="text-amber-400 font-semibold">Meat Packages &amp; Pricing</span>
     </div>
   </div>
 
-  <!-- Hero Section -->
-  <section class="py-16 lg:py-20 text-center border-b border-stone-200 dark:border-zinc-800 bg-gradient-to-b from-stone-100 to-stone-50 dark:from-zinc-900 dark:to-zinc-950">
-    <div class="container mx-auto px-4 max-w-3xl">
-      <span class="badge-artisan mb-3 inline-flex items-center gap-1.5">
-        <i class="bi bi-box2-heart-fill text-red-700 dark:text-red-400"></i> Direct From Our Aging Rooms
-      </span>
-      <h1 class="text-4xl sm:text-5xl font-heading font-extrabold text-stone-900 dark:text-stone-50 mb-4">
+  <!-- Hero Section with Distinctive Artisan Wine Cellar Theme, Unique Curated Prime Steaks Background & Atmospheric Lighting -->
+  <section class="hero-section relative overflow-hidden text-center border-b border-red-950/60 dark:border-zinc-800 bg-gradient-to-b from-[#180809] via-[#200a0d] to-[#120506] text-white">
+    <!-- Relevant Background Image with Multi-Tone Gradient Overlays -->
+    <div class="absolute inset-0 z-0 pointer-events-none select-none">
+      <img src="https://images.unsplash.com/photo-1690983325551-b922137727be?auto=format&fit=crop&w=1920&q=80" 
+           alt="Artisan Selection of Prime Butcher Steaks, Tomahawk, Ribeye, Sea Salt &amp; Cleaver" 
+           class="w-full h-full object-cover object-center opacity-35 transform scale-105 filter saturate-125 contrast-110 transition duration-1000">
+      <!-- Multi-Tone Gradients for Depth, Warmth & Crystal-Clear Text Contrast -->
+      <div class="absolute inset-0 bg-gradient-to-r from-[#180809]/95 via-[#1a080a]/80 to-[#2d0c11]/85"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#120506] via-[#1a080a]/50 to-[#180809]/90"></div>
+      <div class="absolute inset-0 bg-[#140506]/30 backdrop-blur-[0.5px]"></div>
+    </div>
+
+    <!-- Animated Ambient Color Glow Orbs -->
+    <div class="absolute -top-16 -start-16 w-96 h-96 bg-rose-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute top-1/2 end-1/4 -translate-y-1/2 w-80 h-80 bg-amber-500/25 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <div class="absolute -bottom-10 end-10 w-72 h-72 bg-orange-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 max-w-3xl relative z-10 flex flex-col items-center justify-center">
+      <!-- Aging Rooms Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/90 border border-amber-500/40 text-amber-300 text-xs font-bold uppercase tracking-wider mb-5 backdrop-blur-md shadow-lg shadow-black/40">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+        </span>
+        <i class="bi bi-box2-heart-fill text-amber-400"></i>
+        <span>Direct From Our Aging Rooms</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight mb-4 drop-shadow-md">
         Curated Meat Packages
       </h1>
-      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-300 leading-relaxed">
+
+      <!-- Subtitle Description -->
+      <p class="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl mx-auto drop-shadow-xs">
         Hand-selected cuts balanced for whole-family weekly dining, weekend smokehouse barbecue cookouts, and dry-aged steakhouse tasting flights.
       </p>
+
+      <!-- Trust & Cold Chain Guarantees Row -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-cyan-500/50 hover:bg-stone-800 hover:-translate-y-0.5 transition duration-200">
+          <i class="bi bi-thermometer-snow text-cyan-400 text-sm"></i>
+          <span>0&deg;C Cold-Chain Packed</span>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-emerald-500/50 hover:bg-stone-800 hover:-translate-y-0.5 transition duration-200">
+          <i class="bi bi-shield-check text-emerald-400 text-sm"></i>
+          <span>100% Satisfaction Guarantee</span>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-rose-500/50 hover:bg-stone-800 hover:-translate-y-0.5 transition duration-200">
+          <i class="bi bi-scissors text-rose-400 text-sm"></i>
+          <span>Free Portion Slicing</span>
+        </div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-amber-500/50 hover:bg-stone-800 hover:-translate-y-0.5 transition duration-200">
+          <i class="bi bi-truck text-amber-400 text-sm"></i>
+          <span>Free Metro Delivery Over $120</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -272,54 +280,54 @@
               </div>
 
               <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 border-t border-stone-200 dark:border-zinc-700 pt-4">
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>4x Boneless Pasture Chicken Breasts</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>2x Prime Angus Chuck Pot Roasts (3 lbs)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>4 lbs 80/20 Fresh Butcher Minced Beef</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>4x Heritage Berkshire Pork Chops</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>Complimentary Jar of Butcher Salt</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>4x Boneless Pasture Chicken Breasts</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>2x Prime Angus Chuck Pot Roasts (3 lbs)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>4 lbs 80/20 Fresh Butcher Minced Beef</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>4x Heritage Berkshire Pork Chops</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>Complimentary Jar of Butcher Salt</span></li>
               </ul>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button type="button" class="w-full btn-artisan-outline text-xs py-2.5 add-to-enquiry-btn" data-id="box-family" data-title="Family Pasture Box" data-price="149.00" data-category="Box">
+            <button type="button" class="w-full btn-artisan-primary text-xs py-2.5 add-to-enquiry-btn" data-id="box-family" data-title="Family Pasture Box" data-price="149.00" data-category="Box">
               <i class="bi bi-basket2-fill me-1.5"></i> Add Box to Basket
             </button>
           </div>
         </div>
 
-        <!-- Package 2: Pitmaster BBQ Crate (Featured) -->
-        <div class="rounded-3xl bg-stone-900 text-white border-2 border-amber-500 overflow-hidden flex flex-col justify-between shadow-2xl relative">
-          <div class="absolute top-0 right-0 bg-amber-500 text-stone-950 text-[10px] font-extrabold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+        <!-- Package 2: Pitmaster BBQ Crate (Featured / Most Popular) -->
+        <div class="rounded-3xl bg-stone-50 dark:bg-zinc-800 border-2 border-amber-500/80 dark:border-amber-400 overflow-hidden flex flex-col justify-between shadow-xl hover:shadow-2xl transition relative">
+          <div class="absolute top-0 right-0 bg-amber-500 text-stone-950 text-[10px] font-extrabold px-3 py-1 rounded-bl-xl uppercase tracking-wider z-10 shadow-sm">
             Most Popular
           </div>
           <div>
             <div class="h-44 overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80" alt="Pitmaster BBQ Crate with Smoked Brisket and Ribs" class="w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-red-800/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Smokehouse Special</span>
+              <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Smokehouse Special</span>
             </div>
             <div class="p-6">
-              <h3 class="font-heading font-bold text-xl text-white mb-1 pricing-card-title">
+              <h3 class="font-heading font-bold text-xl text-stone-900 dark:text-stone-100 mb-1 pricing-card-title">
                 <span class="block leading-tight">The Pitmaster</span>
                 <span class="block leading-tight">BBQ Smoker Box</span>
               </h3>
-              <p class="text-xs text-stone-400 mb-4 pricing-card-desc">Hardwood low-and-slow competition barbecue selections.</p>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mb-4 pricing-card-desc">Hardwood low-and-slow competition barbecue selections.</p>
               
               <div class="mb-6 flex items-baseline gap-1">
-                <span class="text-3xl font-heading font-extrabold text-amber-400">$229</span>
-                <span class="text-xs text-stone-400">/ box (approx. 24 lbs meat)</span>
+                <span class="text-3xl font-heading font-extrabold text-stone-900 dark:text-stone-100">$229</span>
+                <span class="text-xs text-stone-500 dark:text-stone-400">/ box (approx. 24 lbs meat)</span>
               </div>
 
-              <ul class="space-y-2.5 text-xs text-stone-300 border-t border-stone-800 pt-4">
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-amber-400 mt-0.5"></i> <span>1x Whole USDA Prime Packer Brisket (12 lbs)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-amber-400 mt-0.5"></i> <span>2x St. Louis Cut Duroc Pork Spare Ribs</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-amber-400 mt-0.5"></i> <span>1x Heritage Pork Shoulder Butt (8 lbs)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-amber-400 mt-0.5"></i> <span>4 lbs Smoked Jalapeño &amp; Cheddar Sausage</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-amber-400 mt-0.5"></i> <span>Hickory Smoker Wood &amp; Peach Paper Roll</span></li>
+              <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 border-t border-stone-200 dark:border-zinc-700 pt-4">
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>1x Whole USDA Prime Packer Brisket (12 lbs)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>2x St. Louis Cut Duroc Pork Spare Ribs</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>1x Heritage Pork Shoulder Butt (8 lbs)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>4 lbs Smoked Jalapeño &amp; Cheddar Sausage</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>Hickory Smoker Wood &amp; Peach Paper Roll</span></li>
               </ul>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button type="button" class="w-full btn-artisan-gold text-xs py-2.5 add-to-enquiry-btn" data-id="box-pitmaster" data-title="The Pitmaster BBQ Box" data-price="229.00" data-category="Box">
+            <button type="button" class="w-full btn-artisan-primary text-xs py-2.5 add-to-enquiry-btn" data-id="box-pitmaster" data-title="The Pitmaster BBQ Box" data-price="229.00" data-category="Box">
               <i class="bi bi-fire me-1.5"></i> Claim Pitmaster Box
             </button>
           </div>
@@ -330,7 +338,7 @@
           <div>
             <div class="h-44 overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80" alt="Artisan Steakhouse Reserve" class="w-full h-full object-cover">
-              <span class="absolute top-3 left-3 bg-red-800/90 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Dry Aged Reserve</span>
+              <span class="absolute top-3 left-3 bg-stone-900/80 backdrop-blur-sm text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Dry Aged Reserve</span>
             </div>
             <div class="p-6">
               <h3 class="font-heading font-bold text-xl text-stone-900 dark:text-stone-100 mb-1 pricing-card-title">
@@ -340,16 +348,16 @@
               <p class="text-xs text-stone-500 dark:text-stone-400 mb-4 pricing-card-desc">Aged in our Himalayan pink salt lockers for 35–45 days.</p>
               
               <div class="mb-6 flex items-baseline gap-1">
-                <span class="text-3xl font-heading font-extrabold text-red-700 dark:text-red-400">$319</span>
+                <span class="text-3xl font-heading font-extrabold text-stone-900 dark:text-stone-100">$319</span>
                 <span class="text-xs text-stone-500 dark:text-stone-400">/ box (Gourmet Cut Flight)</span>
               </div>
 
               <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 border-t border-stone-200 dark:border-zinc-700 pt-4">
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>2x 45-Day Bone-In Prime Ribeyes (20 oz)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>2x 35-Day Dry-Aged NY Strip Steaks (16 oz)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>2x Center-Cut Filet Mignons (8 oz)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>1 Tub Roasted Garlic Bone Marrow Butter</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>Authentic Salt Locker Aging Certificate</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>2x 45-Day Bone-In Prime Ribeyes (20 oz)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>2x 35-Day Dry-Aged NY Strip Steaks (16 oz)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>2x Center-Cut Filet Mignons (8 oz)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>1 Tub Roasted Garlic Bone Marrow Butter</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>Authentic Salt Locker Aging Certificate</span></li>
               </ul>
             </div>
           </div>
@@ -380,16 +388,16 @@
               </div>
 
               <ul class="space-y-2.5 text-xs text-stone-600 dark:text-stone-300 border-t border-stone-200 dark:border-zinc-700 pt-4">
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>1x Whole Frenched Lamb Rib Rack (8 bones)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>10x Prime Dry-Aged Burger Patties (8 oz)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>1x Whole Beef Tenderloin / Châteaubriand (5 lbs)</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>8x Thick-Cut Heritage Berkshire Pork Chops</span></li>
-                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i> <span>Priority Scheduled Chilled Van Delivery</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>1x Whole Frenched Lamb Rib Rack (8 bones)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>10x Prime Dry-Aged Burger Patties (8 oz)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>1x Whole Beef Tenderloin / Châteaubriand (5 lbs)</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>8x Thick-Cut Heritage Berkshire Pork Chops</span></li>
+                <li class="flex items-start gap-2"><i class="bi bi-check2-circle text-emerald-600 dark:text-emerald-400 mt-0.5"></i> <span>Priority Scheduled Chilled Van Delivery</span></li>
               </ul>
             </div>
           </div>
           <div class="p-6 pt-0">
-            <button type="button" class="w-full btn-artisan-outline text-xs py-2.5 add-to-enquiry-btn" data-id="box-banquet" data-title="Banquet & Chef Crate" data-price="589.00" data-category="Box">
+            <button type="button" class="w-full btn-artisan-primary text-xs py-2.5 add-to-enquiry-btn" data-id="box-banquet" data-title="Banquet & Chef Crate" data-price="589.00" data-category="Box">
               <i class="bi bi-telephone me-1.5"></i> Reserve Banquet Crate
             </button>
           </div>
@@ -544,7 +552,7 @@
             </li>
             <li class="flex items-center gap-2.5">
               <i class="bi bi-telephone-fill text-amber-500 dark:text-amber-400 flex-shrink-0"></i>
-              <a href="tel:5553826328" class="hover:text-stone-900 dark:hover:text-stone-200">(555) 382-MEAT (6328)</a>
+              <a href="tel:+15553826328" class="hover:text-stone-900 dark:hover:text-stone-200 transition-colors whitespace-nowrap" aria-label="Call Prime &amp; Cut Butcher Counter">+1 (555) 382-6328</a>
             </li>
             <li class="flex items-center gap-2.5">
               <i class="bi bi-envelope-fill text-amber-500 dark:text-amber-400 flex-shrink-0"></i>
@@ -662,7 +670,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label for="modalCustPhone" class="block text-xs font-semibold mb-1">Phone Number *</label>
-                <input type="tel" id="modalCustPhone" required class="form-control-artisan w-full text-xs" placeholder="e.g. (555) 019-2834" inputmode="tel" autocomplete="tel" maxlength="20" oninput="this.value=this.value.replace(/[^0-9+\-()\s]/g,'')" onkeydown="if(/^[a-zA-Z]$/.test(event.key))event.preventDefault();">
+                <input type="tel" id="modalCustPhone" required class="form-control-artisan w-full text-xs" placeholder="e.g. (555) 019-2834 (min 10 digits)" inputmode="tel" autocomplete="tel" minlength="10" maxlength="20" pattern=".{10,20}" title="Phone number must have at least 10 digits" oninput="this.value=this.value.replace(/[^0-9+\-()\s]/g,''); if(this.value.replace(/\D/g,'').length<10){this.setCustomValidity('Phone number must have at least 10 digits.');}else{this.setCustomValidity('');}" oninvalid="if(this.value.replace(/\D/g,'').length<10) this.setCustomValidity('Phone number must have at least 10 digits.');" onkeydown="if(/^[a-zA-Z]$/.test(event.key))event.preventDefault();">
               </div>
               <div>
                 <label for="modalCustEmail" class="block text-xs font-semibold mb-1">Email Address *</label>
