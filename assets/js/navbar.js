@@ -18,7 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function initNavbarActiveLink() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link, .nav-link-custom, .dropdown-item, .mobile-nav-link');
+  const navLinks = document.querySelectorAll('.desktop-nav-menu .nav-link, .desktop-nav-menu .nav-link-custom, .desktop-nav-menu .dropdown-item');
+
+  // Reset all desktop active states
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    link.removeAttribute('aria-current');
+  });
+  document.querySelectorAll('.desktop-nav-menu .dropdown-toggle').forEach(dt => dt.classList.remove('active'));
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
@@ -46,6 +53,29 @@ function initNavbarActiveLink() {
           toggle.classList.add('active');
         }
       }
+    }
+  });
+
+  // Also highlight matching link in mobile navigation drawer
+  const mobileLinks = document.querySelectorAll('#mobileNavMenu a');
+  mobileLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    let isMatch = (href === currentPath || (currentPath === '' && href === 'index.html'));
+    if (!isMatch && href === 'products.html' && (currentPath === 'product-details.html' || currentPath === 'custom-cuts.html')) {
+      isMatch = true;
+    }
+    if (!isMatch && href === 'blog.html' && currentPath === 'blog-details.html') {
+      isMatch = true;
+    }
+
+    if (isMatch) {
+      link.classList.add('bg-red-100/70', 'dark:bg-red-950/50', 'text-red-900', 'dark:text-red-300', 'font-semibold');
+      link.classList.remove('text-stone-800', 'dark:text-stone-200', 'hover:bg-stone-100', 'font-medium');
+    } else {
+      link.classList.remove('bg-red-100/70', 'dark:bg-red-950/50', 'text-red-900', 'dark:text-red-300', 'font-semibold');
+      link.classList.add('text-stone-800', 'dark:text-stone-200', 'hover:bg-stone-100', 'font-medium');
     }
   });
 }
@@ -132,9 +162,9 @@ function initNavbarDropdowns() {
       }
     }
 
-    // Desktop hover handling
+    // Desktop / Tablet hover handling
     dropdown.addEventListener('mouseenter', () => {
-      if (window.innerWidth >= 992) {
+      if (window.innerWidth >= 720) {
         clearTimeout(timeoutId);
         alignDropdownMenu();
         menu.classList.add('show');
@@ -143,7 +173,7 @@ function initNavbarDropdowns() {
     });
 
     dropdown.addEventListener('mouseleave', () => {
-      if (window.innerWidth >= 992) {
+      if (window.innerWidth >= 720) {
         timeoutId = setTimeout(() => {
           menu.classList.remove('show');
           toggle.setAttribute('aria-expanded', 'false');

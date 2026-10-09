@@ -82,9 +82,9 @@
       }
     });
 
-    // Close on resize above mobile breakpoint
+    // Close on resize above mobile breakpoint (720px)
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024 && !mobileMenu.classList.contains('hidden')) {
+      if (window.innerWidth >= 720 && !mobileMenu.classList.contains('hidden')) {
         setMenuState(false);
       }
     }, { passive: true });
