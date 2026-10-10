@@ -59,10 +59,10 @@
       badge1: 'Beef • Dry Aged 35 Days',
       badge2: 'USDA Prime • BMS 7+',
       portionNote: 'Massive long-bone bone-in ribeye frenched by hand to expose the pristine bone handle. Serves 2–3.',
-      image: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/blog/dry-aged-tomahawk-steak.jpg',
       gallery: [
+        'assets/images/blog/dry-aged-tomahawk-steak.jpg',
         'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
-        'assets/images/salt.png',
         'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80'
       ],
@@ -167,11 +167,11 @@
       badge1: 'Beef • Dry Aged 35 Days',
       badge2: 'USDA Prime • BMS 7+',
       portionNote: '45oz long-bone showpiece steak frenched to exposed clean bone handle. Feeds 2–3 guests.',
-      image: 'assets/images/image.png',
+      image: 'assets/images/blog/dry-aged-tomahawk-steak.jpg',
       gallery: [
-        'assets/images/image.png',
+        'assets/images/blog/dry-aged-tomahawk-steak.jpg',
         'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&w=1200&q=80',
-        'assets/images/salt.png',
+        'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80'
       ],
       description: 'Massive long-bone bone-in ribeye frenched by hand to expose the pristine rib bone handle. Exceptional BMS 7+ marbling aged 35 days for deep nutty steakhouse flavor.',
@@ -419,11 +419,11 @@
       badge1: 'Heritage Kurobuta • 100% Berkshire',
       badge2: 'Rich Red Marbled',
       portionNote: 'Woodland foraged, rich red marbling, extraordinarily juicy. Hand-cut 1.75 inches thick.',
-      image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/blog/berkshire-heritage-pork.jpg',
       gallery: [
+        'assets/images/blog/berkshire-heritage-pork.jpg',
         'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=1200&q=80',
-        'assets/images/products/crispy-crackling-pork-belly.jpg',
         'assets/images/products/whole-pork-tenderloin.jpg'
       ],
       description: 'The Wagyu of pork. Intensely marbled, deep rosy-red meat with rich intramuscular fat for unprecedented juiciness.',
@@ -959,9 +959,9 @@
       badge1: 'Curated Box • Smokehouse Special',
       badge2: 'Smoker & Offset Fire Ready',
       portionNote: 'Hardwood low-and-slow competition barbecue selections. Includes whole prime packer brisket (12 lbs), 2x Duroc spare ribs, 8 lb pork butt, and smoked sausage. Serves 10–14.',
-      image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
+      image: 'The Pitmaster.jpg',
       gallery: [
-        'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
+        'The Pitmaster.jpg',
         'assets/images/blog/hardwood-smoked-brisket.jpg',
         'assets/images/Decoding Beef Rib.jpg',
         'assets/images/products/grill-master-reserve-box.jpg'
@@ -995,9 +995,9 @@
       badge1: 'Curated Box • Dry Aged Reserve',
       badge2: '35–45 Day Salt Aged Steaks',
       portionNote: 'Aged in our Himalayan pink salt lockers for 35–45 days. Includes 2x 45-day bone-in ribeyes, 2x 35-day dry-aged NY strips, 2x filet mignons, and marrow butter. Serves 6–8.',
-      image: 'assets/images/hospitality-supply.jpg',
+      image: 'assets/images/Steakhouse Reserve.jpg',
       gallery: [
-        'assets/images/hospitality-supply.jpg',
+        'assets/images/Steakhouse Reserve.jpg',
         'assets/images/salt.png',
         'assets/images/image.png',
         'assets/images/beef/wagyu-a5.jpg'
@@ -1031,9 +1031,9 @@
       badge1: 'Curated Box • Master Chef Banquet',
       badge2: 'Ultimate Holiday Centerpiece',
       portionNote: 'Massive celebratory crate: 45oz Tomahawk, 8-bone Lamb Rack, Crispy Pork Belly, and whole Spatchcock Chicken. Serves 25–30.',
-      image: 'assets/images/whole-roasts.jpg',
+      image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80',
       gallery: [
-        'assets/images/whole-roasts.jpg',
+        'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80',
         'assets/images/image.png',
         'assets/images/products/farmhouse-feast-crate.jpg',
         'assets/images/mutton/rack-of-lamb.jpg'

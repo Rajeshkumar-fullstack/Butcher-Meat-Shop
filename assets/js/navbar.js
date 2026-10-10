@@ -11,7 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenuHandler();
   initDropdownKeyboardAccess();
   initNavbarDropdowns();
+  initNavbarStickyScroll();
 });
+
+/**
+ * Manages sticky navbar scroll elevation and styling
+ */
+function initNavbarStickyScroll() {
+  const header = document.querySelector('header');
+  if (!header) return;
+
+  function onScroll() {
+    if (window.scrollY > 10) {
+      header.classList.add('navbar-scrolled');
+    } else {
+      header.classList.remove('navbar-scrolled');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // initial check
+}
 
 /**
  * Highlights current page in navigation menus automatically

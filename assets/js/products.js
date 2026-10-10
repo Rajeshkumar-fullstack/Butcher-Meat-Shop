@@ -91,7 +91,7 @@
       portion: 'Showpiece Cut',
       tag: "Today's Reserve Cut",
       badgeClass: 'badge-beef',
-      image: 'assets/images/image.png',
+      image: 'assets/images/blog/dry-aged-tomahawk-steak.jpg',
       description: 'Massive long-bone bone-in ribeye frenched by hand to expose the pristine rib bone handle. Exceptional BMS 7+ marbling aged 35 days for deep nutty steakhouse flavor.'
     },
     {
@@ -106,7 +106,7 @@
       portion: '3-Bone Plate',
       tag: 'Pitmaster Cut',
       badgeClass: 'badge-beef',
-      image: 'assets/images/Decoding Beef Rib.jpg',
+      image: 'assets/images/prime.jpg',
       description: 'Massive 3-bone plate section (Bones 6, 7, 8) with deep intramuscular fat that renders into silky gelatin during slow smoking.'
     },
 
@@ -124,7 +124,7 @@
       unit: '1.8kg',
       tag: '100% Organic Pastured',
       badgeClass: 'badge-chicken',
-      image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/blog/spatchcock-roast-chicken.jpg',
       description: 'Air-chilled, pasture-raised whole chicken with crispy skin potential and juicy, natural chicken flavor. Never fed hormones.'
     },
     {
@@ -271,7 +271,7 @@
       portion: '2 pcs',
       tag: 'Heritage Kurobuta',
       badgeClass: 'badge-pork',
-      image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/blog/berkshire-heritage-pork.jpg',
       description: 'The Wagyu of pork. Intensely marbled, deep rosy-red meat with rich intramuscular fat for unprecedented juiciness.'
     },
     {
@@ -360,7 +360,7 @@
       portion: 'approx. 24 lbs',
       tag: 'Smokehouse Special',
       badgeClass: 'badge-pork',
-      image: 'https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=600&q=80',
+      image: 'The Pitmaster.jpg',
       description: 'Hardwood low-and-slow competition barbecue selections. Includes whole prime packer brisket (12 lbs), 2x Duroc spare ribs, 8 lb pork butt, and smoked sausage.'
     },
     {
@@ -375,7 +375,7 @@
       portion: 'Gourmet Cut Flight',
       tag: 'Dry Aged Reserve',
       badgeClass: 'badge-beef',
-      image: 'assets/images/hospitality-supply.jpg',
+      image: 'assets/images/Steakhouse Reserve.jpg',
       description: 'Aged in our Himalayan pink salt lockers for 35–45 days. Includes 2x 45-day bone-in ribeyes, 2x 35-day dry-aged NY strips, 2x filet mignons, and marrow butter.'
     },
     {
@@ -390,7 +390,7 @@
       portion: 'Serves 25–30 guests',
       tag: 'Event & Chef Crate',
       badgeClass: 'badge-mutton',
-      image: 'assets/images/whole-roasts.jpg',
+      image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=600&q=80',
       description: 'Bulk premium meat allocations for parties & dining rooms. Includes whole frenched lamb rib rack, 10x dry-aged burger patties, whole beef tenderloin, and Berkshire chops.'
     },
     {
@@ -492,19 +492,26 @@
 
     if (!product) return;
 
+    const itemImage = (extra && extra.image) ? extra.image : product.image;
+    const itemName = (extra && extra.title) ? extra.title : product.name;
+    const itemPrice = (extra && extra.price !== undefined && !isNaN(parseFloat(extra.price))) ? parseFloat(extra.price) : product.price;
+
     let cart = getCart();
     const existingIndex = cart.findIndex(item => item.id === product.id);
 
     if (existingIndex > -1) {
       cart[existingIndex].qty += qty;
+      if (itemImage) cart[existingIndex].image = itemImage;
+      if (itemName) cart[existingIndex].name = itemName;
+      if (itemPrice) cart[existingIndex].price = itemPrice;
     } else {
       cart.push({
         id: product.id,
-        name: product.name,
-        price: product.price,
-        unit: product.unit || 'cut',
-        category: product.category || 'meat',
-        image: product.image,
+        name: itemName,
+        price: itemPrice,
+        unit: product.unit || (extra && extra.unit) || 'box',
+        category: product.category || (extra && extra.category) || 'meat',
+        image: itemImage,
         qty: qty
       });
     }
@@ -512,7 +519,7 @@
     saveCart(cart);
 
     if (window.showToast) {
-      window.showToast(`Added ${qty > 1 ? qty + 'x ' : ''}${product.name} to your enquiry basket!`, 'success');
+      window.showToast(`Added ${qty > 1 ? qty + 'x ' : ''}${itemName} to your enquiry basket!`, 'success');
     }
 
     // Automatically open offcanvas drawer to give instant visual feedback
@@ -694,20 +701,22 @@
       const itemSubtotal = item.price * item.qty;
       totalPrice += itemSubtotal;
       return `
-        <div class="flex items-center gap-3 p-3 bg-white dark:bg-zinc-800 rounded-xl border border-stone-200 dark:border-zinc-700 shadow-sm">
-          <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'64\\' height=\\'64\\' fill=\\'%238B1E1E\\'><rect width=\\'64\\' height=\\'64\\' fill=\\'%23f3f4f6\\'/><text x=\\'50%\\' y=\\'55%\\' font-size=\\'12\\' text-anchor=\\'middle\\' fill=\\'%238B1E1E\\'>MEAT</text></svg>'">
+        <div class="flex items-center gap-3 p-3 bg-white dark:bg-zinc-800 rounded-xl border border-stone-200 dark:border-zinc-700 shadow-sm hover:border-red-600/40 transition">
+          <div class="w-16 h-16 rounded-lg overflow-hidden bg-stone-100 dark:bg-zinc-700 flex-shrink-0 relative border border-stone-200/60 dark:border-zinc-700">
+            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover rounded-lg" loading="lazy" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'64\\' height=\\'64\\' fill=\\'%238B1E1E\\'><rect width=\\'64\\' height=\\'64\\' fill=\\'%23f3f4f6\\'/><text x=\\'50%\\' y=\\'55%\\' font-size=\\'11\\' font-weight=\\'bold\\' text-anchor=\\'middle\\' fill=\\'%238B1E1E\\'>MEAT</text></svg>'">
+          </div>
           <div class="flex-grow min-w-0">
             <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 truncate">${item.name}</h4>
             <p class="text-xs text-stone-500 dark:text-stone-400">$${item.price.toFixed(2)} / ${item.unit}</p>
             <div class="flex items-center gap-2 mt-2">
-              <button class="cart-qty-btn decrease-qty w-6 h-6 rounded-md bg-stone-100 dark:bg-zinc-700 hover:bg-stone-200 text-xs font-bold" data-id="${item.id}">-</button>
-              <span class="text-xs font-bold text-stone-800 dark:text-stone-200">${item.qty}</span>
-              <button class="cart-qty-btn increase-qty w-6 h-6 rounded-md bg-stone-100 dark:bg-zinc-700 hover:bg-stone-200 text-xs font-bold" data-id="${item.id}">+</button>
+              <button class="cart-qty-btn decrease-qty w-6 h-6 rounded-md bg-stone-100 dark:bg-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-600 text-xs font-bold transition flex items-center justify-center text-stone-800 dark:text-stone-200" data-id="${item.id}" aria-label="Decrease quantity">-</button>
+              <span class="text-xs font-bold text-stone-800 dark:text-stone-200 min-w-[1rem] text-center">${item.qty}</span>
+              <button class="cart-qty-btn increase-qty w-6 h-6 rounded-md bg-stone-100 dark:bg-zinc-700 hover:bg-stone-200 dark:hover:bg-zinc-600 text-xs font-bold transition flex items-center justify-center text-stone-800 dark:text-stone-200" data-id="${item.id}" aria-label="Increase quantity">+</button>
             </div>
           </div>
           <div class="text-end flex-shrink-0">
             <p class="text-sm font-bold text-red-700 dark:text-red-400">$${itemSubtotal.toFixed(2)}</p>
-            <button class="remove-cart-item text-xs text-stone-400 hover:text-red-600 mt-2 transition" data-id="${item.id}" title="Remove item">
+            <button class="remove-cart-item text-xs text-stone-400 hover:text-red-600 mt-2 transition p-1" data-id="${item.id}" title="Remove item" aria-label="Remove item">
               <i class="bi bi-trash3"></i>
             </button>
           </div>
@@ -1150,10 +1159,16 @@
       const price = parseFloat(btn.dataset.price) || 0;
       const category = btn.dataset.category || 'Curated Box';
 
-      // Find card image if present
-      const card = btn.closest('.rounded-3xl, .card, div');
-      const img = card ? card.querySelector('img') : null;
-      const image = img ? img.getAttribute('src') : 'assets/images/salt.png';
+      // Find card image if present in data-image attribute or in DOM card
+      let image = btn.dataset.image || '';
+      if (!image) {
+        const card = btn.closest('.rounded-3xl, .card, [class*="rounded-3xl"], [class*="rounded-2xl"], .meat-card, section .grid > div');
+        const img = card ? card.querySelector('img') : null;
+        image = img ? (img.getAttribute('src') || img.src) : '';
+      }
+      if (!image) {
+        image = 'assets/images/salt.png';
+      }
 
       addToCart(id, 1, {
         title: title,
