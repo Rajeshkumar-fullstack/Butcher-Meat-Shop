@@ -59,9 +59,9 @@
       badge1: 'Beef • Dry Aged 35 Days',
       badge2: 'USDA Prime • BMS 7+',
       portionNote: 'Massive long-bone bone-in ribeye frenched by hand to expose the pristine bone handle. Serves 2–3.',
-      image: 'assets/images/image.png',
+      image: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
       gallery: [
-        'assets/images/image.png',
+        'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80',
         'assets/images/salt.png',
         'https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?auto=format&fit=crop&w=1200&q=80',
         'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1200&q=80'
@@ -203,12 +203,12 @@
       badge1: 'Prime Beef • Plate Short Rib',
       badge2: 'Bones 6-7-8 Dinosaur Cut',
       portionNote: 'Substantial 3-bone plate rack with thick meat cap. Perfect for low & slow smoking. Serves 3–4.',
-      image: 'assets/images/Decoding Beef Rib.jpg',
+      image: 'assets/images/prime.jpg',
       gallery: [
+        'assets/images/prime.jpg',
         'assets/images/Decoding Beef Rib.jpg',
         'assets/images/blog/hardwood-smoked-brisket.jpg',
-        'assets/images/salt.png',
-        'assets/images/image.png'
+        'assets/images/salt.png'
       ],
       description: 'Massive 3-bone plate section (Bones 6, 7, 8) with deep intramuscular fat that renders into silky gelatin during slow smoking.',
       tenderness: '9.7 / 10',
@@ -671,9 +671,9 @@
       badge1: 'Pasture Poultry • 100% Organic Pastured',
       badge2: 'Pasture Raised & Certified',
       portionNote: 'Air-chilled, pasture-raised whole chicken with crispy skin potential and juicy, natural chicken flavor. Never fed hormones. Serves 4–5.',
-      image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+      image: 'assets/images/blog/spatchcock-roast-chicken.jpg',
       gallery: [
-        'https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=800&q=80',
+        'assets/images/blog/spatchcock-roast-chicken.jpg',
         'assets/images/chicken/spatchcock-chicken.jpg',
         'https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=800&q=80',
         'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80'

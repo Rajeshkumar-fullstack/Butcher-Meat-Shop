@@ -222,27 +222,27 @@
   </header>
 
   <!-- Hero Section: Home 2 (Smokehouse & High-Heat Grill) -->
-  <section class="hero-section relative overflow-hidden border-b border-stone-200 dark:border-zinc-800 bg-gradient-to-b from-[#141416] via-[#101012] to-[#0A0A0C] text-white">
+  <section class="hero-section relative overflow-hidden border-b border-stone-200 dark:border-zinc-800 bg-gradient-to-b from-[#141416] via-[#101012] to-[#0A0A0C] text-white" style="overflow-x:hidden">
     <!-- Fire Ambient Glows -->
-    <div class="absolute top-10 start-1/4 w-[500px] h-[300px] bg-amber-600/15 blur-[140px] -z-10 rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-10 end-1/4 w-[500px] h-[300px] bg-red-600/15 blur-[140px] -z-10 rounded-full pointer-events-none"></div>
+    <div class="absolute top-10 start-1/4 w-[500px] max-w-[min(500px,100vw)] h-[300px] bg-amber-600/15 blur-[140px] -z-10 rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-10 end-1/4 w-[500px] max-w-[min(500px,100vw)] h-[300px] bg-red-600/15 blur-[140px] -z-10 rounded-full pointer-events-none"></div>
 
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="container mx-auto px-4 sm:px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Hero Text -->
-        <div class="lg:col-span-7 text-start">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-6">
-            <i class="bi bi-fire text-amber-500"></i>
-            <span>Hardwood Smokehouse &bull; Steakhouse Prime Reserve</span>
+        <div class="lg:col-span-7 text-start min-w-0 w-full">
+          <div class="inline-flex flex-wrap items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-6 max-w-full">
+            <i class="bi bi-fire text-amber-500 flex-shrink-0"></i>
+            <span class="leading-snug">Hardwood Smokehouse &bull; Steakhouse Prime Reserve</span>
           </div>
 
-          <h1 class="font-heading text-4xl sm:text-5xl xl:text-6xl font-black text-stone-50 leading-[1.12] mb-6 tracking-tight">
+          <h1 class="font-heading text-[1.75rem] sm:text-4xl xl:text-6xl font-black text-stone-50 leading-[1.15] mb-5 sm:mb-6 tracking-tight">
             Fire, Smoke &amp; Marbling. <br>
             <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-red-500 bg-clip-text text-transparent">Steakhouse Grade Cuts.</span>
           </h1>
 
-          <p class="text-stone-300 text-base sm:text-lg leading-relaxed max-w-2xl mb-8">
+          <p class="text-stone-300 text-sm sm:text-base sm:text-lg leading-relaxed max-w-2xl mb-6 sm:mb-8">
             Engineered for high-heat cast iron crusts, 14-hour Texas smoker briskets, and backyard competition pitmasters. Every slab is hand-trimmed to 1/4-inch fat cap specifications for supreme bark and tenderness.
           </p>
 
@@ -558,14 +558,14 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Rare -->
         <div class="p-6 rounded-2xl bg-stone-850 bg-stone-950/80 border border-red-900/60 shadow-lg relative">
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex flex-col gap-1 mb-4">
             <span class="text-xs uppercase font-bold text-red-400 tracking-wider">Level 1</span>
             <span class="text-lg font-black text-red-500 font-mono">120&deg;F &ndash; 125&deg;F</span>
           </div>
           <div class="h-2 w-full rounded-full bg-red-600 mb-4"></div>
           <h3 class="font-heading text-xl font-bold text-stone-100 mb-2">Rare</h3>
           <p class="text-xs text-stone-400 leading-relaxed mb-4">
-            Cool to warm red center with soft, yielding texture. Fat hasn't fully rendered.
+            Cool to warm red center with soft, yielding texture. Fat hasn't fully rendered slightly warm.
           </p>
           <div class="text-[11px] text-amber-300 font-semibold border-t border-stone-800 pt-3">
             Best Cuts: Center Filet Mignon, Lean Flank
@@ -577,7 +577,7 @@
           <div class="absolute -top-3 end-4 bg-amber-500 text-stone-950 text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">
             Butcher's Choice
           </div>
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex flex-col gap-1 mb-4">
             <span class="text-xs uppercase font-bold text-amber-400 tracking-wider">Level 2</span>
             <span class="text-lg font-black text-amber-400 font-mono">130&deg;F &ndash; 135&deg;F</span>
           </div>
@@ -587,13 +587,13 @@
             Warm red-pink center with buttery intramuscular fat completely rendered into the grain.
           </p>
           <div class="text-[11px] text-amber-300 font-semibold border-t border-stone-800 pt-3">
-            Best Cuts: Dry-Aged Ribeye, A5 Wagyu, NY Strip
+            Best Cuts: Dry-Aged Ribeye, A5 Wagyu
           </div>
         </div>
 
         <!-- Medium -->
         <div class="p-6 rounded-2xl bg-stone-850 bg-stone-950/80 border border-stone-800 shadow-lg relative">
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex flex-col gap-1 mb-4">
             <span class="text-xs uppercase font-bold text-stone-400 tracking-wider">Level 3</span>
             <span class="text-lg font-black text-stone-300 font-mono">140&deg;F &ndash; 145&deg;F</span>
           </div>
@@ -609,7 +609,7 @@
 
         <!-- Low & Slow Smoked -->
         <div class="p-6 rounded-2xl bg-stone-850 bg-stone-950/80 border border-stone-800 shadow-lg relative">
-          <div class="flex items-center justify-between mb-4">
+          <div class="flex flex-col gap-1 mb-4">
             <span class="text-xs uppercase font-bold text-orange-400 tracking-wider">Pitmaster Smoke</span>
             <span class="text-lg font-black text-orange-400 font-mono">200&deg;F &ndash; 205&deg;F</span>
           </div>

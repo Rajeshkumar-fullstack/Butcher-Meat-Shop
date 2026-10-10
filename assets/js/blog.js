@@ -151,7 +151,7 @@ const BUTCHER_ARTICLES = {
       unit: '1.2kg (3-Bone)',
       category: 'Prime Beef',
       tag: 'Pitmaster Cut',
-      image: 'assets/images/Decoding Beef Rib.jpg',
+      image: 'assets/images/prime.jpg',
       desc: 'Massive 3-bone plate section (Bones 6, 7, 8) with deep intramuscular fat that renders into silky gelatin during smoking.'
     },
     contentHtml: `

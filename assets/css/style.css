@@ -77,12 +77,16 @@ html.dark {
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-body);
   background-color: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
-  overflow-x: clip;
+  overflow-x: hidden;
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
