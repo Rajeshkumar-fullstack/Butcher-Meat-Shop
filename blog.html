@@ -237,46 +237,34 @@
     <div class="absolute top-1/2 end-1/4 -translate-y-1/2 w-80 h-80 bg-amber-500/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
     <div class="absolute -bottom-10 end-10 w-72 h-72 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
 
-    <div class="container mx-auto px-4 max-w-3xl relative z-10 flex flex-col items-center justify-center">
+    <div class="container mx-auto px-4 max-w-3xl relative z-10 flex flex-col items-center justify-center text-center">
       <!-- Fire, Salt & Bone Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-950/80 border border-red-500/40 text-amber-300 text-xs font-bold uppercase tracking-wider mb-5 backdrop-blur-md shadow-lg">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-red-950/90 via-red-900/80 to-amber-950/90 border border-amber-500/40 text-amber-300 text-xs font-bold uppercase tracking-widest mb-5 backdrop-blur-md shadow-xl">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
         </span>
         <i class="bi bi-fire text-amber-400"></i>
-        <span>Fire, Salt &amp; Bone</span>
+        <span class="text-stone-100 font-extrabold tracking-wider">Fire, Salt &amp; Bone</span>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight mb-4 drop-shadow-md">
-        The Butcher's Journal
+      <!-- Main Headline (Colorful, Dynamic Gradient, Responsive) -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight mb-4 drop-shadow-lg leading-tight">
+        <span class="text-white">The Butcher's </span>
+        <span class="bg-gradient-to-r from-amber-300 via-rose-400 to-red-500 bg-clip-text text-transparent drop-shadow-sm">Journal</span>
       </h1>
 
+      <!-- Decorative Accent Line -->
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="h-[2px] w-12 bg-gradient-to-r from-transparent to-red-500 rounded-full"></span>
+        <i class="bi bi-award-fill text-amber-400 text-xs"></i>
+        <span class="h-[2px] w-12 bg-gradient-to-l from-transparent to-amber-500 rounded-full"></span>
+      </div>
+
       <!-- Subtitle Description -->
-      <p class="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl mx-auto drop-shadow-xs font-normal">
+      <p class="text-sm sm:text-base md:text-lg text-stone-200/90 leading-relaxed max-w-2xl mx-auto drop-shadow-xs font-normal">
         Master knife techniques, 35-day Himalayan dry aging chemistry, cast iron searing secrets, and pasture animal welfare insights.
       </p>
-
-      <!-- Quick Topic Navigation Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
-        <a href="#featuredPost" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-amber-400/60 hover:bg-stone-800 hover:text-white hover:-translate-y-0.5 transition duration-200 text-decoration-none">
-          <i class="bi bi-star-fill text-amber-400 text-xs"></i>
-          <span>Featured Masterclass</span>
-        </a>
-        <a href="#blogFilterBar" class="blog-quick-cat inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-rose-400/60 hover:bg-stone-800 hover:text-white hover:-translate-y-0.5 transition duration-200 text-decoration-none" data-quick-category="dry-aging">
-          <i class="bi bi-hourglass-split text-rose-400 text-xs"></i>
-          <span>Dry Aging Science</span>
-        </a>
-        <a href="#blogFilterBar" class="blog-quick-cat inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-amber-500/60 hover:bg-stone-800 hover:text-white hover:-translate-y-0.5 transition duration-200 text-decoration-none" data-quick-category="bbq">
-          <i class="bi bi-fire text-amber-500 text-xs"></i>
-          <span>Cooking Guides</span>
-        </a>
-        <a href="#blogFilterBar" class="blog-quick-cat inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-stone-900/80 backdrop-blur-md border border-white/10 text-xs font-semibold text-stone-200 shadow-md hover:border-emerald-400/60 hover:bg-stone-800 hover:text-white hover:-translate-y-0.5 transition duration-200 text-decoration-none" data-quick-category="cutting">
-          <i class="bi bi-patch-check-fill text-emerald-400 text-xs"></i>
-          <span>Farm Heritage</span>
-        </a>
-      </div>
     </div>
   </section>
 
