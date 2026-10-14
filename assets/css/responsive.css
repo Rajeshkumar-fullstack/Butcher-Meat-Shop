@@ -46,15 +46,16 @@ section,
     padding-right: 0.75rem !important;
   }
 
-  /* ── Badge pill: allow wrapping + shrink text ── */
+  /* ── Badge pill: maintain clean single-line alignment with scaled font ── */
   .hero-section .inline-flex.rounded-full {
-    flex-wrap: wrap !important;
+    flex-wrap: nowrap !important;
     text-align: center !important;
     justify-content: center !important;
+    align-items: center !important;
     padding: 0.35rem 0.75rem !important;
-    font-size: 0.6rem !important;
-    line-height: 1.4 !important;
-    letter-spacing: 0.06em !important;
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.05em !important;
     max-width: 100% !important;
   }
 

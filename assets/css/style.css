@@ -569,7 +569,7 @@ header nav .open-cart-btn,
   }
 }
 
-/* Tier 1: Tight Tablet (720px - 799.98px) */
+/* Tier 1: Tight Tablet (720px - 799.98px) — Covers 720px & 768px iPad */
 @media (min-width: 720px) and (max-width: 799.98px) {
   header.navbar-glass nav.container,
   header.navbar nav.container,
@@ -577,6 +577,7 @@ header nav .open-cart-btn,
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
     gap: 4px !important;
+    max-width: 100% !important;
   }
 
   .navbar-brand .logo-icon-box {
@@ -587,7 +588,7 @@ header nav .open-cart-btn,
   }
 
   .navbar-brand span.font-heading {
-    font-size: 0.8rem !important;
+    font-size: 0.78rem !important;
   }
 
   .navbar-brand span.uppercase {
@@ -627,18 +628,33 @@ header nav .open-cart-btn,
 
   header a.btn-artisan-primary,
   header .nav-cta-btn {
-    display: none !important;
+    display: inline-flex !important;
+    font-size: 10px !important;
+    padding: 0 8px !important;
+    height: 28px !important;
+    gap: 3.5px !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 6px rgba(139, 30, 30, 0.25) !important;
+  }
+
+  header .nav-cta-btn i {
+    font-size: 9.5px !important;
   }
 }
 
-/* Tier 2: Mid Tablet (800px - 991.98px) */
-@media (min-width: 800px) and (max-width: 991.98px) {
+/* Tier 2: Mid Tablet (800px - 1023.98px) */
+@media (min-width: 800px) and (max-width: 1023.98px) {
   header.navbar-glass nav.container,
   header.navbar nav.container,
   .navbar .container {
     padding-left: 0.75rem !important;
     padding-right: 0.75rem !important;
     gap: 6px !important;
+    max-width: 100% !important;
   }
 
   .navbar-brand .logo-icon-box {
@@ -664,8 +680,8 @@ header nav .open-cart-btn,
   .navbar .nav-link-custom,
   .navbar-glass .nav-link-custom,
   .nav-link-custom {
-    font-size: 12px !important;
-    padding: 5px 6px !important;
+    font-size: 11.5px !important;
+    padding: 5px 5px !important;
     letter-spacing: -0.01em !important;
   }
 
@@ -689,17 +705,31 @@ header nav .open-cart-btn,
 
   header a.btn-artisan-primary,
   header .nav-cta-btn {
-    display: none !important;
+    display: inline-flex !important;
+    font-size: 11px !important;
+    padding: 0 10px !important;
+    height: 32px !important;
+    gap: 4px !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(139, 30, 30, 0.25) !important;
+  }
+
+  header .nav-cta-btn i {
+    font-size: 10.5px !important;
   }
 }
 
-/* Tier 3: Compact Desktop & Tablet Landscape (992px - 1199.98px) — Covers 1024px cleanly */
-@media (min-width: 992px) and (max-width: 1199.98px) {
+/* Tier 3: Compact Desktop & Tablet Landscape (1024px - 1199.98px) — Covers 1024px cleanly */
+@media (min-width: 1024px) and (max-width: 1199.98px) {
   header.navbar-glass nav.container,
   header.navbar nav.container,
   .navbar .container {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
     gap: 8px !important;
     max-width: 100% !important;
   }
@@ -720,15 +750,15 @@ header nav .open-cart-btn,
   }
 
   .desktop-nav-menu {
-    gap: 3px !important;
+    gap: 2px !important;
   }
 
   .navbar .nav-link,
   .navbar .nav-link-custom,
   .navbar-glass .nav-link-custom,
   .nav-link-custom {
-    font-size: 13px !important;
-    padding: 6px 8px !important;
+    font-size: 12.5px !important;
+    padding: 6px 7px !important;
     letter-spacing: normal !important;
   }
 
@@ -752,7 +782,21 @@ header nav .open-cart-btn,
 
   header a.btn-artisan-primary,
   header .nav-cta-btn {
-    display: none !important;
+    display: inline-flex !important;
+    font-size: 11.5px !important;
+    padding: 0 12px !important;
+    height: 34px !important;
+    gap: 5px !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    border-radius: 9999px !important;
+    box-shadow: 0 2px 8px rgba(139, 30, 30, 0.25) !important;
+  }
+
+  header .nav-cta-btn i {
+    font-size: 11px !important;
   }
 }
 
@@ -809,7 +853,20 @@ header nav .open-cart-btn,
 
   header a.btn-artisan-primary,
   header .nav-cta-btn {
-    display: none !important;
+    display: inline-flex !important;
+    font-size: 12.5px !important;
+    padding: 0 14px !important;
+    height: 36px !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    border-radius: 9999px !important;
+  }
+
+  header .nav-cta-btn i {
+    font-size: 12px !important;
   }
 }
 
@@ -852,6 +909,19 @@ header nav .open-cart-btn,
   header a.btn-artisan-primary,
   header .nav-cta-btn {
     display: inline-flex !important;
+    font-size: 13px !important;
+    padding: 0 16px !important;
+    height: 36px !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    border-radius: 9999px !important;
+  }
+
+  header .nav-cta-btn i {
+    font-size: 12px !important;
   }
 }
 
@@ -2356,6 +2426,88 @@ html.dark .pillar-card:hover {
 
 .hero-section > .container {
   width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Badge Pill & Concentric Halo Indicator (Target Dot)
+   Matches exact reference design: Concentric circular amber halo with bright core
+   Fully responsive down to 320px
+   -------------------------------------------------------------------------- */
+.hero-badge-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  max-width: 100% !important;
+  background-color: rgba(43, 6, 9, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 9999px !important;
+  padding: 0.4rem 1.1rem !important;
+  gap: 8px !important;
+}
+
+.hero-badge-halo {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  border-radius: 9999px !important;
+  background-color: #BF9020 !important;
+  flex-shrink: 0 !important;
+}
+
+.hero-badge-core {
+  display: block !important;
+  width: 9px !important;
+  height: 9px !important;
+  min-width: 9px !important;
+  min-height: 9px !important;
+  border-radius: 9999px !important;
+  background-color: #FCD34D !important;
+  flex-shrink: 0 !important;
+}
+
+.hero-badge-text {
+  color: #FCD34D !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  white-space: nowrap !important;
+  font-size: 0.78rem !important;
+  line-height: 1 !important;
+}
+
+/* Responsive 320px - 360px micro screens */
+@media (max-width: 359px) {
+  .hero-badge-pill {
+    padding: 0.32rem 0.65rem !important;
+    gap: 6px !important;
+    max-width: 96% !important;
+  }
+
+  .hero-badge-halo {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+  }
+
+  .hero-badge-core {
+    width: 6.5px !important;
+    height: 6.5px !important;
+    min-width: 6.5px !important;
+    min-height: 6.5px !important;
+  }
+
+  .hero-badge-text {
+    font-size: 9.5px !important;
+    letter-spacing: 0.04em !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
